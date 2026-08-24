@@ -1,0 +1,5042 @@
+[
+  {
+    "bytes": 1856537794,
+    "epoch": 0,
+    "expected_checksum": "777879744",
+    "shard_id": "data-e00-p00",
+    "stored_checksum": "777879744"
+  },
+  {
+    "bytes": 1191243412,
+    "epoch": 0,
+    "expected_checksum": "777879745",
+    "shard_id": "data-e00-p01",
+    "stored_checksum": "777879745"
+  },
+  {
+    "bytes": 449789974,
+    "epoch": 0,
+    "expected_checksum": "777879746",
+    "shard_id": "data-e00-p02",
+    "stored_checksum": "777879746"
+  },
+  {
+    "bytes": 771985980,
+    "epoch": 0,
+    "expected_checksum": "777879747",
+    "shard_id": "data-e00-p03",
+    "stored_checksum": "777879747"
+  },
+  {
+    "bytes": 1944101548,
+    "epoch": 0,
+    "expected_checksum": "777879748",
+    "shard_id": "data-e00-p04",
+    "stored_checksum": "777879748"
+  },
+  {
+    "bytes": 1288654610,
+    "epoch": 0,
+    "expected_checksum": "777879749",
+    "shard_id": "data-e00-p05",
+    "stored_checksum": "777879749"
+  },
+  {
+    "bytes": 1788438443,
+    "epoch": 0,
+    "expected_checksum": "777879750",
+    "shard_id": "data-e00-p06",
+    "stored_checksum": "777879750"
+  },
+  {
+    "bytes": 689696005,
+    "epoch": 0,
+    "expected_checksum": "777879751",
+    "shard_id": "data-e00-p07",
+    "stored_checksum": "777879751"
+  },
+  {
+    "bytes": 1589707610,
+    "epoch": 0,
+    "expected_checksum": "777879752",
+    "shard_id": "data-e00-p08",
+    "stored_checksum": "777879752"
+  },
+  {
+    "bytes": 1315019097,
+    "epoch": 0,
+    "expected_checksum": "777879753",
+    "shard_id": "data-e00-p09",
+    "stored_checksum": "777879753"
+  },
+  {
+    "bytes": 733782311,
+    "epoch": 0,
+    "expected_checksum": "902245936",
+    "shard_id": "data-e00-p10",
+    "stored_checksum": "902245936"
+  },
+  {
+    "bytes": 309545765,
+    "epoch": 0,
+    "expected_checksum": "902245937",
+    "shard_id": "data-e00-p11",
+    "stored_checksum": "902245937"
+  },
+  {
+    "bytes": 1388629146,
+    "epoch": 1,
+    "expected_checksum": "777879875",
+    "shard_id": "data-e01-p00",
+    "stored_checksum": "777879875"
+  },
+  {
+    "bytes": 1145776317,
+    "epoch": 1,
+    "expected_checksum": "777879876",
+    "shard_id": "data-e01-p01",
+    "stored_checksum": "777879876"
+  },
+  {
+    "bytes": 1684690737,
+    "epoch": 1,
+    "expected_checksum": "777879877",
+    "shard_id": "data-e01-p02",
+    "stored_checksum": "777879877"
+  },
+  {
+    "bytes": 1012749853,
+    "epoch": 1,
+    "expected_checksum": "777879878",
+    "shard_id": "data-e01-p03",
+    "stored_checksum": "777879878"
+  },
+  {
+    "bytes": 581531896,
+    "epoch": 1,
+    "expected_checksum": "777879879",
+    "shard_id": "data-e01-p04",
+    "stored_checksum": "777879879"
+  },
+  {
+    "bytes": 317315891,
+    "epoch": 1,
+    "expected_checksum": "777879880",
+    "shard_id": "data-e01-p05",
+    "stored_checksum": "777879880"
+  },
+  {
+    "bytes": 506276033,
+    "epoch": 1,
+    "expected_checksum": "777879881",
+    "shard_id": "data-e01-p06",
+    "stored_checksum": "777879881"
+  },
+  {
+    "bytes": 1928726594,
+    "epoch": 1,
+    "expected_checksum": "777879882",
+    "shard_id": "data-e01-p07",
+    "stored_checksum": "777879882"
+  },
+  {
+    "bytes": 580980008,
+    "epoch": 1,
+    "expected_checksum": "777879883",
+    "shard_id": "data-e01-p08",
+    "stored_checksum": "777879883"
+  },
+  {
+    "bytes": 1323531286,
+    "epoch": 1,
+    "expected_checksum": "777879884",
+    "shard_id": "data-e01-p09",
+    "stored_checksum": "777879884"
+  },
+  {
+    "bytes": 575784714,
+    "epoch": 1,
+    "expected_checksum": "902263097",
+    "shard_id": "data-e01-p10",
+    "stored_checksum": "902263097"
+  },
+  {
+    "bytes": 902573905,
+    "epoch": 1,
+    "expected_checksum": "902263098",
+    "shard_id": "data-e01-p11",
+    "stored_checksum": "902263098"
+  },
+  {
+    "bytes": 436532817,
+    "epoch": 2,
+    "expected_checksum": "777880006",
+    "shard_id": "data-e02-p00",
+    "stored_checksum": "777880006"
+  },
+  {
+    "bytes": 1783226396,
+    "epoch": 2,
+    "expected_checksum": "777880007",
+    "shard_id": "data-e02-p01",
+    "stored_checksum": "777880007"
+  },
+  {
+    "bytes": 1837991744,
+    "epoch": 2,
+    "expected_checksum": "777880008",
+    "shard_id": "data-e02-p02",
+    "stored_checksum": "777880008"
+  },
+  {
+    "bytes": 1857208106,
+    "epoch": 2,
+    "expected_checksum": "777880009",
+    "shard_id": "data-e02-p03",
+    "stored_checksum": "777880009"
+  },
+  {
+    "bytes": 1913617632,
+    "epoch": 2,
+    "expected_checksum": "777880010",
+    "shard_id": "data-e02-p04",
+    "stored_checksum": "777880010"
+  },
+  {
+    "bytes": 1974567878,
+    "epoch": 2,
+    "expected_checksum": "777880011",
+    "shard_id": "data-e02-p05",
+    "stored_checksum": "777880011"
+  },
+  {
+    "bytes": 644042854,
+    "epoch": 2,
+    "expected_checksum": "777880012",
+    "shard_id": "data-e02-p06",
+    "stored_checksum": "777880012"
+  },
+  {
+    "bytes": 1919326994,
+    "epoch": 2,
+    "expected_checksum": "777880013",
+    "shard_id": "data-e02-p07",
+    "stored_checksum": "777880013"
+  },
+  {
+    "bytes": 1200958205,
+    "epoch": 2,
+    "expected_checksum": "777880014",
+    "shard_id": "data-e02-p08",
+    "stored_checksum": "777880014"
+  },
+  {
+    "bytes": 275854915,
+    "epoch": 2,
+    "expected_checksum": "777880015",
+    "shard_id": "data-e02-p09",
+    "stored_checksum": "777880015"
+  },
+  {
+    "bytes": 1762877447,
+    "epoch": 2,
+    "expected_checksum": "902280258",
+    "shard_id": "data-e02-p10",
+    "stored_checksum": "468864749"
+  },
+  {
+    "bytes": 1226622704,
+    "epoch": 2,
+    "expected_checksum": "902280259",
+    "shard_id": "data-e02-p11",
+    "stored_checksum": "468864750"
+  },
+  {
+    "bytes": 838113159,
+    "epoch": 3,
+    "expected_checksum": "777880137",
+    "shard_id": "data-e03-p00",
+    "stored_checksum": "777880137"
+  },
+  {
+    "bytes": 1498306550,
+    "epoch": 3,
+    "expected_checksum": "777880138",
+    "shard_id": "data-e03-p01",
+    "stored_checksum": "763364540"
+  },
+  {
+    "bytes": 1141862754,
+    "epoch": 3,
+    "expected_checksum": "777880139",
+    "shard_id": "data-e03-p02",
+    "stored_checksum": "777880139"
+  },
+  {
+    "bytes": 1882430224,
+    "epoch": 3,
+    "expected_checksum": "777880140",
+    "shard_id": "data-e03-p03",
+    "stored_checksum": "777880140"
+  },
+  {
+    "bytes": 1677014247,
+    "epoch": 3,
+    "expected_checksum": "777880141",
+    "shard_id": "data-e03-p04",
+    "stored_checksum": "777880141"
+  },
+  {
+    "bytes": 401185010,
+    "epoch": 3,
+    "expected_checksum": "777880142",
+    "shard_id": "data-e03-p05",
+    "stored_checksum": "777880142"
+  },
+  {
+    "bytes": 744459885,
+    "epoch": 3,
+    "expected_checksum": "777880143",
+    "shard_id": "data-e03-p06",
+    "stored_checksum": "763364545"
+  },
+  {
+    "bytes": 308486553,
+    "epoch": 3,
+    "expected_checksum": "777880144",
+    "shard_id": "data-e03-p07",
+    "stored_checksum": "777880144"
+  },
+  {
+    "bytes": 1017666189,
+    "epoch": 3,
+    "expected_checksum": "777880145",
+    "shard_id": "data-e03-p08",
+    "stored_checksum": "777880145"
+  },
+  {
+    "bytes": 740205039,
+    "epoch": 3,
+    "expected_checksum": "777880146",
+    "shard_id": "data-e03-p09",
+    "stored_checksum": "777880146"
+  },
+  {
+    "bytes": 254669106,
+    "epoch": 3,
+    "expected_checksum": "902297419",
+    "shard_id": "data-e03-p10",
+    "stored_checksum": "902297419"
+  },
+  {
+    "bytes": 754616972,
+    "epoch": 3,
+    "expected_checksum": "902297420",
+    "shard_id": "data-e03-p11",
+    "stored_checksum": "902297420"
+  },
+  {
+    "bytes": 1831085541,
+    "epoch": 4,
+    "expected_checksum": "777880268",
+    "shard_id": "data-e04-p00",
+    "stored_checksum": "777880268"
+  },
+  {
+    "bytes": 1708591497,
+    "epoch": 4,
+    "expected_checksum": "777880269",
+    "shard_id": "data-e04-p01",
+    "stored_checksum": "777880269"
+  },
+  {
+    "bytes": 1722169121,
+    "epoch": 4,
+    "expected_checksum": "777880270",
+    "shard_id": "data-e04-p02",
+    "stored_checksum": "777880270"
+  },
+  {
+    "bytes": 360142859,
+    "epoch": 4,
+    "expected_checksum": "777880271",
+    "shard_id": "data-e04-p03",
+    "stored_checksum": "777880271"
+  },
+  {
+    "bytes": 1583862013,
+    "epoch": 4,
+    "expected_checksum": "777880272",
+    "shard_id": "data-e04-p04",
+    "stored_checksum": "777880272"
+  },
+  {
+    "bytes": 929179814,
+    "epoch": 4,
+    "expected_checksum": "777880273",
+    "shard_id": "data-e04-p05",
+    "stored_checksum": "777880273"
+  },
+  {
+    "bytes": 1300900407,
+    "epoch": 4,
+    "expected_checksum": "777880274",
+    "shard_id": "data-e04-p06",
+    "stored_checksum": "777880274"
+  },
+  {
+    "bytes": 1586369238,
+    "epoch": 4,
+    "expected_checksum": "777880275",
+    "shard_id": "data-e04-p07",
+    "stored_checksum": "777880275"
+  },
+  {
+    "bytes": 1850272986,
+    "epoch": 4,
+    "expected_checksum": "777880276",
+    "shard_id": "data-e04-p08",
+    "stored_checksum": "777880276"
+  },
+  {
+    "bytes": 1809556735,
+    "epoch": 4,
+    "expected_checksum": "777880277",
+    "shard_id": "data-e04-p09",
+    "stored_checksum": "777880277"
+  },
+  {
+    "bytes": 1439940639,
+    "epoch": 4,
+    "expected_checksum": "902314580",
+    "shard_id": "data-e04-p10",
+    "stored_checksum": "902314580"
+  },
+  {
+    "bytes": 592877847,
+    "epoch": 4,
+    "expected_checksum": "902314581",
+    "shard_id": "data-e04-p11",
+    "stored_checksum": "902314581"
+  },
+  {
+    "bytes": 280196145,
+    "epoch": 5,
+    "expected_checksum": "777880399",
+    "shard_id": "data-e05-p00",
+    "stored_checksum": "777880399"
+  },
+  {
+    "bytes": 1238949746,
+    "epoch": 5,
+    "expected_checksum": "777880400",
+    "shard_id": "data-e05-p01",
+    "stored_checksum": "777880400"
+  },
+  {
+    "bytes": 497720523,
+    "epoch": 5,
+    "expected_checksum": "777880401",
+    "shard_id": "data-e05-p02",
+    "stored_checksum": "777880401"
+  },
+  {
+    "bytes": 828418992,
+    "epoch": 5,
+    "expected_checksum": "777880402",
+    "shard_id": "data-e05-p03",
+    "stored_checksum": "777880402"
+  },
+  {
+    "bytes": 1941952317,
+    "epoch": 5,
+    "expected_checksum": "777880403",
+    "shard_id": "data-e05-p04",
+    "stored_checksum": "777880403"
+  },
+  {
+    "bytes": 1544759814,
+    "epoch": 5,
+    "expected_checksum": "777880404",
+    "shard_id": "data-e05-p05",
+    "stored_checksum": "777880404"
+  },
+  {
+    "bytes": 832119156,
+    "epoch": 5,
+    "expected_checksum": "777880405",
+    "shard_id": "data-e05-p06",
+    "stored_checksum": "777880405"
+  },
+  {
+    "bytes": 909435949,
+    "epoch": 5,
+    "expected_checksum": "777880406",
+    "shard_id": "data-e05-p07",
+    "stored_checksum": "777880406"
+  },
+  {
+    "bytes": 1535266434,
+    "epoch": 5,
+    "expected_checksum": "777880407",
+    "shard_id": "data-e05-p08",
+    "stored_checksum": "777880407"
+  },
+  {
+    "bytes": 1519264285,
+    "epoch": 5,
+    "expected_checksum": "777880408",
+    "shard_id": "data-e05-p09",
+    "stored_checksum": "777880408"
+  },
+  {
+    "bytes": 790601351,
+    "epoch": 5,
+    "expected_checksum": "902331741",
+    "shard_id": "data-e05-p10",
+    "stored_checksum": "902331741"
+  },
+  {
+    "bytes": 1097882777,
+    "epoch": 5,
+    "expected_checksum": "902331742",
+    "shard_id": "data-e05-p11",
+    "stored_checksum": "902331742"
+  },
+  {
+    "bytes": 1854956933,
+    "epoch": 6,
+    "expected_checksum": "777880530",
+    "shard_id": "data-e06-p00",
+    "stored_checksum": "777880530"
+  },
+  {
+    "bytes": 1442220800,
+    "epoch": 6,
+    "expected_checksum": "777880531",
+    "shard_id": "data-e06-p01",
+    "stored_checksum": "777880531"
+  },
+  {
+    "bytes": 301590937,
+    "epoch": 6,
+    "expected_checksum": "777880532",
+    "shard_id": "data-e06-p02",
+    "stored_checksum": "777880532"
+  },
+  {
+    "bytes": 1068134693,
+    "epoch": 6,
+    "expected_checksum": "777880533",
+    "shard_id": "data-e06-p03",
+    "stored_checksum": "777880533"
+  },
+  {
+    "bytes": 1799388951,
+    "epoch": 6,
+    "expected_checksum": "777880534",
+    "shard_id": "data-e06-p04",
+    "stored_checksum": "777880534"
+  },
+  {
+    "bytes": 962316962,
+    "epoch": 6,
+    "expected_checksum": "777880535",
+    "shard_id": "data-e06-p05",
+    "stored_checksum": "777880535"
+  },
+  {
+    "bytes": 491732974,
+    "epoch": 6,
+    "expected_checksum": "777880536",
+    "shard_id": "data-e06-p06",
+    "stored_checksum": "777880536"
+  },
+  {
+    "bytes": 1716117406,
+    "epoch": 6,
+    "expected_checksum": "777880537",
+    "shard_id": "data-e06-p07",
+    "stored_checksum": "777880537"
+  },
+  {
+    "bytes": 1219429643,
+    "epoch": 6,
+    "expected_checksum": "777880538",
+    "shard_id": "data-e06-p08",
+    "stored_checksum": "777880538"
+  },
+  {
+    "bytes": 1375649169,
+    "epoch": 6,
+    "expected_checksum": "777880539",
+    "shard_id": "data-e06-p09",
+    "stored_checksum": "777880539"
+  },
+  {
+    "bytes": 598106786,
+    "epoch": 6,
+    "expected_checksum": "902348902",
+    "shard_id": "data-e06-p10",
+    "stored_checksum": "902348902"
+  },
+  {
+    "bytes": 642129901,
+    "epoch": 6,
+    "expected_checksum": "902348903",
+    "shard_id": "data-e06-p11",
+    "stored_checksum": "902348903"
+  },
+  {
+    "bytes": 1751475313,
+    "epoch": 7,
+    "expected_checksum": "777880661",
+    "shard_id": "data-e07-p00",
+    "stored_checksum": "777880661"
+  },
+  {
+    "bytes": 460157405,
+    "epoch": 7,
+    "expected_checksum": "777880662",
+    "shard_id": "data-e07-p01",
+    "stored_checksum": "777880662"
+  },
+  {
+    "bytes": 715317366,
+    "epoch": 7,
+    "expected_checksum": "777880663",
+    "shard_id": "data-e07-p02",
+    "stored_checksum": "777880663"
+  },
+  {
+    "bytes": 1219107562,
+    "epoch": 7,
+    "expected_checksum": "777880664",
+    "shard_id": "data-e07-p03",
+    "stored_checksum": "777880664"
+  },
+  {
+    "bytes": 610031909,
+    "epoch": 7,
+    "expected_checksum": "777880665",
+    "shard_id": "data-e07-p04",
+    "stored_checksum": "777880665"
+  },
+  {
+    "bytes": 1710179821,
+    "epoch": 7,
+    "expected_checksum": "777880666",
+    "shard_id": "data-e07-p05",
+    "stored_checksum": "777880666"
+  },
+  {
+    "bytes": 983513825,
+    "epoch": 7,
+    "expected_checksum": "777880667",
+    "shard_id": "data-e07-p06",
+    "stored_checksum": "777880667"
+  },
+  {
+    "bytes": 958511482,
+    "epoch": 7,
+    "expected_checksum": "777880668",
+    "shard_id": "data-e07-p07",
+    "stored_checksum": "777880668"
+  },
+  {
+    "bytes": 501483674,
+    "epoch": 7,
+    "expected_checksum": "777880669",
+    "shard_id": "data-e07-p08",
+    "stored_checksum": "777880669"
+  },
+  {
+    "bytes": 536506208,
+    "epoch": 7,
+    "expected_checksum": "777880670",
+    "shard_id": "data-e07-p09",
+    "stored_checksum": "777880670"
+  },
+  {
+    "bytes": 1262756070,
+    "epoch": 7,
+    "expected_checksum": "902366063",
+    "shard_id": "data-e07-p10",
+    "stored_checksum": "902366063"
+  },
+  {
+    "bytes": 1674112104,
+    "epoch": 7,
+    "expected_checksum": "902366064",
+    "shard_id": "data-e07-p11",
+    "stored_checksum": "902366064"
+  },
+  {
+    "bytes": 304340050,
+    "epoch": 8,
+    "expected_checksum": "777880792",
+    "shard_id": "data-e08-p00",
+    "stored_checksum": "777880792"
+  },
+  {
+    "bytes": 915643701,
+    "epoch": 8,
+    "expected_checksum": "777880793",
+    "shard_id": "data-e08-p01",
+    "stored_checksum": "777880793"
+  },
+  {
+    "bytes": 590216971,
+    "epoch": 8,
+    "expected_checksum": "777880794",
+    "shard_id": "data-e08-p02",
+    "stored_checksum": "777880794"
+  },
+  {
+    "bytes": 1929595975,
+    "epoch": 8,
+    "expected_checksum": "777880795",
+    "shard_id": "data-e08-p03",
+    "stored_checksum": "777880795"
+  },
+  {
+    "bytes": 1841255560,
+    "epoch": 8,
+    "expected_checksum": "777880796",
+    "shard_id": "data-e08-p04",
+    "stored_checksum": "777880796"
+  },
+  {
+    "bytes": 1570526055,
+    "epoch": 8,
+    "expected_checksum": "777880797",
+    "shard_id": "data-e08-p05",
+    "stored_checksum": "777880797"
+  },
+  {
+    "bytes": 1115751372,
+    "epoch": 8,
+    "expected_checksum": "777880798",
+    "shard_id": "data-e08-p06",
+    "stored_checksum": "777880798"
+  },
+  {
+    "bytes": 1662080958,
+    "epoch": 8,
+    "expected_checksum": "777880799",
+    "shard_id": "data-e08-p07",
+    "stored_checksum": "777880799"
+  },
+  {
+    "bytes": 1354076929,
+    "epoch": 8,
+    "expected_checksum": "777880800",
+    "shard_id": "data-e08-p08",
+    "stored_checksum": "777880800"
+  },
+  {
+    "bytes": 445776797,
+    "epoch": 8,
+    "expected_checksum": "777880801",
+    "shard_id": "data-e08-p09",
+    "stored_checksum": "777880801"
+  },
+  {
+    "bytes": 1482486996,
+    "epoch": 8,
+    "expected_checksum": "902383224",
+    "shard_id": "data-e08-p10",
+    "stored_checksum": "902383224"
+  },
+  {
+    "bytes": 1250824638,
+    "epoch": 8,
+    "expected_checksum": "902383225",
+    "shard_id": "data-e08-p11",
+    "stored_checksum": "902383225"
+  },
+  {
+    "bytes": 490583605,
+    "epoch": 9,
+    "expected_checksum": "777880923",
+    "shard_id": "data-e09-p00",
+    "stored_checksum": "777880923"
+  },
+  {
+    "bytes": 367084518,
+    "epoch": 9,
+    "expected_checksum": "777880924",
+    "shard_id": "data-e09-p01",
+    "stored_checksum": "777880924"
+  },
+  {
+    "bytes": 733097435,
+    "epoch": 9,
+    "expected_checksum": "777880925",
+    "shard_id": "data-e09-p02",
+    "stored_checksum": "777880925"
+  },
+  {
+    "bytes": 801496228,
+    "epoch": 9,
+    "expected_checksum": "777880926",
+    "shard_id": "data-e09-p03",
+    "stored_checksum": "777880926"
+  },
+  {
+    "bytes": 1059832202,
+    "epoch": 9,
+    "expected_checksum": "777880927",
+    "shard_id": "data-e09-p04",
+    "stored_checksum": "777880927"
+  },
+  {
+    "bytes": 1479052722,
+    "epoch": 9,
+    "expected_checksum": "777880928",
+    "shard_id": "data-e09-p05",
+    "stored_checksum": "777880928"
+  },
+  {
+    "bytes": 221736196,
+    "epoch": 9,
+    "expected_checksum": "777880929",
+    "shard_id": "data-e09-p06",
+    "stored_checksum": "777880929"
+  },
+  {
+    "bytes": 1931987596,
+    "epoch": 9,
+    "expected_checksum": "777880930",
+    "shard_id": "data-e09-p07",
+    "stored_checksum": "777880930"
+  },
+  {
+    "bytes": 263844687,
+    "epoch": 9,
+    "expected_checksum": "777880931",
+    "shard_id": "data-e09-p08",
+    "stored_checksum": "777880931"
+  },
+  {
+    "bytes": 407224098,
+    "epoch": 9,
+    "expected_checksum": "777880932",
+    "shard_id": "data-e09-p09",
+    "stored_checksum": "777880932"
+  },
+  {
+    "bytes": 1462817185,
+    "epoch": 9,
+    "expected_checksum": "902400385",
+    "shard_id": "data-e09-p10",
+    "stored_checksum": "902400385"
+  },
+  {
+    "bytes": 1513332106,
+    "epoch": 9,
+    "expected_checksum": "902400386",
+    "shard_id": "data-e09-p11",
+    "stored_checksum": "902400386"
+  },
+  {
+    "bytes": 712969905,
+    "epoch": 10,
+    "expected_checksum": "902262966",
+    "shard_id": "data-e10-p00",
+    "stored_checksum": "902262966"
+  },
+  {
+    "bytes": 1270554044,
+    "epoch": 10,
+    "expected_checksum": "902262967",
+    "shard_id": "data-e10-p01",
+    "stored_checksum": "459354162"
+  },
+  {
+    "bytes": 882663226,
+    "epoch": 10,
+    "expected_checksum": "902262968",
+    "shard_id": "data-e10-p02",
+    "stored_checksum": "902262968"
+  },
+  {
+    "bytes": 1492512252,
+    "epoch": 10,
+    "expected_checksum": "902262969",
+    "shard_id": "data-e10-p03",
+    "stored_checksum": "902262969"
+  },
+  {
+    "bytes": 1066240822,
+    "epoch": 10,
+    "expected_checksum": "902262970",
+    "shard_id": "data-e10-p04",
+    "stored_checksum": "902262970"
+  },
+  {
+    "bytes": 1504537311,
+    "epoch": 10,
+    "expected_checksum": "902262971",
+    "shard_id": "data-e10-p05",
+    "stored_checksum": "902262971"
+  },
+  {
+    "bytes": 420103072,
+    "epoch": 10,
+    "expected_checksum": "902262972",
+    "shard_id": "data-e10-p06",
+    "stored_checksum": "902262972"
+  },
+  {
+    "bytes": 1187945024,
+    "epoch": 10,
+    "expected_checksum": "902262973",
+    "shard_id": "data-e10-p07",
+    "stored_checksum": "902262973"
+  },
+  {
+    "bytes": 1432842257,
+    "epoch": 10,
+    "expected_checksum": "902262974",
+    "shard_id": "data-e10-p08",
+    "stored_checksum": "902262974"
+  },
+  {
+    "bytes": 754241392,
+    "epoch": 10,
+    "expected_checksum": "902262975",
+    "shard_id": "data-e10-p09",
+    "stored_checksum": "902262975"
+  },
+  {
+    "bytes": 1669920432,
+    "epoch": 10,
+    "expected_checksum": "196447899",
+    "shard_id": "data-e10-p10",
+    "stored_checksum": "196447899"
+  },
+  {
+    "bytes": 535846021,
+    "epoch": 10,
+    "expected_checksum": "196447900",
+    "shard_id": "data-e10-p11",
+    "stored_checksum": "196447900"
+  },
+  {
+    "bytes": 328795686,
+    "epoch": 11,
+    "expected_checksum": "902263097",
+    "shard_id": "data-e11-p00",
+    "stored_checksum": "902263097"
+  },
+  {
+    "bytes": 1154684200,
+    "epoch": 11,
+    "expected_checksum": "902263098",
+    "shard_id": "data-e11-p01",
+    "stored_checksum": "902263098"
+  },
+  {
+    "bytes": 1447779198,
+    "epoch": 11,
+    "expected_checksum": "902263099",
+    "shard_id": "data-e11-p02",
+    "stored_checksum": "902263099"
+  },
+  {
+    "bytes": 223772535,
+    "epoch": 11,
+    "expected_checksum": "902263100",
+    "shard_id": "data-e11-p03",
+    "stored_checksum": "902263100"
+  },
+  {
+    "bytes": 760625336,
+    "epoch": 11,
+    "expected_checksum": "902263101",
+    "shard_id": "data-e11-p04",
+    "stored_checksum": "902263101"
+  },
+  {
+    "bytes": 677285104,
+    "epoch": 11,
+    "expected_checksum": "902263102",
+    "shard_id": "data-e11-p05",
+    "stored_checksum": "902263102"
+  },
+  {
+    "bytes": 1360886594,
+    "epoch": 11,
+    "expected_checksum": "902263103",
+    "shard_id": "data-e11-p06",
+    "stored_checksum": "902263103"
+  },
+  {
+    "bytes": 862515328,
+    "epoch": 11,
+    "expected_checksum": "902263104",
+    "shard_id": "data-e11-p07",
+    "stored_checksum": "902263104"
+  },
+  {
+    "bytes": 1266951560,
+    "epoch": 11,
+    "expected_checksum": "902263105",
+    "shard_id": "data-e11-p08",
+    "stored_checksum": "902263105"
+  },
+  {
+    "bytes": 1897328316,
+    "epoch": 11,
+    "expected_checksum": "902263106",
+    "shard_id": "data-e11-p09",
+    "stored_checksum": "902263106"
+  },
+  {
+    "bytes": 1009860136,
+    "epoch": 11,
+    "expected_checksum": "196465060",
+    "shard_id": "data-e11-p10",
+    "stored_checksum": "196465060"
+  },
+  {
+    "bytes": 542259988,
+    "epoch": 11,
+    "expected_checksum": "196465061",
+    "shard_id": "data-e11-p11",
+    "stored_checksum": "196465061"
+  },
+  {
+    "bytes": 1627199218,
+    "epoch": 12,
+    "expected_checksum": "902263228",
+    "shard_id": "data-e12-p00",
+    "stored_checksum": "902263228"
+  },
+  {
+    "bytes": 1127294509,
+    "epoch": 12,
+    "expected_checksum": "902263229",
+    "shard_id": "data-e12-p01",
+    "stored_checksum": "048353997"
+  },
+  {
+    "bytes": 544677761,
+    "epoch": 12,
+    "expected_checksum": "902263230",
+    "shard_id": "data-e12-p02",
+    "stored_checksum": "902263230"
+  },
+  {
+    "bytes": 989269756,
+    "epoch": 12,
+    "expected_checksum": "902263231",
+    "shard_id": "data-e12-p03",
+    "stored_checksum": "902263231"
+  },
+  {
+    "bytes": 1008172131,
+    "epoch": 12,
+    "expected_checksum": "902263232",
+    "shard_id": "data-e12-p04",
+    "stored_checksum": "902263232"
+  },
+  {
+    "bytes": 1264381017,
+    "epoch": 12,
+    "expected_checksum": "902263233",
+    "shard_id": "data-e12-p05",
+    "stored_checksum": "902263233"
+  },
+  {
+    "bytes": 1397386468,
+    "epoch": 12,
+    "expected_checksum": "902263234",
+    "shard_id": "data-e12-p06",
+    "stored_checksum": "902263234"
+  },
+  {
+    "bytes": 307750674,
+    "epoch": 12,
+    "expected_checksum": "902263235",
+    "shard_id": "data-e12-p07",
+    "stored_checksum": "902263235"
+  },
+  {
+    "bytes": 978158776,
+    "epoch": 12,
+    "expected_checksum": "902263236",
+    "shard_id": "data-e12-p08",
+    "stored_checksum": "902263236"
+  },
+  {
+    "bytes": 1344605747,
+    "epoch": 12,
+    "expected_checksum": "902263237",
+    "shard_id": "data-e12-p09",
+    "stored_checksum": "902263237"
+  },
+  {
+    "bytes": 1098461036,
+    "epoch": 12,
+    "expected_checksum": "196482221",
+    "shard_id": "data-e12-p10",
+    "stored_checksum": "196482221"
+  },
+  {
+    "bytes": 1957779607,
+    "epoch": 12,
+    "expected_checksum": "196482222",
+    "shard_id": "data-e12-p11",
+    "stored_checksum": "196482222"
+  },
+  {
+    "bytes": 1242957924,
+    "epoch": 13,
+    "expected_checksum": "902263359",
+    "shard_id": "data-e13-p00",
+    "stored_checksum": "902263359"
+  },
+  {
+    "bytes": 1315538044,
+    "epoch": 13,
+    "expected_checksum": "902263360",
+    "shard_id": "data-e13-p01",
+    "stored_checksum": "902263360"
+  },
+  {
+    "bytes": 364468311,
+    "epoch": 13,
+    "expected_checksum": "902263361",
+    "shard_id": "data-e13-p02",
+    "stored_checksum": "902263361"
+  },
+  {
+    "bytes": 1037528843,
+    "epoch": 13,
+    "expected_checksum": "902263362",
+    "shard_id": "data-e13-p03",
+    "stored_checksum": "902263362"
+  },
+  {
+    "bytes": 1515120192,
+    "epoch": 13,
+    "expected_checksum": "902263363",
+    "shard_id": "data-e13-p04",
+    "stored_checksum": "902263363"
+  },
+  {
+    "bytes": 1174861902,
+    "epoch": 13,
+    "expected_checksum": "902263364",
+    "shard_id": "data-e13-p05",
+    "stored_checksum": "902263364"
+  },
+  {
+    "bytes": 662017156,
+    "epoch": 13,
+    "expected_checksum": "902263365",
+    "shard_id": "data-e13-p06",
+    "stored_checksum": "902263365"
+  },
+  {
+    "bytes": 638543609,
+    "epoch": 13,
+    "expected_checksum": "902263366",
+    "shard_id": "data-e13-p07",
+    "stored_checksum": "902263366"
+  },
+  {
+    "bytes": 1143835084,
+    "epoch": 13,
+    "expected_checksum": "902263367",
+    "shard_id": "data-e13-p08",
+    "stored_checksum": "902263367"
+  },
+  {
+    "bytes": 1655689056,
+    "epoch": 13,
+    "expected_checksum": "902263368",
+    "shard_id": "data-e13-p09",
+    "stored_checksum": "902263368"
+  },
+  {
+    "bytes": 1985007214,
+    "epoch": 13,
+    "expected_checksum": "196499382",
+    "shard_id": "data-e13-p10",
+    "stored_checksum": "196499382"
+  },
+  {
+    "bytes": 237854777,
+    "epoch": 13,
+    "expected_checksum": "196499383",
+    "shard_id": "data-e13-p11",
+    "stored_checksum": "196499383"
+  },
+  {
+    "bytes": 992966946,
+    "epoch": 14,
+    "expected_checksum": "902263490",
+    "shard_id": "data-e14-p00",
+    "stored_checksum": "902263490"
+  },
+  {
+    "bytes": 877818439,
+    "epoch": 14,
+    "expected_checksum": "902263491",
+    "shard_id": "data-e14-p01",
+    "stored_checksum": "902263491"
+  },
+  {
+    "bytes": 564621114,
+    "epoch": 14,
+    "expected_checksum": "902263492",
+    "shard_id": "data-e14-p02",
+    "stored_checksum": "637353840"
+  },
+  {
+    "bytes": 1029035793,
+    "epoch": 14,
+    "expected_checksum": "902263493",
+    "shard_id": "data-e14-p03",
+    "stored_checksum": "902263493"
+  },
+  {
+    "bytes": 1879658250,
+    "epoch": 14,
+    "expected_checksum": "902263494",
+    "shard_id": "data-e14-p04",
+    "stored_checksum": "902263494"
+  },
+  {
+    "bytes": 207965035,
+    "epoch": 14,
+    "expected_checksum": "902263495",
+    "shard_id": "data-e14-p05",
+    "stored_checksum": "902263495"
+  },
+  {
+    "bytes": 1588433790,
+    "epoch": 14,
+    "expected_checksum": "902263496",
+    "shard_id": "data-e14-p06",
+    "stored_checksum": "902263496"
+  },
+  {
+    "bytes": 609639467,
+    "epoch": 14,
+    "expected_checksum": "902263497",
+    "shard_id": "data-e14-p07",
+    "stored_checksum": "902263497"
+  },
+  {
+    "bytes": 858087903,
+    "epoch": 14,
+    "expected_checksum": "902263498",
+    "shard_id": "data-e14-p08",
+    "stored_checksum": "902263498"
+  },
+  {
+    "bytes": 951359340,
+    "epoch": 14,
+    "expected_checksum": "902263499",
+    "shard_id": "data-e14-p09",
+    "stored_checksum": "902263499"
+  },
+  {
+    "bytes": 1648644339,
+    "epoch": 14,
+    "expected_checksum": "196516543",
+    "shard_id": "data-e14-p10",
+    "stored_checksum": "196516543"
+  },
+  {
+    "bytes": 1372567579,
+    "epoch": 14,
+    "expected_checksum": "196516544",
+    "shard_id": "data-e14-p11",
+    "stored_checksum": "637353970"
+  },
+  {
+    "bytes": 439588046,
+    "epoch": 15,
+    "expected_checksum": "902263621",
+    "shard_id": "data-e15-p00",
+    "stored_checksum": "902263621"
+  },
+  {
+    "bytes": 1983626456,
+    "epoch": 15,
+    "expected_checksum": "902263622",
+    "shard_id": "data-e15-p01",
+    "stored_checksum": "902263622"
+  },
+  {
+    "bytes": 1084215174,
+    "epoch": 15,
+    "expected_checksum": "902263623",
+    "shard_id": "data-e15-p02",
+    "stored_checksum": "902263623"
+  },
+  {
+    "bytes": 455921941,
+    "epoch": 15,
+    "expected_checksum": "902263624",
+    "shard_id": "data-e15-p03",
+    "stored_checksum": "902263624"
+  },
+  {
+    "bytes": 1901002143,
+    "epoch": 15,
+    "expected_checksum": "902263625",
+    "shard_id": "data-e15-p04",
+    "stored_checksum": "902263625"
+  },
+  {
+    "bytes": 1195218552,
+    "epoch": 15,
+    "expected_checksum": "902263626",
+    "shard_id": "data-e15-p05",
+    "stored_checksum": "902263626"
+  },
+  {
+    "bytes": 545162395,
+    "epoch": 15,
+    "expected_checksum": "902263627",
+    "shard_id": "data-e15-p06",
+    "stored_checksum": "902263627"
+  },
+  {
+    "bytes": 1667130398,
+    "epoch": 15,
+    "expected_checksum": "902263628",
+    "shard_id": "data-e15-p07",
+    "stored_checksum": "902263628"
+  },
+  {
+    "bytes": 207405503,
+    "epoch": 15,
+    "expected_checksum": "902263629",
+    "shard_id": "data-e15-p08",
+    "stored_checksum": "902263629"
+  },
+  {
+    "bytes": 1735018995,
+    "epoch": 15,
+    "expected_checksum": "902263630",
+    "shard_id": "data-e15-p09",
+    "stored_checksum": "902263630"
+  },
+  {
+    "bytes": 1709337732,
+    "epoch": 15,
+    "expected_checksum": "196533704",
+    "shard_id": "data-e15-p10",
+    "stored_checksum": "196533704"
+  },
+  {
+    "bytes": 1561577126,
+    "epoch": 15,
+    "expected_checksum": "196533705",
+    "shard_id": "data-e15-p11",
+    "stored_checksum": "196533705"
+  },
+  {
+    "bytes": 1263404083,
+    "epoch": 16,
+    "expected_checksum": "902263752",
+    "shard_id": "data-e16-p00",
+    "stored_checksum": "902263752"
+  },
+  {
+    "bytes": 1659257051,
+    "epoch": 16,
+    "expected_checksum": "902263753",
+    "shard_id": "data-e16-p01",
+    "stored_checksum": "902263753"
+  },
+  {
+    "bytes": 1869255789,
+    "epoch": 16,
+    "expected_checksum": "902263754",
+    "shard_id": "data-e16-p02",
+    "stored_checksum": "902263754"
+  },
+  {
+    "bytes": 514159328,
+    "epoch": 16,
+    "expected_checksum": "902263755",
+    "shard_id": "data-e16-p03",
+    "stored_checksum": "902263755"
+  },
+  {
+    "bytes": 1717194833,
+    "epoch": 16,
+    "expected_checksum": "902263756",
+    "shard_id": "data-e16-p04",
+    "stored_checksum": "902263756"
+  },
+  {
+    "bytes": 1807302754,
+    "epoch": 16,
+    "expected_checksum": "902263757",
+    "shard_id": "data-e16-p05",
+    "stored_checksum": "902263757"
+  },
+  {
+    "bytes": 599835399,
+    "epoch": 16,
+    "expected_checksum": "902263758",
+    "shard_id": "data-e16-p06",
+    "stored_checksum": "226353679"
+  },
+  {
+    "bytes": 244154908,
+    "epoch": 16,
+    "expected_checksum": "902263759",
+    "shard_id": "data-e16-p07",
+    "stored_checksum": "902263759"
+  },
+  {
+    "bytes": 1067866761,
+    "epoch": 16,
+    "expected_checksum": "902263760",
+    "shard_id": "data-e16-p08",
+    "stored_checksum": "902263760"
+  },
+  {
+    "bytes": 1835182816,
+    "epoch": 16,
+    "expected_checksum": "902263761",
+    "shard_id": "data-e16-p09",
+    "stored_checksum": "226353682"
+  },
+  {
+    "bytes": 681450259,
+    "epoch": 16,
+    "expected_checksum": "196550865",
+    "shard_id": "data-e16-p10",
+    "stored_checksum": "196550865"
+  },
+  {
+    "bytes": 1128088812,
+    "epoch": 16,
+    "expected_checksum": "196550866",
+    "shard_id": "data-e16-p11",
+    "stored_checksum": "196550866"
+  },
+  {
+    "bytes": 681740536,
+    "epoch": 17,
+    "expected_checksum": "902263883",
+    "shard_id": "data-e17-p00",
+    "stored_checksum": "902263883"
+  },
+  {
+    "bytes": 1395579344,
+    "epoch": 17,
+    "expected_checksum": "902263884",
+    "shard_id": "data-e17-p01",
+    "stored_checksum": "902263884"
+  },
+  {
+    "bytes": 1206881740,
+    "epoch": 17,
+    "expected_checksum": "902263885",
+    "shard_id": "data-e17-p02",
+    "stored_checksum": "902263885"
+  },
+  {
+    "bytes": 1396815607,
+    "epoch": 17,
+    "expected_checksum": "902263886",
+    "shard_id": "data-e17-p03",
+    "stored_checksum": "902263886"
+  },
+  {
+    "bytes": 1217590587,
+    "epoch": 17,
+    "expected_checksum": "902263887",
+    "shard_id": "data-e17-p04",
+    "stored_checksum": "902263887"
+  },
+  {
+    "bytes": 1422229482,
+    "epoch": 17,
+    "expected_checksum": "902263888",
+    "shard_id": "data-e17-p05",
+    "stored_checksum": "902263888"
+  },
+  {
+    "bytes": 1220868603,
+    "epoch": 17,
+    "expected_checksum": "902263889",
+    "shard_id": "data-e17-p06",
+    "stored_checksum": "902263889"
+  },
+  {
+    "bytes": 1359706525,
+    "epoch": 17,
+    "expected_checksum": "902263890",
+    "shard_id": "data-e17-p07",
+    "stored_checksum": "902263890"
+  },
+  {
+    "bytes": 560780664,
+    "epoch": 17,
+    "expected_checksum": "902263891",
+    "shard_id": "data-e17-p08",
+    "stored_checksum": "902263891"
+  },
+  {
+    "bytes": 285140923,
+    "epoch": 17,
+    "expected_checksum": "902263892",
+    "shard_id": "data-e17-p09",
+    "stored_checksum": "520853603"
+  },
+  {
+    "bytes": 1075821356,
+    "epoch": 17,
+    "expected_checksum": "196568026",
+    "shard_id": "data-e17-p10",
+    "stored_checksum": "196568026"
+  },
+  {
+    "bytes": 877607030,
+    "epoch": 17,
+    "expected_checksum": "196568027",
+    "shard_id": "data-e17-p11",
+    "stored_checksum": "196568027"
+  },
+  {
+    "bytes": 1210183613,
+    "epoch": 18,
+    "expected_checksum": "902264014",
+    "shard_id": "data-e18-p00",
+    "stored_checksum": "307699443"
+  },
+  {
+    "bytes": 1923360398,
+    "epoch": 18,
+    "expected_checksum": "902264015",
+    "shard_id": "data-e18-p01",
+    "stored_checksum": "902264015"
+  },
+  {
+    "bytes": 976000931,
+    "epoch": 18,
+    "expected_checksum": "902264016",
+    "shard_id": "data-e18-p02",
+    "stored_checksum": "307699445"
+  },
+  {
+    "bytes": 1829898061,
+    "epoch": 18,
+    "expected_checksum": "902264017",
+    "shard_id": "data-e18-p03",
+    "stored_checksum": "307699446"
+  },
+  {
+    "bytes": 547918590,
+    "epoch": 18,
+    "expected_checksum": "902264018",
+    "shard_id": "data-e18-p04",
+    "stored_checksum": "307699447"
+  },
+  {
+    "bytes": 1139455969,
+    "epoch": 18,
+    "expected_checksum": "902264019",
+    "shard_id": "data-e18-p05",
+    "stored_checksum": "307699448"
+  },
+  {
+    "bytes": 1712665774,
+    "epoch": 18,
+    "expected_checksum": "902264020",
+    "shard_id": "data-e18-p06",
+    "stored_checksum": "902264020"
+  },
+  {
+    "bytes": 625483427,
+    "epoch": 18,
+    "expected_checksum": "902264021",
+    "shard_id": "data-e18-p07",
+    "stored_checksum": "307699450"
+  },
+  {
+    "bytes": 329219441,
+    "epoch": 18,
+    "expected_checksum": "902264022",
+    "shard_id": "data-e18-p08",
+    "stored_checksum": "307699451"
+  },
+  {
+    "bytes": 294087868,
+    "epoch": 18,
+    "expected_checksum": "902264023",
+    "shard_id": "data-e18-p09",
+    "stored_checksum": "307699452"
+  },
+  {
+    "bytes": 1306208067,
+    "epoch": 18,
+    "expected_checksum": "196585187",
+    "shard_id": "data-e18-p10",
+    "stored_checksum": "307699574"
+  },
+  {
+    "bytes": 1043275485,
+    "epoch": 18,
+    "expected_checksum": "196585188",
+    "shard_id": "data-e18-p11",
+    "stored_checksum": "307699575"
+  },
+  {
+    "bytes": 1095236141,
+    "epoch": 19,
+    "expected_checksum": "902264145",
+    "shard_id": "data-e19-p00",
+    "stored_checksum": "902264145"
+  },
+  {
+    "bytes": 955632127,
+    "epoch": 19,
+    "expected_checksum": "902264146",
+    "shard_id": "data-e19-p01",
+    "stored_checksum": "902264146"
+  },
+  {
+    "bytes": 1295842797,
+    "epoch": 19,
+    "expected_checksum": "902264147",
+    "shard_id": "data-e19-p02",
+    "stored_checksum": "902264147"
+  },
+  {
+    "bytes": 496481572,
+    "epoch": 19,
+    "expected_checksum": "902264148",
+    "shard_id": "data-e19-p03",
+    "stored_checksum": "902264148"
+  },
+  {
+    "bytes": 1922410261,
+    "epoch": 19,
+    "expected_checksum": "902264149",
+    "shard_id": "data-e19-p04",
+    "stored_checksum": "902264149"
+  },
+  {
+    "bytes": 1975612041,
+    "epoch": 19,
+    "expected_checksum": "902264150",
+    "shard_id": "data-e19-p05",
+    "stored_checksum": "902264150"
+  },
+  {
+    "bytes": 850570940,
+    "epoch": 19,
+    "expected_checksum": "902264151",
+    "shard_id": "data-e19-p06",
+    "stored_checksum": "902264151"
+  },
+  {
+    "bytes": 693225236,
+    "epoch": 19,
+    "expected_checksum": "902264152",
+    "shard_id": "data-e19-p07",
+    "stored_checksum": "902264152"
+  },
+  {
+    "bytes": 736243840,
+    "epoch": 19,
+    "expected_checksum": "902264153",
+    "shard_id": "data-e19-p08",
+    "stored_checksum": "902264153"
+  },
+  {
+    "bytes": 1256086232,
+    "epoch": 19,
+    "expected_checksum": "902264154",
+    "shard_id": "data-e19-p09",
+    "stored_checksum": "902264154"
+  },
+  {
+    "bytes": 403680604,
+    "epoch": 19,
+    "expected_checksum": "196602348",
+    "shard_id": "data-e19-p10",
+    "stored_checksum": "196602348"
+  },
+  {
+    "bytes": 519347941,
+    "epoch": 19,
+    "expected_checksum": "196602349",
+    "shard_id": "data-e19-p11",
+    "stored_checksum": "109853561"
+  },
+  {
+    "bytes": 1423754453,
+    "epoch": 20,
+    "expected_checksum": "902280127",
+    "shard_id": "data-e20-p00",
+    "stored_checksum": "902280127"
+  },
+  {
+    "bytes": 1139226935,
+    "epoch": 20,
+    "expected_checksum": "902280128",
+    "shard_id": "data-e20-p01",
+    "stored_checksum": "902280128"
+  },
+  {
+    "bytes": 286612827,
+    "epoch": 20,
+    "expected_checksum": "902280129",
+    "shard_id": "data-e20-p02",
+    "stored_checksum": "902280129"
+  },
+  {
+    "bytes": 308554236,
+    "epoch": 20,
+    "expected_checksum": "902280130",
+    "shard_id": "data-e20-p03",
+    "stored_checksum": "902280130"
+  },
+  {
+    "bytes": 867756284,
+    "epoch": 20,
+    "expected_checksum": "902280131",
+    "shard_id": "data-e20-p04",
+    "stored_checksum": "902280131"
+  },
+  {
+    "bytes": 1055794847,
+    "epoch": 20,
+    "expected_checksum": "902280132",
+    "shard_id": "data-e20-p05",
+    "stored_checksum": "902280132"
+  },
+  {
+    "bytes": 1075734635,
+    "epoch": 20,
+    "expected_checksum": "902280133",
+    "shard_id": "data-e20-p06",
+    "stored_checksum": "902280133"
+  },
+  {
+    "bytes": 217159376,
+    "epoch": 20,
+    "expected_checksum": "902280134",
+    "shard_id": "data-e20-p07",
+    "stored_checksum": "902280134"
+  },
+  {
+    "bytes": 993386156,
+    "epoch": 20,
+    "expected_checksum": "902280135",
+    "shard_id": "data-e20-p08",
+    "stored_checksum": "902280135"
+  },
+  {
+    "bytes": 1011833336,
+    "epoch": 20,
+    "expected_checksum": "902280136",
+    "shard_id": "data-e20-p09",
+    "stored_checksum": "902280136"
+  },
+  {
+    "bytes": 1798372055,
+    "epoch": 20,
+    "expected_checksum": "198695990",
+    "shard_id": "data-e20-p10",
+    "stored_checksum": "198695990"
+  },
+  {
+    "bytes": 1903653276,
+    "epoch": 20,
+    "expected_checksum": "198695991",
+    "shard_id": "data-e20-p11",
+    "stored_checksum": "198695991"
+  },
+  {
+    "bytes": 997514884,
+    "epoch": 21,
+    "expected_checksum": "902280258",
+    "shard_id": "data-e21-p00",
+    "stored_checksum": "902280258"
+  },
+  {
+    "bytes": 1823705412,
+    "epoch": 21,
+    "expected_checksum": "902280259",
+    "shard_id": "data-e21-p01",
+    "stored_checksum": "902280259"
+  },
+  {
+    "bytes": 1966530514,
+    "epoch": 21,
+    "expected_checksum": "902280260",
+    "shard_id": "data-e21-p02",
+    "stored_checksum": "902280260"
+  },
+  {
+    "bytes": 1830526818,
+    "epoch": 21,
+    "expected_checksum": "902280261",
+    "shard_id": "data-e21-p03",
+    "stored_checksum": "902280261"
+  },
+  {
+    "bytes": 283599249,
+    "epoch": 21,
+    "expected_checksum": "902280262",
+    "shard_id": "data-e21-p04",
+    "stored_checksum": "902280262"
+  },
+  {
+    "bytes": 279482630,
+    "epoch": 21,
+    "expected_checksum": "902280263",
+    "shard_id": "data-e21-p05",
+    "stored_checksum": "902280263"
+  },
+  {
+    "bytes": 939376325,
+    "epoch": 21,
+    "expected_checksum": "902280264",
+    "shard_id": "data-e21-p06",
+    "stored_checksum": "902280264"
+  },
+  {
+    "bytes": 1883180476,
+    "epoch": 21,
+    "expected_checksum": "902280265",
+    "shard_id": "data-e21-p07",
+    "stored_checksum": "902280265"
+  },
+  {
+    "bytes": 291517622,
+    "epoch": 21,
+    "expected_checksum": "902280266",
+    "shard_id": "data-e21-p08",
+    "stored_checksum": "902280266"
+  },
+  {
+    "bytes": 1347430799,
+    "epoch": 21,
+    "expected_checksum": "902280267",
+    "shard_id": "data-e21-p09",
+    "stored_checksum": "902280267"
+  },
+  {
+    "bytes": 1657847953,
+    "epoch": 21,
+    "expected_checksum": "198713151",
+    "shard_id": "data-e21-p10",
+    "stored_checksum": "198713151"
+  },
+  {
+    "bytes": 212156573,
+    "epoch": 21,
+    "expected_checksum": "198713152",
+    "shard_id": "data-e21-p11",
+    "stored_checksum": "198713152"
+  },
+  {
+    "bytes": 1025403421,
+    "epoch": 22,
+    "expected_checksum": "902280389",
+    "shard_id": "data-e22-p00",
+    "stored_checksum": "902280389"
+  },
+  {
+    "bytes": 1738951528,
+    "epoch": 22,
+    "expected_checksum": "902280390",
+    "shard_id": "data-e22-p01",
+    "stored_checksum": "902280390"
+  },
+  {
+    "bytes": 1424694706,
+    "epoch": 22,
+    "expected_checksum": "902280391",
+    "shard_id": "data-e22-p02",
+    "stored_checksum": "902280391"
+  },
+  {
+    "bytes": 719819088,
+    "epoch": 22,
+    "expected_checksum": "902280392",
+    "shard_id": "data-e22-p03",
+    "stored_checksum": "902280392"
+  },
+  {
+    "bytes": 1636936247,
+    "epoch": 22,
+    "expected_checksum": "902280393",
+    "shard_id": "data-e22-p04",
+    "stored_checksum": "902280393"
+  },
+  {
+    "bytes": 249622181,
+    "epoch": 22,
+    "expected_checksum": "902280394",
+    "shard_id": "data-e22-p05",
+    "stored_checksum": "902280394"
+  },
+  {
+    "bytes": 848742592,
+    "epoch": 22,
+    "expected_checksum": "902280395",
+    "shard_id": "data-e22-p06",
+    "stored_checksum": "627843387"
+  },
+  {
+    "bytes": 1314438822,
+    "epoch": 22,
+    "expected_checksum": "902280396",
+    "shard_id": "data-e22-p07",
+    "stored_checksum": "902280396"
+  },
+  {
+    "bytes": 1187243835,
+    "epoch": 22,
+    "expected_checksum": "902280397",
+    "shard_id": "data-e22-p08",
+    "stored_checksum": "902280397"
+  },
+  {
+    "bytes": 1868144025,
+    "epoch": 22,
+    "expected_checksum": "902280398",
+    "shard_id": "data-e22-p09",
+    "stored_checksum": "902280398"
+  },
+  {
+    "bytes": 1933807808,
+    "epoch": 22,
+    "expected_checksum": "198730312",
+    "shard_id": "data-e22-p10",
+    "stored_checksum": "198730312"
+  },
+  {
+    "bytes": 1016109873,
+    "epoch": 22,
+    "expected_checksum": "198730313",
+    "shard_id": "data-e22-p11",
+    "stored_checksum": "198730313"
+  },
+  {
+    "bytes": 1898714670,
+    "epoch": 23,
+    "expected_checksum": "902280520",
+    "shard_id": "data-e23-p00",
+    "stored_checksum": "902280520"
+  },
+  {
+    "bytes": 1575195503,
+    "epoch": 23,
+    "expected_checksum": "902280521",
+    "shard_id": "data-e23-p01",
+    "stored_checksum": "902280521"
+  },
+  {
+    "bytes": 1478652702,
+    "epoch": 23,
+    "expected_checksum": "902280522",
+    "shard_id": "data-e23-p02",
+    "stored_checksum": "922343304"
+  },
+  {
+    "bytes": 969637187,
+    "epoch": 23,
+    "expected_checksum": "902280523",
+    "shard_id": "data-e23-p03",
+    "stored_checksum": "902280523"
+  },
+  {
+    "bytes": 1871214342,
+    "epoch": 23,
+    "expected_checksum": "902280524",
+    "shard_id": "data-e23-p04",
+    "stored_checksum": "902280524"
+  },
+  {
+    "bytes": 565328717,
+    "epoch": 23,
+    "expected_checksum": "902280525",
+    "shard_id": "data-e23-p05",
+    "stored_checksum": "902280525"
+  },
+  {
+    "bytes": 1246625706,
+    "epoch": 23,
+    "expected_checksum": "902280526",
+    "shard_id": "data-e23-p06",
+    "stored_checksum": "902280526"
+  },
+  {
+    "bytes": 322207716,
+    "epoch": 23,
+    "expected_checksum": "902280527",
+    "shard_id": "data-e23-p07",
+    "stored_checksum": "902280527"
+  },
+  {
+    "bytes": 1721411354,
+    "epoch": 23,
+    "expected_checksum": "902280528",
+    "shard_id": "data-e23-p08",
+    "stored_checksum": "902280528"
+  },
+  {
+    "bytes": 307612786,
+    "epoch": 23,
+    "expected_checksum": "902280529",
+    "shard_id": "data-e23-p09",
+    "stored_checksum": "902280529"
+  },
+  {
+    "bytes": 1815676883,
+    "epoch": 23,
+    "expected_checksum": "198747473",
+    "shard_id": "data-e23-p10",
+    "stored_checksum": "198747473"
+  },
+  {
+    "bytes": 545086421,
+    "epoch": 23,
+    "expected_checksum": "198747474",
+    "shard_id": "data-e23-p11",
+    "stored_checksum": "198747474"
+  },
+  {
+    "bytes": 1460425503,
+    "epoch": 24,
+    "expected_checksum": "902280651",
+    "shard_id": "data-e24-p00",
+    "stored_checksum": "902280651"
+  },
+  {
+    "bytes": 1976453330,
+    "epoch": 24,
+    "expected_checksum": "902280652",
+    "shard_id": "data-e24-p01",
+    "stored_checksum": "709189152"
+  },
+  {
+    "bytes": 718831546,
+    "epoch": 24,
+    "expected_checksum": "902280653",
+    "shard_id": "data-e24-p02",
+    "stored_checksum": "902280653"
+  },
+  {
+    "bytes": 1579273276,
+    "epoch": 24,
+    "expected_checksum": "902280654",
+    "shard_id": "data-e24-p03",
+    "stored_checksum": "709189154"
+  },
+  {
+    "bytes": 262586655,
+    "epoch": 24,
+    "expected_checksum": "902280655",
+    "shard_id": "data-e24-p04",
+    "stored_checksum": "709189155"
+  },
+  {
+    "bytes": 1175384958,
+    "epoch": 24,
+    "expected_checksum": "902280656",
+    "shard_id": "data-e24-p05",
+    "stored_checksum": "902280656"
+  },
+  {
+    "bytes": 573223498,
+    "epoch": 24,
+    "expected_checksum": "902280657",
+    "shard_id": "data-e24-p06",
+    "stored_checksum": "902280657"
+  },
+  {
+    "bytes": 533304083,
+    "epoch": 24,
+    "expected_checksum": "902280658",
+    "shard_id": "data-e24-p07",
+    "stored_checksum": "709189158"
+  },
+  {
+    "bytes": 1343220680,
+    "epoch": 24,
+    "expected_checksum": "902280659",
+    "shard_id": "data-e24-p08",
+    "stored_checksum": "709189159"
+  },
+  {
+    "bytes": 288306825,
+    "epoch": 24,
+    "expected_checksum": "902280660",
+    "shard_id": "data-e24-p09",
+    "stored_checksum": "709189160"
+  },
+  {
+    "bytes": 1910515204,
+    "epoch": 24,
+    "expected_checksum": "198764634",
+    "shard_id": "data-e24-p10",
+    "stored_checksum": "198764634"
+  },
+  {
+    "bytes": 1577333882,
+    "epoch": 24,
+    "expected_checksum": "198764635",
+    "shard_id": "data-e24-p11",
+    "stored_checksum": "709189283"
+  },
+  {
+    "bytes": 1049522716,
+    "epoch": 25,
+    "expected_checksum": "902280782",
+    "shard_id": "data-e25-p00",
+    "stored_checksum": "902280782"
+  },
+  {
+    "bytes": 1626419318,
+    "epoch": 25,
+    "expected_checksum": "902280783",
+    "shard_id": "data-e25-p01",
+    "stored_checksum": "902280783"
+  },
+  {
+    "bytes": 1163096476,
+    "epoch": 25,
+    "expected_checksum": "902280784",
+    "shard_id": "data-e25-p02",
+    "stored_checksum": "902280784"
+  },
+  {
+    "bytes": 1208414745,
+    "epoch": 25,
+    "expected_checksum": "902280785",
+    "shard_id": "data-e25-p03",
+    "stored_checksum": "902280785"
+  },
+  {
+    "bytes": 1939191478,
+    "epoch": 25,
+    "expected_checksum": "902280786",
+    "shard_id": "data-e25-p04",
+    "stored_checksum": "902280786"
+  },
+  {
+    "bytes": 1113720136,
+    "epoch": 25,
+    "expected_checksum": "902280787",
+    "shard_id": "data-e25-p05",
+    "stored_checksum": "902280787"
+  },
+  {
+    "bytes": 514476163,
+    "epoch": 25,
+    "expected_checksum": "902280788",
+    "shard_id": "data-e25-p06",
+    "stored_checksum": "902280788"
+  },
+  {
+    "bytes": 920882941,
+    "epoch": 25,
+    "expected_checksum": "902280789",
+    "shard_id": "data-e25-p07",
+    "stored_checksum": "902280789"
+  },
+  {
+    "bytes": 840151259,
+    "epoch": 25,
+    "expected_checksum": "902280790",
+    "shard_id": "data-e25-p08",
+    "stored_checksum": "902280790"
+  },
+  {
+    "bytes": 372563164,
+    "epoch": 25,
+    "expected_checksum": "902280791",
+    "shard_id": "data-e25-p09",
+    "stored_checksum": "902280791"
+  },
+  {
+    "bytes": 1659515704,
+    "epoch": 25,
+    "expected_checksum": "198781795",
+    "shard_id": "data-e25-p10",
+    "stored_checksum": "198781795"
+  },
+  {
+    "bytes": 595241950,
+    "epoch": 25,
+    "expected_checksum": "198781796",
+    "shard_id": "data-e25-p11",
+    "stored_checksum": "198781796"
+  },
+  {
+    "bytes": 1384521583,
+    "epoch": 26,
+    "expected_checksum": "902280913",
+    "shard_id": "data-e26-p00",
+    "stored_checksum": "902280913"
+  },
+  {
+    "bytes": 1771520432,
+    "epoch": 26,
+    "expected_checksum": "902280914",
+    "shard_id": "data-e26-p01",
+    "stored_checksum": "902280914"
+  },
+  {
+    "bytes": 1467657060,
+    "epoch": 26,
+    "expected_checksum": "902280915",
+    "shard_id": "data-e26-p02",
+    "stored_checksum": "902280915"
+  },
+  {
+    "bytes": 460437848,
+    "epoch": 26,
+    "expected_checksum": "902280916",
+    "shard_id": "data-e26-p03",
+    "stored_checksum": "902280916"
+  },
+  {
+    "bytes": 562317910,
+    "epoch": 26,
+    "expected_checksum": "902280917",
+    "shard_id": "data-e26-p04",
+    "stored_checksum": "902280917"
+  },
+  {
+    "bytes": 1045686509,
+    "epoch": 26,
+    "expected_checksum": "902280918",
+    "shard_id": "data-e26-p05",
+    "stored_checksum": "902280918"
+  },
+  {
+    "bytes": 1696077528,
+    "epoch": 26,
+    "expected_checksum": "902280919",
+    "shard_id": "data-e26-p06",
+    "stored_checksum": "902280919"
+  },
+  {
+    "bytes": 1575642526,
+    "epoch": 26,
+    "expected_checksum": "902280920",
+    "shard_id": "data-e26-p07",
+    "stored_checksum": "902280920"
+  },
+  {
+    "bytes": 602443362,
+    "epoch": 26,
+    "expected_checksum": "902280921",
+    "shard_id": "data-e26-p08",
+    "stored_checksum": "902280921"
+  },
+  {
+    "bytes": 307482528,
+    "epoch": 26,
+    "expected_checksum": "902280922",
+    "shard_id": "data-e26-p09",
+    "stored_checksum": "902280922"
+  },
+  {
+    "bytes": 1215631838,
+    "epoch": 26,
+    "expected_checksum": "198798956",
+    "shard_id": "data-e26-p10",
+    "stored_checksum": "198798956"
+  },
+  {
+    "bytes": 615961153,
+    "epoch": 26,
+    "expected_checksum": "198798957",
+    "shard_id": "data-e26-p11",
+    "stored_checksum": "198798957"
+  },
+  {
+    "bytes": 1350713807,
+    "epoch": 27,
+    "expected_checksum": "902281044",
+    "shard_id": "data-e27-p00",
+    "stored_checksum": "902281044"
+  },
+  {
+    "bytes": 980945452,
+    "epoch": 27,
+    "expected_checksum": "902281045",
+    "shard_id": "data-e27-p01",
+    "stored_checksum": "902281045"
+  },
+  {
+    "bytes": 1912378563,
+    "epoch": 27,
+    "expected_checksum": "902281046",
+    "shard_id": "data-e27-p02",
+    "stored_checksum": "902281046"
+  },
+  {
+    "bytes": 1705546387,
+    "epoch": 27,
+    "expected_checksum": "902281047",
+    "shard_id": "data-e27-p03",
+    "stored_checksum": "902281047"
+  },
+  {
+    "bytes": 794904610,
+    "epoch": 27,
+    "expected_checksum": "902281048",
+    "shard_id": "data-e27-p04",
+    "stored_checksum": "902281048"
+  },
+  {
+    "bytes": 1366831065,
+    "epoch": 27,
+    "expected_checksum": "902281049",
+    "shard_id": "data-e27-p05",
+    "stored_checksum": "902281049"
+  },
+  {
+    "bytes": 1922982468,
+    "epoch": 27,
+    "expected_checksum": "902281050",
+    "shard_id": "data-e27-p06",
+    "stored_checksum": "902281050"
+  },
+  {
+    "bytes": 243700201,
+    "epoch": 27,
+    "expected_checksum": "902281051",
+    "shard_id": "data-e27-p07",
+    "stored_checksum": "902281051"
+  },
+  {
+    "bytes": 1253712062,
+    "epoch": 27,
+    "expected_checksum": "902281052",
+    "shard_id": "data-e27-p08",
+    "stored_checksum": "902281052"
+  },
+  {
+    "bytes": 1354169936,
+    "epoch": 27,
+    "expected_checksum": "902281053",
+    "shard_id": "data-e27-p09",
+    "stored_checksum": "902281053"
+  },
+  {
+    "bytes": 1916799884,
+    "epoch": 27,
+    "expected_checksum": "198816117",
+    "shard_id": "data-e27-p10",
+    "stored_checksum": "100343103"
+  },
+  {
+    "bytes": 1784912152,
+    "epoch": 27,
+    "expected_checksum": "198816118",
+    "shard_id": "data-e27-p11",
+    "stored_checksum": "198816118"
+  },
+  {
+    "bytes": 1493636105,
+    "epoch": 28,
+    "expected_checksum": "902281175",
+    "shard_id": "data-e28-p00",
+    "stored_checksum": "902281175"
+  },
+  {
+    "bytes": 1231630225,
+    "epoch": 28,
+    "expected_checksum": "902281176",
+    "shard_id": "data-e28-p01",
+    "stored_checksum": "902281176"
+  },
+  {
+    "bytes": 481648439,
+    "epoch": 28,
+    "expected_checksum": "902281177",
+    "shard_id": "data-e28-p02",
+    "stored_checksum": "902281177"
+  },
+  {
+    "bytes": 1615614897,
+    "epoch": 28,
+    "expected_checksum": "902281178",
+    "shard_id": "data-e28-p03",
+    "stored_checksum": "902281178"
+  },
+  {
+    "bytes": 1307786854,
+    "epoch": 28,
+    "expected_checksum": "902281179",
+    "shard_id": "data-e28-p04",
+    "stored_checksum": "902281179"
+  },
+  {
+    "bytes": 1996216407,
+    "epoch": 28,
+    "expected_checksum": "902281180",
+    "shard_id": "data-e28-p05",
+    "stored_checksum": "902281180"
+  },
+  {
+    "bytes": 377857163,
+    "epoch": 28,
+    "expected_checksum": "902281181",
+    "shard_id": "data-e28-p06",
+    "stored_checksum": "902281181"
+  },
+  {
+    "bytes": 1679116007,
+    "epoch": 28,
+    "expected_checksum": "902281182",
+    "shard_id": "data-e28-p07",
+    "stored_checksum": "902281182"
+  },
+  {
+    "bytes": 1308021116,
+    "epoch": 28,
+    "expected_checksum": "902281183",
+    "shard_id": "data-e28-p08",
+    "stored_checksum": "902281183"
+  },
+  {
+    "bytes": 247562975,
+    "epoch": 28,
+    "expected_checksum": "902281184",
+    "shard_id": "data-e28-p09",
+    "stored_checksum": "902281184"
+  },
+  {
+    "bytes": 1214768529,
+    "epoch": 28,
+    "expected_checksum": "198833278",
+    "shard_id": "data-e28-p10",
+    "stored_checksum": "198833278"
+  },
+  {
+    "bytes": 1614793425,
+    "epoch": 28,
+    "expected_checksum": "198833279",
+    "shard_id": "data-e28-p11",
+    "stored_checksum": "198833279"
+  },
+  {
+    "bytes": 1047186164,
+    "epoch": 29,
+    "expected_checksum": "902281306",
+    "shard_id": "data-e29-p00",
+    "stored_checksum": "902281306"
+  },
+  {
+    "bytes": 1859136872,
+    "epoch": 29,
+    "expected_checksum": "902281307",
+    "shard_id": "data-e29-p01",
+    "stored_checksum": "902281307"
+  },
+  {
+    "bytes": 905642241,
+    "epoch": 29,
+    "expected_checksum": "902281308",
+    "shard_id": "data-e29-p02",
+    "stored_checksum": "902281308"
+  },
+  {
+    "bytes": 1851513556,
+    "epoch": 29,
+    "expected_checksum": "902281309",
+    "shard_id": "data-e29-p03",
+    "stored_checksum": "689342817"
+  },
+  {
+    "bytes": 1296825960,
+    "epoch": 29,
+    "expected_checksum": "902281310",
+    "shard_id": "data-e29-p04",
+    "stored_checksum": "902281310"
+  },
+  {
+    "bytes": 1298064114,
+    "epoch": 29,
+    "expected_checksum": "902281311",
+    "shard_id": "data-e29-p05",
+    "stored_checksum": "902281311"
+  },
+  {
+    "bytes": 981248590,
+    "epoch": 29,
+    "expected_checksum": "902281312",
+    "shard_id": "data-e29-p06",
+    "stored_checksum": "902281312"
+  },
+  {
+    "bytes": 1932203602,
+    "epoch": 29,
+    "expected_checksum": "902281313",
+    "shard_id": "data-e29-p07",
+    "stored_checksum": "902281313"
+  },
+  {
+    "bytes": 568705103,
+    "epoch": 29,
+    "expected_checksum": "902281314",
+    "shard_id": "data-e29-p08",
+    "stored_checksum": "902281314"
+  },
+  {
+    "bytes": 983088881,
+    "epoch": 29,
+    "expected_checksum": "902281315",
+    "shard_id": "data-e29-p09",
+    "stored_checksum": "902281315"
+  },
+  {
+    "bytes": 208647495,
+    "epoch": 29,
+    "expected_checksum": "198850439",
+    "shard_id": "data-e29-p10",
+    "stored_checksum": "198850439"
+  },
+  {
+    "bytes": 526521579,
+    "epoch": 29,
+    "expected_checksum": "198850440",
+    "shard_id": "data-e29-p11",
+    "stored_checksum": "198850440"
+  },
+  {
+    "bytes": 1513573999,
+    "epoch": 30,
+    "expected_checksum": "902297288",
+    "shard_id": "data-e30-p00",
+    "stored_checksum": "902297288"
+  },
+  {
+    "bytes": 1773715790,
+    "epoch": 30,
+    "expected_checksum": "902297289",
+    "shard_id": "data-e30-p01",
+    "stored_checksum": "902297289"
+  },
+  {
+    "bytes": 778785323,
+    "epoch": 30,
+    "expected_checksum": "902297290",
+    "shard_id": "data-e30-p02",
+    "stored_checksum": "902297290"
+  },
+  {
+    "bytes": 535975307,
+    "epoch": 30,
+    "expected_checksum": "902297291",
+    "shard_id": "data-e30-p03",
+    "stored_checksum": "902297291"
+  },
+  {
+    "bytes": 1509666905,
+    "epoch": 30,
+    "expected_checksum": "902297292",
+    "shard_id": "data-e30-p04",
+    "stored_checksum": "902297292"
+  },
+  {
+    "bytes": 834037712,
+    "epoch": 30,
+    "expected_checksum": "902297293",
+    "shard_id": "data-e30-p05",
+    "stored_checksum": "902297293"
+  },
+  {
+    "bytes": 241826430,
+    "epoch": 30,
+    "expected_checksum": "902297294",
+    "shard_id": "data-e30-p06",
+    "stored_checksum": "902297294"
+  },
+  {
+    "bytes": 685570549,
+    "epoch": 30,
+    "expected_checksum": "902297295",
+    "shard_id": "data-e30-p07",
+    "stored_checksum": "902297295"
+  },
+  {
+    "bytes": 618628896,
+    "epoch": 30,
+    "expected_checksum": "902297296",
+    "shard_id": "data-e30-p08",
+    "stored_checksum": "902297296"
+  },
+  {
+    "bytes": 434283362,
+    "epoch": 30,
+    "expected_checksum": "902297297",
+    "shard_id": "data-e30-p09",
+    "stored_checksum": "902297297"
+  },
+  {
+    "bytes": 200049662,
+    "epoch": 30,
+    "expected_checksum": "200944081",
+    "shard_id": "data-e30-p10",
+    "stored_checksum": "200944081"
+  },
+  {
+    "bytes": 920398971,
+    "epoch": 30,
+    "expected_checksum": "200944082",
+    "shard_id": "data-e30-p11",
+    "stored_checksum": "200944082"
+  },
+  {
+    "bytes": 1617930537,
+    "epoch": 31,
+    "expected_checksum": "902297419",
+    "shard_id": "data-e31-p00",
+    "stored_checksum": "902297419"
+  },
+  {
+    "bytes": 826735441,
+    "epoch": 31,
+    "expected_checksum": "902297420",
+    "shard_id": "data-e31-p01",
+    "stored_checksum": "902297420"
+  },
+  {
+    "bytes": 997906106,
+    "epoch": 31,
+    "expected_checksum": "902297421",
+    "shard_id": "data-e31-p02",
+    "stored_checksum": "902297421"
+  },
+  {
+    "bytes": 437067346,
+    "epoch": 31,
+    "expected_checksum": "902297422",
+    "shard_id": "data-e31-p03",
+    "stored_checksum": "902297422"
+  },
+  {
+    "bytes": 1592275120,
+    "epoch": 31,
+    "expected_checksum": "902297423",
+    "shard_id": "data-e31-p04",
+    "stored_checksum": "902297423"
+  },
+  {
+    "bytes": 960537368,
+    "epoch": 31,
+    "expected_checksum": "902297424",
+    "shard_id": "data-e31-p05",
+    "stored_checksum": "902297424"
+  },
+  {
+    "bytes": 1004755694,
+    "epoch": 31,
+    "expected_checksum": "902297425",
+    "shard_id": "data-e31-p06",
+    "stored_checksum": "902297425"
+  },
+  {
+    "bytes": 376304748,
+    "epoch": 31,
+    "expected_checksum": "902297426",
+    "shard_id": "data-e31-p07",
+    "stored_checksum": "902297426"
+  },
+  {
+    "bytes": 984334355,
+    "epoch": 31,
+    "expected_checksum": "902297427",
+    "shard_id": "data-e31-p08",
+    "stored_checksum": "902297427"
+  },
+  {
+    "bytes": 969305040,
+    "epoch": 31,
+    "expected_checksum": "902297428",
+    "shard_id": "data-e31-p09",
+    "stored_checksum": "902297428"
+  },
+  {
+    "bytes": 1187936835,
+    "epoch": 31,
+    "expected_checksum": "200961242",
+    "shard_id": "data-e31-p10",
+    "stored_checksum": "200961242"
+  },
+  {
+    "bytes": 1833803224,
+    "epoch": 31,
+    "expected_checksum": "200961243",
+    "shard_id": "data-e31-p11",
+    "stored_checksum": "200961243"
+  },
+  {
+    "bytes": 718969989,
+    "epoch": 32,
+    "expected_checksum": "902297550",
+    "shard_id": "data-e32-p00",
+    "stored_checksum": "902297550"
+  },
+  {
+    "bytes": 942949521,
+    "epoch": 32,
+    "expected_checksum": "902297551",
+    "shard_id": "data-e32-p01",
+    "stored_checksum": "699678695"
+  },
+  {
+    "bytes": 505516554,
+    "epoch": 32,
+    "expected_checksum": "902297552",
+    "shard_id": "data-e32-p02",
+    "stored_checksum": "902297552"
+  },
+  {
+    "bytes": 1390524527,
+    "epoch": 32,
+    "expected_checksum": "902297553",
+    "shard_id": "data-e32-p03",
+    "stored_checksum": "902297553"
+  },
+  {
+    "bytes": 223370563,
+    "epoch": 32,
+    "expected_checksum": "902297554",
+    "shard_id": "data-e32-p04",
+    "stored_checksum": "699678698"
+  },
+  {
+    "bytes": 475915058,
+    "epoch": 32,
+    "expected_checksum": "902297555",
+    "shard_id": "data-e32-p05",
+    "stored_checksum": "699678699"
+  },
+  {
+    "bytes": 1490358848,
+    "epoch": 32,
+    "expected_checksum": "902297556",
+    "shard_id": "data-e32-p06",
+    "stored_checksum": "699678700"
+  },
+  {
+    "bytes": 1347510245,
+    "epoch": 32,
+    "expected_checksum": "902297557",
+    "shard_id": "data-e32-p07",
+    "stored_checksum": "902297557"
+  },
+  {
+    "bytes": 542419276,
+    "epoch": 32,
+    "expected_checksum": "902297558",
+    "shard_id": "data-e32-p08",
+    "stored_checksum": "699678702"
+  },
+  {
+    "bytes": 239248672,
+    "epoch": 32,
+    "expected_checksum": "902297559",
+    "shard_id": "data-e32-p09",
+    "stored_checksum": "902297559"
+  },
+  {
+    "bytes": 1931406590,
+    "epoch": 32,
+    "expected_checksum": "200978403",
+    "shard_id": "data-e32-p10",
+    "stored_checksum": "200978403"
+  },
+  {
+    "bytes": 1844483485,
+    "epoch": 32,
+    "expected_checksum": "200978404",
+    "shard_id": "data-e32-p11",
+    "stored_checksum": "699678826"
+  },
+  {
+    "bytes": 1437213618,
+    "epoch": 33,
+    "expected_checksum": "902297681",
+    "shard_id": "data-e33-p00",
+    "stored_checksum": "902297681"
+  },
+  {
+    "bytes": 326014302,
+    "epoch": 33,
+    "expected_checksum": "902297682",
+    "shard_id": "data-e33-p01",
+    "stored_checksum": "902297682"
+  },
+  {
+    "bytes": 316639818,
+    "epoch": 33,
+    "expected_checksum": "902297683",
+    "shard_id": "data-e33-p02",
+    "stored_checksum": "902297683"
+  },
+  {
+    "bytes": 1740796555,
+    "epoch": 33,
+    "expected_checksum": "902297684",
+    "shard_id": "data-e33-p03",
+    "stored_checksum": "902297684"
+  },
+  {
+    "bytes": 1236000166,
+    "epoch": 33,
+    "expected_checksum": "902297685",
+    "shard_id": "data-e33-p04",
+    "stored_checksum": "994178619"
+  },
+  {
+    "bytes": 1635821701,
+    "epoch": 33,
+    "expected_checksum": "902297686",
+    "shard_id": "data-e33-p05",
+    "stored_checksum": "902297686"
+  },
+  {
+    "bytes": 1653923008,
+    "epoch": 33,
+    "expected_checksum": "902297687",
+    "shard_id": "data-e33-p06",
+    "stored_checksum": "902297687"
+  },
+  {
+    "bytes": 386781734,
+    "epoch": 33,
+    "expected_checksum": "902297688",
+    "shard_id": "data-e33-p07",
+    "stored_checksum": "902297688"
+  },
+  {
+    "bytes": 1439422523,
+    "epoch": 33,
+    "expected_checksum": "902297689",
+    "shard_id": "data-e33-p08",
+    "stored_checksum": "994178623"
+  },
+  {
+    "bytes": 703635608,
+    "epoch": 33,
+    "expected_checksum": "902297690",
+    "shard_id": "data-e33-p09",
+    "stored_checksum": "902297690"
+  },
+  {
+    "bytes": 1088820209,
+    "epoch": 33,
+    "expected_checksum": "200995564",
+    "shard_id": "data-e33-p10",
+    "stored_checksum": "994178746"
+  },
+  {
+    "bytes": 1983221045,
+    "epoch": 33,
+    "expected_checksum": "200995565",
+    "shard_id": "data-e33-p11",
+    "stored_checksum": "994178747"
+  },
+  {
+    "bytes": 306868272,
+    "epoch": 34,
+    "expected_checksum": "902297812",
+    "shard_id": "data-e34-p00",
+    "stored_checksum": "902297812"
+  },
+  {
+    "bytes": 1749391101,
+    "epoch": 34,
+    "expected_checksum": "902297813",
+    "shard_id": "data-e34-p01",
+    "stored_checksum": "902297813"
+  },
+  {
+    "bytes": 1446293581,
+    "epoch": 34,
+    "expected_checksum": "902297814",
+    "shard_id": "data-e34-p02",
+    "stored_checksum": "902297814"
+  },
+  {
+    "bytes": 997886819,
+    "epoch": 34,
+    "expected_checksum": "902297815",
+    "shard_id": "data-e34-p03",
+    "stored_checksum": "902297815"
+  },
+  {
+    "bytes": 842777355,
+    "epoch": 34,
+    "expected_checksum": "902297816",
+    "shard_id": "data-e34-p04",
+    "stored_checksum": "902297816"
+  },
+  {
+    "bytes": 1746663967,
+    "epoch": 34,
+    "expected_checksum": "902297817",
+    "shard_id": "data-e34-p05",
+    "stored_checksum": "902297817"
+  },
+  {
+    "bytes": 754195051,
+    "epoch": 34,
+    "expected_checksum": "902297818",
+    "shard_id": "data-e34-p06",
+    "stored_checksum": "902297818"
+  },
+  {
+    "bytes": 1795110371,
+    "epoch": 34,
+    "expected_checksum": "902297819",
+    "shard_id": "data-e34-p07",
+    "stored_checksum": "902297819"
+  },
+  {
+    "bytes": 1350361867,
+    "epoch": 34,
+    "expected_checksum": "902297820",
+    "shard_id": "data-e34-p08",
+    "stored_checksum": "902297820"
+  },
+  {
+    "bytes": 412816489,
+    "epoch": 34,
+    "expected_checksum": "902297821",
+    "shard_id": "data-e34-p09",
+    "stored_checksum": "902297821"
+  },
+  {
+    "bytes": 1851667642,
+    "epoch": 34,
+    "expected_checksum": "201012725",
+    "shard_id": "data-e34-p10",
+    "stored_checksum": "201012725"
+  },
+  {
+    "bytes": 831232028,
+    "epoch": 34,
+    "expected_checksum": "201012726",
+    "shard_id": "data-e34-p11",
+    "stored_checksum": "201012726"
+  },
+  {
+    "bytes": 631752550,
+    "epoch": 35,
+    "expected_checksum": "902297943",
+    "shard_id": "data-e35-p00",
+    "stored_checksum": "902297943"
+  },
+  {
+    "bytes": 1102975530,
+    "epoch": 35,
+    "expected_checksum": "902297944",
+    "shard_id": "data-e35-p01",
+    "stored_checksum": "090832516"
+  },
+  {
+    "bytes": 1300945388,
+    "epoch": 35,
+    "expected_checksum": "902297945",
+    "shard_id": "data-e35-p02",
+    "stored_checksum": "902297945"
+  },
+  {
+    "bytes": 1272097979,
+    "epoch": 35,
+    "expected_checksum": "902297946",
+    "shard_id": "data-e35-p03",
+    "stored_checksum": "902297946"
+  },
+  {
+    "bytes": 1640106583,
+    "epoch": 35,
+    "expected_checksum": "902297947",
+    "shard_id": "data-e35-p04",
+    "stored_checksum": "902297947"
+  },
+  {
+    "bytes": 1869614800,
+    "epoch": 35,
+    "expected_checksum": "902297948",
+    "shard_id": "data-e35-p05",
+    "stored_checksum": "090832520"
+  },
+  {
+    "bytes": 1967584047,
+    "epoch": 35,
+    "expected_checksum": "902297949",
+    "shard_id": "data-e35-p06",
+    "stored_checksum": "902297949"
+  },
+  {
+    "bytes": 732680656,
+    "epoch": 35,
+    "expected_checksum": "902297950",
+    "shard_id": "data-e35-p07",
+    "stored_checksum": "902297950"
+  },
+  {
+    "bytes": 1533991469,
+    "epoch": 35,
+    "expected_checksum": "902297951",
+    "shard_id": "data-e35-p08",
+    "stored_checksum": "902297951"
+  },
+  {
+    "bytes": 970426684,
+    "epoch": 35,
+    "expected_checksum": "902297952",
+    "shard_id": "data-e35-p09",
+    "stored_checksum": "902297952"
+  },
+  {
+    "bytes": 1566300544,
+    "epoch": 35,
+    "expected_checksum": "201029886",
+    "shard_id": "data-e35-p10",
+    "stored_checksum": "201029886"
+  },
+  {
+    "bytes": 468039360,
+    "epoch": 35,
+    "expected_checksum": "201029887",
+    "shard_id": "data-e35-p11",
+    "stored_checksum": "201029887"
+  },
+  {
+    "bytes": 529965590,
+    "epoch": 36,
+    "expected_checksum": "902298074",
+    "shard_id": "data-e36-p00",
+    "stored_checksum": "902298074"
+  },
+  {
+    "bytes": 1703084430,
+    "epoch": 36,
+    "expected_checksum": "902298075",
+    "shard_id": "data-e36-p01",
+    "stored_checksum": "902298075"
+  },
+  {
+    "bytes": 1940731828,
+    "epoch": 36,
+    "expected_checksum": "902298076",
+    "shard_id": "data-e36-p02",
+    "stored_checksum": "902298076"
+  },
+  {
+    "bytes": 346917556,
+    "epoch": 36,
+    "expected_checksum": "902298077",
+    "shard_id": "data-e36-p03",
+    "stored_checksum": "902298077"
+  },
+  {
+    "bytes": 1658176440,
+    "epoch": 36,
+    "expected_checksum": "902298078",
+    "shard_id": "data-e36-p04",
+    "stored_checksum": "902298078"
+  },
+  {
+    "bytes": 380771261,
+    "epoch": 36,
+    "expected_checksum": "902298079",
+    "shard_id": "data-e36-p05",
+    "stored_checksum": "902298079"
+  },
+  {
+    "bytes": 213105794,
+    "epoch": 36,
+    "expected_checksum": "902298080",
+    "shard_id": "data-e36-p06",
+    "stored_checksum": "902298080"
+  },
+  {
+    "bytes": 1913775315,
+    "epoch": 36,
+    "expected_checksum": "902298081",
+    "shard_id": "data-e36-p07",
+    "stored_checksum": "902298081"
+  },
+  {
+    "bytes": 1392192770,
+    "epoch": 36,
+    "expected_checksum": "902298082",
+    "shard_id": "data-e36-p08",
+    "stored_checksum": "902298082"
+  },
+  {
+    "bytes": 597524475,
+    "epoch": 36,
+    "expected_checksum": "902298083",
+    "shard_id": "data-e36-p09",
+    "stored_checksum": "902298083"
+  },
+  {
+    "bytes": 1160091550,
+    "epoch": 36,
+    "expected_checksum": "201047047",
+    "shard_id": "data-e36-p10",
+    "stored_checksum": "385332567"
+  },
+  {
+    "bytes": 625618928,
+    "epoch": 36,
+    "expected_checksum": "201047048",
+    "shard_id": "data-e36-p11",
+    "stored_checksum": "201047048"
+  },
+  {
+    "bytes": 688563833,
+    "epoch": 37,
+    "expected_checksum": "902298205",
+    "shard_id": "data-e37-p00",
+    "stored_checksum": "902298205"
+  },
+  {
+    "bytes": 1335280431,
+    "epoch": 37,
+    "expected_checksum": "902298206",
+    "shard_id": "data-e37-p01",
+    "stored_checksum": "902298206"
+  },
+  {
+    "bytes": 1771701230,
+    "epoch": 37,
+    "expected_checksum": "902298207",
+    "shard_id": "data-e37-p02",
+    "stored_checksum": "902298207"
+  },
+  {
+    "bytes": 1446752566,
+    "epoch": 37,
+    "expected_checksum": "902298208",
+    "shard_id": "data-e37-p03",
+    "stored_checksum": "902298208"
+  },
+  {
+    "bytes": 459927057,
+    "epoch": 37,
+    "expected_checksum": "902298209",
+    "shard_id": "data-e37-p04",
+    "stored_checksum": "902298209"
+  },
+  {
+    "bytes": 982538789,
+    "epoch": 37,
+    "expected_checksum": "902298210",
+    "shard_id": "data-e37-p05",
+    "stored_checksum": "902298210"
+  },
+  {
+    "bytes": 1746383819,
+    "epoch": 37,
+    "expected_checksum": "902298211",
+    "shard_id": "data-e37-p06",
+    "stored_checksum": "902298211"
+  },
+  {
+    "bytes": 1124915248,
+    "epoch": 37,
+    "expected_checksum": "902298212",
+    "shard_id": "data-e37-p07",
+    "stored_checksum": "902298212"
+  },
+  {
+    "bytes": 1791808740,
+    "epoch": 37,
+    "expected_checksum": "902298213",
+    "shard_id": "data-e37-p08",
+    "stored_checksum": "902298213"
+  },
+  {
+    "bytes": 485163294,
+    "epoch": 37,
+    "expected_checksum": "902298214",
+    "shard_id": "data-e37-p09",
+    "stored_checksum": "902298214"
+  },
+  {
+    "bytes": 530214181,
+    "epoch": 37,
+    "expected_checksum": "201064208",
+    "shard_id": "data-e37-p10",
+    "stored_checksum": "201064208"
+  },
+  {
+    "bytes": 1435718764,
+    "epoch": 37,
+    "expected_checksum": "201064209",
+    "shard_id": "data-e37-p11",
+    "stored_checksum": "201064209"
+  },
+  {
+    "bytes": 1909468290,
+    "epoch": 38,
+    "expected_checksum": "902298336",
+    "shard_id": "data-e38-p00",
+    "stored_checksum": "902298336"
+  },
+  {
+    "bytes": 1330357628,
+    "epoch": 38,
+    "expected_checksum": "902298337",
+    "shard_id": "data-e38-p01",
+    "stored_checksum": "902298337"
+  },
+  {
+    "bytes": 1296680894,
+    "epoch": 38,
+    "expected_checksum": "902298338",
+    "shard_id": "data-e38-p02",
+    "stored_checksum": "902298338"
+  },
+  {
+    "bytes": 973858956,
+    "epoch": 38,
+    "expected_checksum": "902298339",
+    "shard_id": "data-e38-p03",
+    "stored_checksum": "902298339"
+  },
+  {
+    "bytes": 888221821,
+    "epoch": 38,
+    "expected_checksum": "902298340",
+    "shard_id": "data-e38-p04",
+    "stored_checksum": "902298340"
+  },
+  {
+    "bytes": 1303681463,
+    "epoch": 38,
+    "expected_checksum": "902298341",
+    "shard_id": "data-e38-p05",
+    "stored_checksum": "902298341"
+  },
+  {
+    "bytes": 439470718,
+    "epoch": 38,
+    "expected_checksum": "902298342",
+    "shard_id": "data-e38-p06",
+    "stored_checksum": "902298342"
+  },
+  {
+    "bytes": 440255460,
+    "epoch": 38,
+    "expected_checksum": "902298343",
+    "shard_id": "data-e38-p07",
+    "stored_checksum": "902298343"
+  },
+  {
+    "bytes": 1177446271,
+    "epoch": 38,
+    "expected_checksum": "902298344",
+    "shard_id": "data-e38-p08",
+    "stored_checksum": "902298344"
+  },
+  {
+    "bytes": 759234255,
+    "epoch": 38,
+    "expected_checksum": "902298345",
+    "shard_id": "data-e38-p09",
+    "stored_checksum": "902298345"
+  },
+  {
+    "bytes": 579320319,
+    "epoch": 38,
+    "expected_checksum": "201081369",
+    "shard_id": "data-e38-p10",
+    "stored_checksum": "974332409"
+  },
+  {
+    "bytes": 921441553,
+    "epoch": 38,
+    "expected_checksum": "201081370",
+    "shard_id": "data-e38-p11",
+    "stored_checksum": "201081370"
+  },
+  {
+    "bytes": 317388056,
+    "epoch": 39,
+    "expected_checksum": "902298467",
+    "shard_id": "data-e39-p00",
+    "stored_checksum": "902298467"
+  },
+  {
+    "bytes": 413038996,
+    "epoch": 39,
+    "expected_checksum": "902298468",
+    "shard_id": "data-e39-p01",
+    "stored_checksum": "902298468"
+  },
+  {
+    "bytes": 341604045,
+    "epoch": 39,
+    "expected_checksum": "902298469",
+    "shard_id": "data-e39-p02",
+    "stored_checksum": "902298469"
+  },
+  {
+    "bytes": 1536128966,
+    "epoch": 39,
+    "expected_checksum": "902298470",
+    "shard_id": "data-e39-p03",
+    "stored_checksum": "902298470"
+  },
+  {
+    "bytes": 372077175,
+    "epoch": 39,
+    "expected_checksum": "902298471",
+    "shard_id": "data-e39-p04",
+    "stored_checksum": "902298471"
+  },
+  {
+    "bytes": 632308241,
+    "epoch": 39,
+    "expected_checksum": "902298472",
+    "shard_id": "data-e39-p05",
+    "stored_checksum": "902298472"
+  },
+  {
+    "bytes": 853713905,
+    "epoch": 39,
+    "expected_checksum": "902298473",
+    "shard_id": "data-e39-p06",
+    "stored_checksum": "902298473"
+  },
+  {
+    "bytes": 987531956,
+    "epoch": 39,
+    "expected_checksum": "902298474",
+    "shard_id": "data-e39-p07",
+    "stored_checksum": "902298474"
+  },
+  {
+    "bytes": 1226626046,
+    "epoch": 39,
+    "expected_checksum": "902298475",
+    "shard_id": "data-e39-p08",
+    "stored_checksum": "902298475"
+  },
+  {
+    "bytes": 298724987,
+    "epoch": 39,
+    "expected_checksum": "902298476",
+    "shard_id": "data-e39-p09",
+    "stored_checksum": "902298476"
+  },
+  {
+    "bytes": 1607527269,
+    "epoch": 39,
+    "expected_checksum": "201098530",
+    "shard_id": "data-e39-p10",
+    "stored_checksum": "201098530"
+  },
+  {
+    "bytes": 416552719,
+    "epoch": 39,
+    "expected_checksum": "201098531",
+    "shard_id": "data-e39-p11",
+    "stored_checksum": "201098531"
+  },
+  {
+    "bytes": 1769947636,
+    "epoch": 40,
+    "expected_checksum": "902314449",
+    "shard_id": "data-e40-p00",
+    "stored_checksum": "902314449"
+  },
+  {
+    "bytes": 1788654684,
+    "epoch": 40,
+    "expected_checksum": "902314450",
+    "shard_id": "data-e40-p01",
+    "stored_checksum": "902314450"
+  },
+  {
+    "bytes": 1099251592,
+    "epoch": 40,
+    "expected_checksum": "902314451",
+    "shard_id": "data-e40-p02",
+    "stored_checksum": "902314451"
+  },
+  {
+    "bytes": 924019810,
+    "epoch": 40,
+    "expected_checksum": "902314452",
+    "shard_id": "data-e40-p03",
+    "stored_checksum": "902314452"
+  },
+  {
+    "bytes": 465313653,
+    "epoch": 40,
+    "expected_checksum": "902314453",
+    "shard_id": "data-e40-p04",
+    "stored_checksum": "902314453"
+  },
+  {
+    "bytes": 605259861,
+    "epoch": 40,
+    "expected_checksum": "902314454",
+    "shard_id": "data-e40-p05",
+    "stored_checksum": "902314454"
+  },
+  {
+    "bytes": 462796957,
+    "epoch": 40,
+    "expected_checksum": "902314455",
+    "shard_id": "data-e40-p06",
+    "stored_checksum": "902314455"
+  },
+  {
+    "bytes": 878912233,
+    "epoch": 40,
+    "expected_checksum": "902314456",
+    "shard_id": "data-e40-p07",
+    "stored_checksum": "902314456"
+  },
+  {
+    "bytes": 1591176018,
+    "epoch": 40,
+    "expected_checksum": "902314457",
+    "shard_id": "data-e40-p08",
+    "stored_checksum": "902314457"
+  },
+  {
+    "bytes": 512912366,
+    "epoch": 40,
+    "expected_checksum": "902314458",
+    "shard_id": "data-e40-p09",
+    "stored_checksum": "902314458"
+  },
+  {
+    "bytes": 1075352204,
+    "epoch": 40,
+    "expected_checksum": "203192172",
+    "shard_id": "data-e40-p10",
+    "stored_checksum": "203192172"
+  },
+  {
+    "bytes": 341447296,
+    "epoch": 40,
+    "expected_checksum": "203192173",
+    "shard_id": "data-e40-p11",
+    "stored_checksum": "203192173"
+  },
+  {
+    "bytes": 498846472,
+    "epoch": 41,
+    "expected_checksum": "902314580",
+    "shard_id": "data-e41-p00",
+    "stored_checksum": "902314580"
+  },
+  {
+    "bytes": 1090650836,
+    "epoch": 41,
+    "expected_checksum": "902314581",
+    "shard_id": "data-e41-p01",
+    "stored_checksum": "902314581"
+  },
+  {
+    "bytes": 1183497765,
+    "epoch": 41,
+    "expected_checksum": "902314582",
+    "shard_id": "data-e41-p02",
+    "stored_checksum": "902314582"
+  },
+  {
+    "bytes": 1359889420,
+    "epoch": 41,
+    "expected_checksum": "902314583",
+    "shard_id": "data-e41-p03",
+    "stored_checksum": "902314583"
+  },
+  {
+    "bytes": 1406917052,
+    "epoch": 41,
+    "expected_checksum": "902314584",
+    "shard_id": "data-e41-p04",
+    "stored_checksum": "902314584"
+  },
+  {
+    "bytes": 387750841,
+    "epoch": 41,
+    "expected_checksum": "902314585",
+    "shard_id": "data-e41-p05",
+    "stored_checksum": "902314585"
+  },
+  {
+    "bytes": 1124676457,
+    "epoch": 41,
+    "expected_checksum": "902314586",
+    "shard_id": "data-e41-p06",
+    "stored_checksum": "902314586"
+  },
+  {
+    "bytes": 994102438,
+    "epoch": 41,
+    "expected_checksum": "902314587",
+    "shard_id": "data-e41-p07",
+    "stored_checksum": "902314587"
+  },
+  {
+    "bytes": 1657573026,
+    "epoch": 41,
+    "expected_checksum": "902314588",
+    "shard_id": "data-e41-p08",
+    "stored_checksum": "902314588"
+  },
+  {
+    "bytes": 1484733245,
+    "epoch": 41,
+    "expected_checksum": "902314589",
+    "shard_id": "data-e41-p09",
+    "stored_checksum": "902314589"
+  },
+  {
+    "bytes": 547857162,
+    "epoch": 41,
+    "expected_checksum": "203209333",
+    "shard_id": "data-e41-p10",
+    "stored_checksum": "203209333"
+  },
+  {
+    "bytes": 283200941,
+    "epoch": 41,
+    "expected_checksum": "203209334",
+    "shard_id": "data-e41-p11",
+    "stored_checksum": "203209334"
+  },
+  {
+    "bytes": 1180344495,
+    "epoch": 42,
+    "expected_checksum": "902314711",
+    "shard_id": "data-e42-p00",
+    "stored_checksum": "902314711"
+  },
+  {
+    "bytes": 1289222006,
+    "epoch": 42,
+    "expected_checksum": "902314712",
+    "shard_id": "data-e42-p01",
+    "stored_checksum": "902314712"
+  },
+  {
+    "bytes": 1081495284,
+    "epoch": 42,
+    "expected_checksum": "902314713",
+    "shard_id": "data-e42-p02",
+    "stored_checksum": "902314713"
+  },
+  {
+    "bytes": 1751377383,
+    "epoch": 42,
+    "expected_checksum": "902314714",
+    "shard_id": "data-e42-p03",
+    "stored_checksum": "902314714"
+  },
+  {
+    "bytes": 1921875747,
+    "epoch": 42,
+    "expected_checksum": "902314715",
+    "shard_id": "data-e42-p04",
+    "stored_checksum": "902314715"
+  },
+  {
+    "bytes": 1282678465,
+    "epoch": 42,
+    "expected_checksum": "902314716",
+    "shard_id": "data-e42-p05",
+    "stored_checksum": "902314716"
+  },
+  {
+    "bytes": 1375584594,
+    "epoch": 42,
+    "expected_checksum": "902314717",
+    "shard_id": "data-e42-p06",
+    "stored_checksum": "902314717"
+  },
+  {
+    "bytes": 1035128072,
+    "epoch": 42,
+    "expected_checksum": "902314718",
+    "shard_id": "data-e42-p07",
+    "stored_checksum": "902314718"
+  },
+  {
+    "bytes": 1672981273,
+    "epoch": 42,
+    "expected_checksum": "902314719",
+    "shard_id": "data-e42-p08",
+    "stored_checksum": "902314719"
+  },
+  {
+    "bytes": 328892454,
+    "epoch": 42,
+    "expected_checksum": "902314720",
+    "shard_id": "data-e42-p09",
+    "stored_checksum": "902314720"
+  },
+  {
+    "bytes": 1672866471,
+    "epoch": 42,
+    "expected_checksum": "203226494",
+    "shard_id": "data-e42-p10",
+    "stored_checksum": "203226494"
+  },
+  {
+    "bytes": 1893224204,
+    "epoch": 42,
+    "expected_checksum": "203226495",
+    "shard_id": "data-e42-p11",
+    "stored_checksum": "203226495"
+  },
+  {
+    "bytes": 1060615953,
+    "epoch": 43,
+    "expected_checksum": "902314842",
+    "shard_id": "data-e43-p00",
+    "stored_checksum": "902314842"
+  },
+  {
+    "bytes": 489241159,
+    "epoch": 43,
+    "expected_checksum": "902314843",
+    "shard_id": "data-e43-p01",
+    "stored_checksum": "902314843"
+  },
+  {
+    "bytes": 730257146,
+    "epoch": 43,
+    "expected_checksum": "902314844",
+    "shard_id": "data-e43-p02",
+    "stored_checksum": "902314844"
+  },
+  {
+    "bytes": 525261899,
+    "epoch": 43,
+    "expected_checksum": "902314845",
+    "shard_id": "data-e43-p03",
+    "stored_checksum": "902314845"
+  },
+  {
+    "bytes": 1432451086,
+    "epoch": 43,
+    "expected_checksum": "902314846",
+    "shard_id": "data-e43-p04",
+    "stored_checksum": "902314846"
+  },
+  {
+    "bytes": 1339958478,
+    "epoch": 43,
+    "expected_checksum": "902314847",
+    "shard_id": "data-e43-p05",
+    "stored_checksum": "902314847"
+  },
+  {
+    "bytes": 1747727607,
+    "epoch": 43,
+    "expected_checksum": "902314848",
+    "shard_id": "data-e43-p06",
+    "stored_checksum": "902314848"
+  },
+  {
+    "bytes": 707828066,
+    "epoch": 43,
+    "expected_checksum": "902314849",
+    "shard_id": "data-e43-p07",
+    "stored_checksum": "902314849"
+  },
+  {
+    "bytes": 1913107697,
+    "epoch": 43,
+    "expected_checksum": "902314850",
+    "shard_id": "data-e43-p08",
+    "stored_checksum": "902314850"
+  },
+  {
+    "bytes": 1309923110,
+    "epoch": 43,
+    "expected_checksum": "902314851",
+    "shard_id": "data-e43-p09",
+    "stored_checksum": "902314851"
+  },
+  {
+    "bytes": 1803450885,
+    "epoch": 43,
+    "expected_checksum": "203243655",
+    "shard_id": "data-e43-p10",
+    "stored_checksum": "203243655"
+  },
+  {
+    "bytes": 1561087668,
+    "epoch": 43,
+    "expected_checksum": "203243656",
+    "shard_id": "data-e43-p11",
+    "stored_checksum": "203243656"
+  },
+  {
+    "bytes": 1049636874,
+    "epoch": 44,
+    "expected_checksum": "902314973",
+    "shard_id": "data-e44-p00",
+    "stored_checksum": "902314973"
+  },
+  {
+    "bytes": 1749395731,
+    "epoch": 44,
+    "expected_checksum": "902314974",
+    "shard_id": "data-e44-p01",
+    "stored_checksum": "902314974"
+  },
+  {
+    "bytes": 303363429,
+    "epoch": 44,
+    "expected_checksum": "902314975",
+    "shard_id": "data-e44-p02",
+    "stored_checksum": "902314975"
+  },
+  {
+    "bytes": 1490973522,
+    "epoch": 44,
+    "expected_checksum": "902314976",
+    "shard_id": "data-e44-p03",
+    "stored_checksum": "902314976"
+  },
+  {
+    "bytes": 1205591798,
+    "epoch": 44,
+    "expected_checksum": "902314977",
+    "shard_id": "data-e44-p04",
+    "stored_checksum": "902314977"
+  },
+  {
+    "bytes": 1816898488,
+    "epoch": 44,
+    "expected_checksum": "902314978",
+    "shard_id": "data-e44-p05",
+    "stored_checksum": "902314978"
+  },
+  {
+    "bytes": 906240358,
+    "epoch": 44,
+    "expected_checksum": "902314979",
+    "shard_id": "data-e44-p06",
+    "stored_checksum": "902314979"
+  },
+  {
+    "bytes": 1764405942,
+    "epoch": 44,
+    "expected_checksum": "902314980",
+    "shard_id": "data-e44-p07",
+    "stored_checksum": "902314980"
+  },
+  {
+    "bytes": 452085929,
+    "epoch": 44,
+    "expected_checksum": "902314981",
+    "shard_id": "data-e44-p08",
+    "stored_checksum": "902314981"
+  },
+  {
+    "bytes": 1499856891,
+    "epoch": 44,
+    "expected_checksum": "902314982",
+    "shard_id": "data-e44-p09",
+    "stored_checksum": "902314982"
+  },
+  {
+    "bytes": 761377101,
+    "epoch": 44,
+    "expected_checksum": "203260816",
+    "shard_id": "data-e44-p10",
+    "stored_checksum": "203260816"
+  },
+  {
+    "bytes": 1908288712,
+    "epoch": 44,
+    "expected_checksum": "203260817",
+    "shard_id": "data-e44-p11",
+    "stored_checksum": "375822111"
+  },
+  {
+    "bytes": 1738329692,
+    "epoch": 45,
+    "expected_checksum": "902315104",
+    "shard_id": "data-e45-p00",
+    "stored_checksum": "902315104"
+  },
+  {
+    "bytes": 1267216986,
+    "epoch": 45,
+    "expected_checksum": "902315105",
+    "shard_id": "data-e45-p01",
+    "stored_checksum": "902315105"
+  },
+  {
+    "bytes": 865676772,
+    "epoch": 45,
+    "expected_checksum": "902315106",
+    "shard_id": "data-e45-p02",
+    "stored_checksum": "902315106"
+  },
+  {
+    "bytes": 366883982,
+    "epoch": 45,
+    "expected_checksum": "902315107",
+    "shard_id": "data-e45-p03",
+    "stored_checksum": "902315107"
+  },
+  {
+    "bytes": 1241862096,
+    "epoch": 45,
+    "expected_checksum": "902315108",
+    "shard_id": "data-e45-p04",
+    "stored_checksum": "902315108"
+  },
+  {
+    "bytes": 1217554805,
+    "epoch": 45,
+    "expected_checksum": "902315109",
+    "shard_id": "data-e45-p05",
+    "stored_checksum": "902315109"
+  },
+  {
+    "bytes": 1095058763,
+    "epoch": 45,
+    "expected_checksum": "902315110",
+    "shard_id": "data-e45-p06",
+    "stored_checksum": "902315110"
+  },
+  {
+    "bytes": 1721845146,
+    "epoch": 45,
+    "expected_checksum": "902315111",
+    "shard_id": "data-e45-p07",
+    "stored_checksum": "902315111"
+  },
+  {
+    "bytes": 1773425670,
+    "epoch": 45,
+    "expected_checksum": "902315112",
+    "shard_id": "data-e45-p08",
+    "stored_checksum": "902315112"
+  },
+  {
+    "bytes": 1702596705,
+    "epoch": 45,
+    "expected_checksum": "902315113",
+    "shard_id": "data-e45-p09",
+    "stored_checksum": "902315113"
+  },
+  {
+    "bytes": 323150669,
+    "epoch": 45,
+    "expected_checksum": "203277977",
+    "shard_id": "data-e45-p10",
+    "stored_checksum": "203277977"
+  },
+  {
+    "bytes": 1238988084,
+    "epoch": 45,
+    "expected_checksum": "203277978",
+    "shard_id": "data-e45-p11",
+    "stored_checksum": "203277978"
+  },
+  {
+    "bytes": 306324209,
+    "epoch": 46,
+    "expected_checksum": "902315235",
+    "shard_id": "data-e46-p00",
+    "stored_checksum": "902315235"
+  },
+  {
+    "bytes": 1352370447,
+    "epoch": 46,
+    "expected_checksum": "902315236",
+    "shard_id": "data-e46-p01",
+    "stored_checksum": "902315236"
+  },
+  {
+    "bytes": 1623509890,
+    "epoch": 46,
+    "expected_checksum": "902315237",
+    "shard_id": "data-e46-p02",
+    "stored_checksum": "902315237"
+  },
+  {
+    "bytes": 656177132,
+    "epoch": 46,
+    "expected_checksum": "902315238",
+    "shard_id": "data-e46-p03",
+    "stored_checksum": "902315238"
+  },
+  {
+    "bytes": 1002027923,
+    "epoch": 46,
+    "expected_checksum": "902315239",
+    "shard_id": "data-e46-p04",
+    "stored_checksum": "902315239"
+  },
+  {
+    "bytes": 1466924276,
+    "epoch": 46,
+    "expected_checksum": "902315240",
+    "shard_id": "data-e46-p05",
+    "stored_checksum": "902315240"
+  },
+  {
+    "bytes": 1137586850,
+    "epoch": 46,
+    "expected_checksum": "902315241",
+    "shard_id": "data-e46-p06",
+    "stored_checksum": "902315241"
+  },
+  {
+    "bytes": 1105141475,
+    "epoch": 46,
+    "expected_checksum": "902315242",
+    "shard_id": "data-e46-p07",
+    "stored_checksum": "902315242"
+  },
+  {
+    "bytes": 1129347825,
+    "epoch": 46,
+    "expected_checksum": "902315243",
+    "shard_id": "data-e46-p08",
+    "stored_checksum": "902315243"
+  },
+  {
+    "bytes": 1451690770,
+    "epoch": 46,
+    "expected_checksum": "902315244",
+    "shard_id": "data-e46-p09",
+    "stored_checksum": "902315244"
+  },
+  {
+    "bytes": 781747429,
+    "epoch": 46,
+    "expected_checksum": "203295138",
+    "shard_id": "data-e46-p10",
+    "stored_checksum": "203295138"
+  },
+  {
+    "bytes": 632437210,
+    "epoch": 46,
+    "expected_checksum": "203295139",
+    "shard_id": "data-e46-p11",
+    "stored_checksum": "203295139"
+  },
+  {
+    "bytes": 1059960656,
+    "epoch": 47,
+    "expected_checksum": "902315366",
+    "shard_id": "data-e47-p00",
+    "stored_checksum": "902315366"
+  },
+  {
+    "bytes": 1408649725,
+    "epoch": 47,
+    "expected_checksum": "902315367",
+    "shard_id": "data-e47-p01",
+    "stored_checksum": "902315367"
+  },
+  {
+    "bytes": 1487303502,
+    "epoch": 47,
+    "expected_checksum": "902315368",
+    "shard_id": "data-e47-p02",
+    "stored_checksum": "902315368"
+  },
+  {
+    "bytes": 982537157,
+    "epoch": 47,
+    "expected_checksum": "902315369",
+    "shard_id": "data-e47-p03",
+    "stored_checksum": "902315369"
+  },
+  {
+    "bytes": 705394235,
+    "epoch": 47,
+    "expected_checksum": "902315370",
+    "shard_id": "data-e47-p04",
+    "stored_checksum": "902315370"
+  },
+  {
+    "bytes": 1344892648,
+    "epoch": 47,
+    "expected_checksum": "902315371",
+    "shard_id": "data-e47-p05",
+    "stored_checksum": "902315371"
+  },
+  {
+    "bytes": 541451911,
+    "epoch": 47,
+    "expected_checksum": "902315372",
+    "shard_id": "data-e47-p06",
+    "stored_checksum": "902315372"
+  },
+  {
+    "bytes": 1332879024,
+    "epoch": 47,
+    "expected_checksum": "902315373",
+    "shard_id": "data-e47-p07",
+    "stored_checksum": "902315373"
+  },
+  {
+    "bytes": 1151587231,
+    "epoch": 47,
+    "expected_checksum": "902315374",
+    "shard_id": "data-e47-p08",
+    "stored_checksum": "902315374"
+  },
+  {
+    "bytes": 1791245115,
+    "epoch": 47,
+    "expected_checksum": "902315375",
+    "shard_id": "data-e47-p09",
+    "stored_checksum": "902315375"
+  },
+  {
+    "bytes": 1005340486,
+    "epoch": 47,
+    "expected_checksum": "203312299",
+    "shard_id": "data-e47-p10",
+    "stored_checksum": "203312299"
+  },
+  {
+    "bytes": 622427137,
+    "epoch": 47,
+    "expected_checksum": "203312300",
+    "shard_id": "data-e47-p11",
+    "stored_checksum": "203312300"
+  },
+  {
+    "bytes": 1019232927,
+    "epoch": 48,
+    "expected_checksum": "902315497",
+    "shard_id": "data-e48-p00",
+    "stored_checksum": "902315497"
+  },
+  {
+    "bytes": 1189453993,
+    "epoch": 48,
+    "expected_checksum": "902315498",
+    "shard_id": "data-e48-p01",
+    "stored_checksum": "902315498"
+  },
+  {
+    "bytes": 1695514995,
+    "epoch": 48,
+    "expected_checksum": "902315499",
+    "shard_id": "data-e48-p02",
+    "stored_checksum": "902315499"
+  },
+  {
+    "bytes": 747707140,
+    "epoch": 48,
+    "expected_checksum": "902315500",
+    "shard_id": "data-e48-p03",
+    "stored_checksum": "902315500"
+  },
+  {
+    "bytes": 1876453131,
+    "epoch": 48,
+    "expected_checksum": "902315501",
+    "shard_id": "data-e48-p04",
+    "stored_checksum": "902315501"
+  },
+  {
+    "bytes": 1605290085,
+    "epoch": 48,
+    "expected_checksum": "902315502",
+    "shard_id": "data-e48-p05",
+    "stored_checksum": "902315502"
+  },
+  {
+    "bytes": 1842104437,
+    "epoch": 48,
+    "expected_checksum": "902315503",
+    "shard_id": "data-e48-p06",
+    "stored_checksum": "902315503"
+  },
+  {
+    "bytes": 465168810,
+    "epoch": 48,
+    "expected_checksum": "902315504",
+    "shard_id": "data-e48-p07",
+    "stored_checksum": "902315504"
+  },
+  {
+    "bytes": 1003499979,
+    "epoch": 48,
+    "expected_checksum": "902315505",
+    "shard_id": "data-e48-p08",
+    "stored_checksum": "902315505"
+  },
+  {
+    "bytes": 761817778,
+    "epoch": 48,
+    "expected_checksum": "902315506",
+    "shard_id": "data-e48-p09",
+    "stored_checksum": "902315506"
+  },
+  {
+    "bytes": 625657330,
+    "epoch": 48,
+    "expected_checksum": "203329460",
+    "shard_id": "data-e48-p10",
+    "stored_checksum": "203329460"
+  },
+  {
+    "bytes": 897242654,
+    "epoch": 48,
+    "expected_checksum": "203329461",
+    "shard_id": "data-e48-p11",
+    "stored_checksum": "203329461"
+  },
+  {
+    "bytes": 934402923,
+    "epoch": 49,
+    "expected_checksum": "902315628",
+    "shard_id": "data-e49-p00",
+    "stored_checksum": "902315628"
+  },
+  {
+    "bytes": 473437215,
+    "epoch": 49,
+    "expected_checksum": "902315629",
+    "shard_id": "data-e49-p01",
+    "stored_checksum": "848321578"
+  },
+  {
+    "bytes": 622103518,
+    "epoch": 49,
+    "expected_checksum": "902315630",
+    "shard_id": "data-e49-p02",
+    "stored_checksum": "902315630"
+  },
+  {
+    "bytes": 1492074424,
+    "epoch": 49,
+    "expected_checksum": "902315631",
+    "shard_id": "data-e49-p03",
+    "stored_checksum": "902315631"
+  },
+  {
+    "bytes": 1869095841,
+    "epoch": 49,
+    "expected_checksum": "902315632",
+    "shard_id": "data-e49-p04",
+    "stored_checksum": "902315632"
+  },
+  {
+    "bytes": 673337515,
+    "epoch": 49,
+    "expected_checksum": "902315633",
+    "shard_id": "data-e49-p05",
+    "stored_checksum": "902315633"
+  },
+  {
+    "bytes": 1352278398,
+    "epoch": 49,
+    "expected_checksum": "902315634",
+    "shard_id": "data-e49-p06",
+    "stored_checksum": "848321583"
+  },
+  {
+    "bytes": 802499511,
+    "epoch": 49,
+    "expected_checksum": "902315635",
+    "shard_id": "data-e49-p07",
+    "stored_checksum": "902315635"
+  },
+  {
+    "bytes": 838308511,
+    "epoch": 49,
+    "expected_checksum": "902315636",
+    "shard_id": "data-e49-p08",
+    "stored_checksum": "902315636"
+  },
+  {
+    "bytes": 758203265,
+    "epoch": 49,
+    "expected_checksum": "902315637",
+    "shard_id": "data-e49-p09",
+    "stored_checksum": "902315637"
+  },
+  {
+    "bytes": 1963973603,
+    "epoch": 49,
+    "expected_checksum": "203346621",
+    "shard_id": "data-e49-p10",
+    "stored_checksum": "203346621"
+  },
+  {
+    "bytes": 1143969029,
+    "epoch": 49,
+    "expected_checksum": "203346622",
+    "shard_id": "data-e49-p11",
+    "stored_checksum": "203346622"
+  },
+  {
+    "bytes": 254334664,
+    "epoch": 50,
+    "expected_checksum": "902331610",
+    "shard_id": "data-e50-p00",
+    "stored_checksum": "902331610"
+  },
+  {
+    "bytes": 1091105570,
+    "epoch": 50,
+    "expected_checksum": "902331611",
+    "shard_id": "data-e50-p01",
+    "stored_checksum": "902331611"
+  },
+  {
+    "bytes": 345539843,
+    "epoch": 50,
+    "expected_checksum": "902331612",
+    "shard_id": "data-e50-p02",
+    "stored_checksum": "902331612"
+  },
+  {
+    "bytes": 1471788892,
+    "epoch": 50,
+    "expected_checksum": "902331613",
+    "shard_id": "data-e50-p03",
+    "stored_checksum": "902331613"
+  },
+  {
+    "bytes": 645170006,
+    "epoch": 50,
+    "expected_checksum": "902331614",
+    "shard_id": "data-e50-p04",
+    "stored_checksum": "902331614"
+  },
+  {
+    "bytes": 1737682506,
+    "epoch": 50,
+    "expected_checksum": "902331615",
+    "shard_id": "data-e50-p05",
+    "stored_checksum": "902331615"
+  },
+  {
+    "bytes": 1340597278,
+    "epoch": 50,
+    "expected_checksum": "902331616",
+    "shard_id": "data-e50-p06",
+    "stored_checksum": "902331616"
+  },
+  {
+    "bytes": 1347493412,
+    "epoch": 50,
+    "expected_checksum": "902331617",
+    "shard_id": "data-e50-p07",
+    "stored_checksum": "902331617"
+  },
+  {
+    "bytes": 966298039,
+    "epoch": 50,
+    "expected_checksum": "902331618",
+    "shard_id": "data-e50-p08",
+    "stored_checksum": "902331618"
+  },
+  {
+    "bytes": 1833533428,
+    "epoch": 50,
+    "expected_checksum": "902331619",
+    "shard_id": "data-e50-p09",
+    "stored_checksum": "777311696"
+  },
+  {
+    "bytes": 1619133852,
+    "epoch": 50,
+    "expected_checksum": "205440263",
+    "shard_id": "data-e50-p10",
+    "stored_checksum": "205440263"
+  },
+  {
+    "bytes": 1922995624,
+    "epoch": 50,
+    "expected_checksum": "205440264",
+    "shard_id": "data-e50-p11",
+    "stored_checksum": "205440264"
+  },
+  {
+    "bytes": 1909656366,
+    "epoch": 51,
+    "expected_checksum": "902331741",
+    "shard_id": "data-e51-p00",
+    "stored_checksum": "902331741"
+  },
+  {
+    "bytes": 1332408301,
+    "epoch": 51,
+    "expected_checksum": "902331742",
+    "shard_id": "data-e51-p01",
+    "stored_checksum": "902331742"
+  },
+  {
+    "bytes": 1147270760,
+    "epoch": 51,
+    "expected_checksum": "902331743",
+    "shard_id": "data-e51-p02",
+    "stored_checksum": "902331743"
+  },
+  {
+    "bytes": 1654920355,
+    "epoch": 51,
+    "expected_checksum": "902331744",
+    "shard_id": "data-e51-p03",
+    "stored_checksum": "902331744"
+  },
+  {
+    "bytes": 738310117,
+    "epoch": 51,
+    "expected_checksum": "902331745",
+    "shard_id": "data-e51-p04",
+    "stored_checksum": "902331745"
+  },
+  {
+    "bytes": 1997384574,
+    "epoch": 51,
+    "expected_checksum": "902331746",
+    "shard_id": "data-e51-p05",
+    "stored_checksum": "902331746"
+  },
+  {
+    "bytes": 774268214,
+    "epoch": 51,
+    "expected_checksum": "902331747",
+    "shard_id": "data-e51-p06",
+    "stored_checksum": "902331747"
+  },
+  {
+    "bytes": 430906575,
+    "epoch": 51,
+    "expected_checksum": "902331748",
+    "shard_id": "data-e51-p07",
+    "stored_checksum": "902331748"
+  },
+  {
+    "bytes": 734908087,
+    "epoch": 51,
+    "expected_checksum": "902331749",
+    "shard_id": "data-e51-p08",
+    "stored_checksum": "902331749"
+  },
+  {
+    "bytes": 556531642,
+    "epoch": 51,
+    "expected_checksum": "902331750",
+    "shard_id": "data-e51-p09",
+    "stored_checksum": "902331750"
+  },
+  {
+    "bytes": 688601210,
+    "epoch": 51,
+    "expected_checksum": "205457424",
+    "shard_id": "data-e51-p10",
+    "stored_checksum": "205457424"
+  },
+  {
+    "bytes": 1840557468,
+    "epoch": 51,
+    "expected_checksum": "205457425",
+    "shard_id": "data-e51-p11",
+    "stored_checksum": "205457425"
+  },
+  {
+    "bytes": 504301692,
+    "epoch": 52,
+    "expected_checksum": "902331872",
+    "shard_id": "data-e52-p00",
+    "stored_checksum": "902331872"
+  },
+  {
+    "bytes": 1596006459,
+    "epoch": 52,
+    "expected_checksum": "902331873",
+    "shard_id": "data-e52-p01",
+    "stored_checksum": "902331873"
+  },
+  {
+    "bytes": 204379980,
+    "epoch": 52,
+    "expected_checksum": "902331874",
+    "shard_id": "data-e52-p02",
+    "stored_checksum": "902331874"
+  },
+  {
+    "bytes": 1923138662,
+    "epoch": 52,
+    "expected_checksum": "902331875",
+    "shard_id": "data-e52-p03",
+    "stored_checksum": "902331875"
+  },
+  {
+    "bytes": 1276229203,
+    "epoch": 52,
+    "expected_checksum": "902331876",
+    "shard_id": "data-e52-p04",
+    "stored_checksum": "902331876"
+  },
+  {
+    "bytes": 801403676,
+    "epoch": 52,
+    "expected_checksum": "902331877",
+    "shard_id": "data-e52-p05",
+    "stored_checksum": "902331877"
+  },
+  {
+    "bytes": 773969598,
+    "epoch": 52,
+    "expected_checksum": "902331878",
+    "shard_id": "data-e52-p06",
+    "stored_checksum": "902331878"
+  },
+  {
+    "bytes": 1130215921,
+    "epoch": 52,
+    "expected_checksum": "902331879",
+    "shard_id": "data-e52-p07",
+    "stored_checksum": "902331879"
+  },
+  {
+    "bytes": 393084985,
+    "epoch": 52,
+    "expected_checksum": "902331880",
+    "shard_id": "data-e52-p08",
+    "stored_checksum": "902331880"
+  },
+  {
+    "bytes": 1304332452,
+    "epoch": 52,
+    "expected_checksum": "902331881",
+    "shard_id": "data-e52-p09",
+    "stored_checksum": "902331881"
+  },
+  {
+    "bytes": 709787012,
+    "epoch": 52,
+    "expected_checksum": "205474585",
+    "shard_id": "data-e52-p10",
+    "stored_checksum": "205474585"
+  },
+  {
+    "bytes": 1050235665,
+    "epoch": 52,
+    "expected_checksum": "205474586",
+    "shard_id": "data-e52-p11",
+    "stored_checksum": "205474586"
+  },
+  {
+    "bytes": 686126041,
+    "epoch": 53,
+    "expected_checksum": "902332003",
+    "shard_id": "data-e53-p00",
+    "stored_checksum": "902332003"
+  },
+  {
+    "bytes": 1343447609,
+    "epoch": 53,
+    "expected_checksum": "902332004",
+    "shard_id": "data-e53-p01",
+    "stored_checksum": "902332004"
+  },
+  {
+    "bytes": 1197924498,
+    "epoch": 53,
+    "expected_checksum": "902332005",
+    "shard_id": "data-e53-p02",
+    "stored_checksum": "902332005"
+  },
+  {
+    "bytes": 1731165216,
+    "epoch": 53,
+    "expected_checksum": "902332006",
+    "shard_id": "data-e53-p03",
+    "stored_checksum": "902332006"
+  },
+  {
+    "bytes": 385655772,
+    "epoch": 53,
+    "expected_checksum": "902332007",
+    "shard_id": "data-e53-p04",
+    "stored_checksum": "902332007"
+  },
+  {
+    "bytes": 938053213,
+    "epoch": 53,
+    "expected_checksum": "902332008",
+    "shard_id": "data-e53-p05",
+    "stored_checksum": "902332008"
+  },
+  {
+    "bytes": 1318813051,
+    "epoch": 53,
+    "expected_checksum": "902332009",
+    "shard_id": "data-e53-p06",
+    "stored_checksum": "902332009"
+  },
+  {
+    "bytes": 1768243373,
+    "epoch": 53,
+    "expected_checksum": "902332010",
+    "shard_id": "data-e53-p07",
+    "stored_checksum": "902332010"
+  },
+  {
+    "bytes": 538610404,
+    "epoch": 53,
+    "expected_checksum": "902332011",
+    "shard_id": "data-e53-p08",
+    "stored_checksum": "902332011"
+  },
+  {
+    "bytes": 1052399485,
+    "epoch": 53,
+    "expected_checksum": "902332012",
+    "shard_id": "data-e53-p09",
+    "stored_checksum": "902332012"
+  },
+  {
+    "bytes": 693241432,
+    "epoch": 53,
+    "expected_checksum": "205491746",
+    "shard_id": "data-e53-p10",
+    "stored_checksum": "205491746"
+  },
+  {
+    "bytes": 440778918,
+    "epoch": 53,
+    "expected_checksum": "205491747",
+    "shard_id": "data-e53-p11",
+    "stored_checksum": "205491747"
+  },
+  {
+    "bytes": 1021643927,
+    "epoch": 54,
+    "expected_checksum": "902332134",
+    "shard_id": "data-e54-p00",
+    "stored_checksum": "902332134"
+  },
+  {
+    "bytes": 1985581870,
+    "epoch": 54,
+    "expected_checksum": "902332135",
+    "shard_id": "data-e54-p01",
+    "stored_checksum": "902332135"
+  },
+  {
+    "bytes": 1154220083,
+    "epoch": 54,
+    "expected_checksum": "902332136",
+    "shard_id": "data-e54-p02",
+    "stored_checksum": "902332136"
+  },
+  {
+    "bytes": 867272855,
+    "epoch": 54,
+    "expected_checksum": "902332137",
+    "shard_id": "data-e54-p03",
+    "stored_checksum": "902332137"
+  },
+  {
+    "bytes": 1146767518,
+    "epoch": 54,
+    "expected_checksum": "902332138",
+    "shard_id": "data-e54-p04",
+    "stored_checksum": "902332138"
+  },
+  {
+    "bytes": 354042990,
+    "epoch": 54,
+    "expected_checksum": "902332139",
+    "shard_id": "data-e54-p05",
+    "stored_checksum": "902332139"
+  },
+  {
+    "bytes": 668883865,
+    "epoch": 54,
+    "expected_checksum": "902332140",
+    "shard_id": "data-e54-p06",
+    "stored_checksum": "902332140"
+  },
+  {
+    "bytes": 668549678,
+    "epoch": 54,
+    "expected_checksum": "902332141",
+    "shard_id": "data-e54-p07",
+    "stored_checksum": "902332141"
+  },
+  {
+    "bytes": 1136335213,
+    "epoch": 54,
+    "expected_checksum": "902332142",
+    "shard_id": "data-e54-p08",
+    "stored_checksum": "955311372"
+  },
+  {
+    "bytes": 1863699699,
+    "epoch": 54,
+    "expected_checksum": "902332143",
+    "shard_id": "data-e54-p09",
+    "stored_checksum": "902332143"
+  },
+  {
+    "bytes": 852058376,
+    "epoch": 54,
+    "expected_checksum": "205508907",
+    "shard_id": "data-e54-p10",
+    "stored_checksum": "205508907"
+  },
+  {
+    "bytes": 1150577617,
+    "epoch": 54,
+    "expected_checksum": "205508908",
+    "shard_id": "data-e54-p11",
+    "stored_checksum": "205508908"
+  },
+  {
+    "bytes": 350813855,
+    "epoch": 55,
+    "expected_checksum": "902332265",
+    "shard_id": "data-e55-p00",
+    "stored_checksum": "902332265"
+  },
+  {
+    "bytes": 1908994419,
+    "epoch": 55,
+    "expected_checksum": "902332266",
+    "shard_id": "data-e55-p01",
+    "stored_checksum": "902332266"
+  },
+  {
+    "bytes": 396619343,
+    "epoch": 55,
+    "expected_checksum": "902332267",
+    "shard_id": "data-e55-p02",
+    "stored_checksum": "902332267"
+  },
+  {
+    "bytes": 1892461148,
+    "epoch": 55,
+    "expected_checksum": "902332268",
+    "shard_id": "data-e55-p03",
+    "stored_checksum": "902332268"
+  },
+  {
+    "bytes": 594456601,
+    "epoch": 55,
+    "expected_checksum": "902332269",
+    "shard_id": "data-e55-p04",
+    "stored_checksum": "902332269"
+  },
+  {
+    "bytes": 553805314,
+    "epoch": 55,
+    "expected_checksum": "902332270",
+    "shard_id": "data-e55-p05",
+    "stored_checksum": "902332270"
+  },
+  {
+    "bytes": 1900657648,
+    "epoch": 55,
+    "expected_checksum": "902332271",
+    "shard_id": "data-e55-p06",
+    "stored_checksum": "902332271"
+  },
+  {
+    "bytes": 1065836610,
+    "epoch": 55,
+    "expected_checksum": "902332272",
+    "shard_id": "data-e55-p07",
+    "stored_checksum": "902332272"
+  },
+  {
+    "bytes": 1195502571,
+    "epoch": 55,
+    "expected_checksum": "902332273",
+    "shard_id": "data-e55-p08",
+    "stored_checksum": "902332273"
+  },
+  {
+    "bytes": 1983316052,
+    "epoch": 55,
+    "expected_checksum": "902332274",
+    "shard_id": "data-e55-p09",
+    "stored_checksum": "902332274"
+  },
+  {
+    "bytes": 1847733418,
+    "epoch": 55,
+    "expected_checksum": "205526068",
+    "shard_id": "data-e55-p10",
+    "stored_checksum": "205526068"
+  },
+  {
+    "bytes": 1422890040,
+    "epoch": 55,
+    "expected_checksum": "205526069",
+    "shard_id": "data-e55-p11",
+    "stored_checksum": "205526069"
+  },
+  {
+    "bytes": 1866730471,
+    "epoch": 56,
+    "expected_checksum": "902332396",
+    "shard_id": "data-e56-p00",
+    "stored_checksum": "902332396"
+  },
+  {
+    "bytes": 1869798904,
+    "epoch": 56,
+    "expected_checksum": "902332397",
+    "shard_id": "data-e56-p01",
+    "stored_checksum": "902332397"
+  },
+  {
+    "bytes": 957087765,
+    "epoch": 56,
+    "expected_checksum": "902332398",
+    "shard_id": "data-e56-p02",
+    "stored_checksum": "902332398"
+  },
+  {
+    "bytes": 577024783,
+    "epoch": 56,
+    "expected_checksum": "902332399",
+    "shard_id": "data-e56-p03",
+    "stored_checksum": "902332399"
+  },
+  {
+    "bytes": 846868013,
+    "epoch": 56,
+    "expected_checksum": "902332400",
+    "shard_id": "data-e56-p04",
+    "stored_checksum": "902332400"
+  },
+  {
+    "bytes": 1615733413,
+    "epoch": 56,
+    "expected_checksum": "902332401",
+    "shard_id": "data-e56-p05",
+    "stored_checksum": "902332401"
+  },
+  {
+    "bytes": 1697391412,
+    "epoch": 56,
+    "expected_checksum": "902332402",
+    "shard_id": "data-e56-p06",
+    "stored_checksum": "902332402"
+  },
+  {
+    "bytes": 607888931,
+    "epoch": 56,
+    "expected_checksum": "902332403",
+    "shard_id": "data-e56-p07",
+    "stored_checksum": "902332403"
+  },
+  {
+    "bytes": 1953460608,
+    "epoch": 56,
+    "expected_checksum": "902332404",
+    "shard_id": "data-e56-p08",
+    "stored_checksum": "902332404"
+  },
+  {
+    "bytes": 538197847,
+    "epoch": 56,
+    "expected_checksum": "902332405",
+    "shard_id": "data-e56-p09",
+    "stored_checksum": "902332405"
+  },
+  {
+    "bytes": 1303392575,
+    "epoch": 56,
+    "expected_checksum": "205543229",
+    "shard_id": "data-e56-p10",
+    "stored_checksum": "205543229"
+  },
+  {
+    "bytes": 1755490436,
+    "epoch": 56,
+    "expected_checksum": "205543230",
+    "shard_id": "data-e56-p11",
+    "stored_checksum": "205543230"
+  },
+  {
+    "bytes": 1465397706,
+    "epoch": 57,
+    "expected_checksum": "902332527",
+    "shard_id": "data-e57-p00",
+    "stored_checksum": "902332527"
+  },
+  {
+    "bytes": 1747065523,
+    "epoch": 57,
+    "expected_checksum": "902332528",
+    "shard_id": "data-e57-p01",
+    "stored_checksum": "838811121"
+  },
+  {
+    "bytes": 1766652739,
+    "epoch": 57,
+    "expected_checksum": "902332529",
+    "shard_id": "data-e57-p02",
+    "stored_checksum": "902332529"
+  },
+  {
+    "bytes": 1067522867,
+    "epoch": 57,
+    "expected_checksum": "902332530",
+    "shard_id": "data-e57-p03",
+    "stored_checksum": "902332530"
+  },
+  {
+    "bytes": 575801051,
+    "epoch": 57,
+    "expected_checksum": "902332531",
+    "shard_id": "data-e57-p04",
+    "stored_checksum": "902332531"
+  },
+  {
+    "bytes": 1696608314,
+    "epoch": 57,
+    "expected_checksum": "902332532",
+    "shard_id": "data-e57-p05",
+    "stored_checksum": "902332532"
+  },
+  {
+    "bytes": 718728864,
+    "epoch": 57,
+    "expected_checksum": "902332533",
+    "shard_id": "data-e57-p06",
+    "stored_checksum": "902332533"
+  },
+  {
+    "bytes": 340922911,
+    "epoch": 57,
+    "expected_checksum": "902332534",
+    "shard_id": "data-e57-p07",
+    "stored_checksum": "902332534"
+  },
+  {
+    "bytes": 975200958,
+    "epoch": 57,
+    "expected_checksum": "902332535",
+    "shard_id": "data-e57-p08",
+    "stored_checksum": "838811128"
+  },
+  {
+    "bytes": 1623987778,
+    "epoch": 57,
+    "expected_checksum": "902332536",
+    "shard_id": "data-e57-p09",
+    "stored_checksum": "902332536"
+  },
+  {
+    "bytes": 964602751,
+    "epoch": 57,
+    "expected_checksum": "205560390",
+    "shard_id": "data-e57-p10",
+    "stored_checksum": "205560390"
+  },
+  {
+    "bytes": 1605762999,
+    "epoch": 57,
+    "expected_checksum": "205560391",
+    "shard_id": "data-e57-p11",
+    "stored_checksum": "205560391"
+  },
+  {
+    "bytes": 318183685,
+    "epoch": 58,
+    "expected_checksum": "902332658",
+    "shard_id": "data-e58-p00",
+    "stored_checksum": "902332658"
+  },
+  {
+    "bytes": 632627773,
+    "epoch": 58,
+    "expected_checksum": "902332659",
+    "shard_id": "data-e58-p01",
+    "stored_checksum": "902332659"
+  },
+  {
+    "bytes": 1527906266,
+    "epoch": 58,
+    "expected_checksum": "902332660",
+    "shard_id": "data-e58-p02",
+    "stored_checksum": "902332660"
+  },
+  {
+    "bytes": 554215322,
+    "epoch": 58,
+    "expected_checksum": "902332661",
+    "shard_id": "data-e58-p03",
+    "stored_checksum": "902332661"
+  },
+  {
+    "bytes": 489445931,
+    "epoch": 58,
+    "expected_checksum": "902332662",
+    "shard_id": "data-e58-p04",
+    "stored_checksum": "902332662"
+  },
+  {
+    "bytes": 481320566,
+    "epoch": 58,
+    "expected_checksum": "902332663",
+    "shard_id": "data-e58-p05",
+    "stored_checksum": "133311039"
+  },
+  {
+    "bytes": 382309560,
+    "epoch": 58,
+    "expected_checksum": "902332664",
+    "shard_id": "data-e58-p06",
+    "stored_checksum": "902332664"
+  },
+  {
+    "bytes": 887337718,
+    "epoch": 58,
+    "expected_checksum": "902332665",
+    "shard_id": "data-e58-p07",
+    "stored_checksum": "902332665"
+  },
+  {
+    "bytes": 1572418465,
+    "epoch": 58,
+    "expected_checksum": "902332666",
+    "shard_id": "data-e58-p08",
+    "stored_checksum": "902332666"
+  },
+  {
+    "bytes": 1827555862,
+    "epoch": 58,
+    "expected_checksum": "902332667",
+    "shard_id": "data-e58-p09",
+    "stored_checksum": "902332667"
+  },
+  {
+    "bytes": 297609791,
+    "epoch": 58,
+    "expected_checksum": "205577551",
+    "shard_id": "data-e58-p10",
+    "stored_checksum": "205577551"
+  },
+  {
+    "bytes": 1653807634,
+    "epoch": 58,
+    "expected_checksum": "205577552",
+    "shard_id": "data-e58-p11",
+    "stored_checksum": "205577552"
+  },
+  {
+    "bytes": 1537308063,
+    "epoch": 59,
+    "expected_checksum": "902332789",
+    "shard_id": "data-e59-p00",
+    "stored_checksum": "902332789"
+  },
+  {
+    "bytes": 316641907,
+    "epoch": 59,
+    "expected_checksum": "902332790",
+    "shard_id": "data-e59-p01",
+    "stored_checksum": "902332790"
+  },
+  {
+    "bytes": 1532733113,
+    "epoch": 59,
+    "expected_checksum": "902332791",
+    "shard_id": "data-e59-p02",
+    "stored_checksum": "902332791"
+  },
+  {
+    "bytes": 1638322055,
+    "epoch": 59,
+    "expected_checksum": "902332792",
+    "shard_id": "data-e59-p03",
+    "stored_checksum": "902332792"
+  },
+  {
+    "bytes": 1452745881,
+    "epoch": 59,
+    "expected_checksum": "902332793",
+    "shard_id": "data-e59-p04",
+    "stored_checksum": "902332793"
+  },
+  {
+    "bytes": 282395014,
+    "epoch": 59,
+    "expected_checksum": "902332794",
+    "shard_id": "data-e59-p05",
+    "stored_checksum": "902332794"
+  },
+  {
+    "bytes": 1812910919,
+    "epoch": 59,
+    "expected_checksum": "902332795",
+    "shard_id": "data-e59-p06",
+    "stored_checksum": "902332795"
+  },
+  {
+    "bytes": 1752382761,
+    "epoch": 59,
+    "expected_checksum": "902332796",
+    "shard_id": "data-e59-p07",
+    "stored_checksum": "902332796"
+  },
+  {
+    "bytes": 1145320337,
+    "epoch": 59,
+    "expected_checksum": "902332797",
+    "shard_id": "data-e59-p08",
+    "stored_checksum": "902332797"
+  },
+  {
+    "bytes": 481731854,
+    "epoch": 59,
+    "expected_checksum": "902332798",
+    "shard_id": "data-e59-p09",
+    "stored_checksum": "902332798"
+  },
+  {
+    "bytes": 594100014,
+    "epoch": 59,
+    "expected_checksum": "205594712",
+    "shard_id": "data-e59-p10",
+    "stored_checksum": "205594712"
+  },
+  {
+    "bytes": 1376614753,
+    "epoch": 59,
+    "expected_checksum": "205594713",
+    "shard_id": "data-e59-p11",
+    "stored_checksum": "205594713"
+  }
+]

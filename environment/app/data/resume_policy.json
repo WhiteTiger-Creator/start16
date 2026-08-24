@@ -1,0 +1,8 @@
+{
+  "default": {
+    "max_refetch_shards": 120,
+    "min_complete_ranks": 16,
+    "refetch_budget_bytes": 35000000000,
+    "world_size": 16
+  }
+}

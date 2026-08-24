@@ -1,0 +1,4002 @@
+[
+  {
+    "bytes": 122947831,
+    "checksum": "499069445",
+    "entry_id": "CK-000001",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s1000-r0-m",
+    "step": 1000,
+    "written_seq": 1
+  },
+  {
+    "bytes": 526087327,
+    "checksum": "898594929",
+    "entry_id": "CK-000002",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s1000-r0-o",
+    "step": 1000,
+    "written_seq": 2
+  },
+  {
+    "bytes": 338758987,
+    "checksum": "078558823",
+    "entry_id": "CK-000003",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s1000-r1-m",
+    "step": 1000,
+    "written_seq": 3
+  },
+  {
+    "bytes": 523037716,
+    "checksum": "806816475",
+    "entry_id": "CK-000004",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s1000-r1-o",
+    "step": 1000,
+    "written_seq": 4
+  },
+  {
+    "bytes": 643688708,
+    "checksum": "658048208",
+    "entry_id": "CK-000005",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s1000-r2-m",
+    "step": 1000,
+    "written_seq": 5
+  },
+  {
+    "bytes": 358928473,
+    "checksum": "715038021",
+    "entry_id": "CK-000006",
+    "kind": "optimizer",
+    "rank": 2,
+    "shard_id": "s1000-r2-o",
+    "step": 1000,
+    "written_seq": 6
+  },
+  {
+    "bytes": 323791280,
+    "checksum": "237537586",
+    "entry_id": "CK-000007",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s1000-r3-m",
+    "step": 1000,
+    "written_seq": 7
+  },
+  {
+    "bytes": 751197798,
+    "checksum": "623259567",
+    "entry_id": "CK-000008",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s1000-r3-o",
+    "step": 1000,
+    "written_seq": 8
+  },
+  {
+    "bytes": 239063981,
+    "checksum": "817026971",
+    "entry_id": "CK-000009",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s1000-r4-m",
+    "step": 1000,
+    "written_seq": 9
+  },
+  {
+    "bytes": 811015675,
+    "checksum": "531481113",
+    "entry_id": "CK-000010",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s1000-r4-o",
+    "step": 1000,
+    "written_seq": 10
+  },
+  {
+    "bytes": 330952389,
+    "checksum": "396516349",
+    "entry_id": "CK-000011",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s1000-r5-m",
+    "step": 1000,
+    "written_seq": 11
+  },
+  {
+    "bytes": 487154793,
+    "checksum": "439702659",
+    "entry_id": "CK-000012",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s1000-r5-o",
+    "step": 1000,
+    "written_seq": 12
+  },
+  {
+    "bytes": 816369629,
+    "checksum": "976005734",
+    "entry_id": "CK-000013",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s1000-r6-m",
+    "step": 1000,
+    "written_seq": 13
+  },
+  {
+    "bytes": 395064640,
+    "checksum": "347924205",
+    "entry_id": "CK-000014",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s1000-r6-o",
+    "step": 1000,
+    "written_seq": 14
+  },
+  {
+    "bytes": 230079106,
+    "checksum": "555495112",
+    "entry_id": "CK-000015",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s1000-r7-m",
+    "step": 1000,
+    "written_seq": 15
+  },
+  {
+    "bytes": 153348180,
+    "checksum": "256145751",
+    "entry_id": "CK-000016",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s1000-r7-o",
+    "step": 1000,
+    "written_seq": 16
+  },
+  {
+    "bytes": 866190040,
+    "checksum": "134984490",
+    "entry_id": "CK-000017",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s1000-r8-m",
+    "step": 1000,
+    "written_seq": 17
+  },
+  {
+    "bytes": 564809266,
+    "checksum": "164367297",
+    "entry_id": "CK-000018",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s1000-r8-o",
+    "step": 1000,
+    "written_seq": 18
+  },
+  {
+    "bytes": 417064140,
+    "checksum": "714473875",
+    "entry_id": "CK-000019",
+    "kind": "model",
+    "rank": 9,
+    "shard_id": "s1000-r9-m",
+    "step": 1000,
+    "written_seq": 19
+  },
+  {
+    "bytes": 494662407,
+    "checksum": "072588843",
+    "entry_id": "CK-000020",
+    "kind": "optimizer",
+    "rank": 9,
+    "shard_id": "s1000-r9-o",
+    "step": 1000,
+    "written_seq": 20
+  },
+  {
+    "bytes": 162570827,
+    "checksum": "378064699",
+    "entry_id": "CK-000021",
+    "kind": "model",
+    "rank": 10,
+    "shard_id": "s1000-r10-m",
+    "step": 1000,
+    "written_seq": 21
+  },
+  {
+    "bytes": 548281015,
+    "checksum": "010421072",
+    "entry_id": "CK-000022",
+    "kind": "optimizer",
+    "rank": 10,
+    "shard_id": "s1000-r10-o",
+    "step": 1000,
+    "written_seq": 22
+  },
+  {
+    "bytes": 694692682,
+    "checksum": "957554084",
+    "entry_id": "CK-000023",
+    "kind": "model",
+    "rank": 11,
+    "shard_id": "s1000-r11-m",
+    "step": 1000,
+    "written_seq": 23
+  },
+  {
+    "bytes": 867914364,
+    "checksum": "918642625",
+    "entry_id": "CK-000024",
+    "kind": "optimizer",
+    "rank": 11,
+    "shard_id": "s1000-r11-o",
+    "step": 1000,
+    "written_seq": 24
+  },
+  {
+    "bytes": 389720762,
+    "checksum": "537043462",
+    "entry_id": "CK-000025",
+    "kind": "model",
+    "rank": 12,
+    "shard_id": "s1000-r12-m",
+    "step": 1000,
+    "written_seq": 25
+  },
+  {
+    "bytes": 675411242,
+    "checksum": "826864171",
+    "entry_id": "CK-000026",
+    "kind": "optimizer",
+    "rank": 12,
+    "shard_id": "s1000-r12-o",
+    "step": 1000,
+    "written_seq": 26
+  },
+  {
+    "bytes": 195507889,
+    "checksum": "116532840",
+    "entry_id": "CK-000027",
+    "kind": "model",
+    "rank": 13,
+    "shard_id": "s1000-r13-m",
+    "step": 1000,
+    "written_seq": 27
+  },
+  {
+    "bytes": 536722206,
+    "checksum": "735085717",
+    "entry_id": "CK-000028",
+    "kind": "optimizer",
+    "rank": 13,
+    "shard_id": "s1000-r13-o",
+    "step": 1000,
+    "written_seq": 28
+  },
+  {
+    "bytes": 616203969,
+    "checksum": "696022225",
+    "entry_id": "CK-000029",
+    "kind": "model",
+    "rank": 14,
+    "shard_id": "s1000-r14-m",
+    "step": 1000,
+    "written_seq": 29
+  },
+  {
+    "bytes": 709529665,
+    "checksum": "643307263",
+    "entry_id": "CK-000030",
+    "kind": "optimizer",
+    "rank": 14,
+    "shard_id": "s1000-r14-o",
+    "step": 1000,
+    "written_seq": 30
+  },
+  {
+    "bytes": 883189191,
+    "checksum": "275511603",
+    "entry_id": "CK-000031",
+    "kind": "model",
+    "rank": 15,
+    "shard_id": "s1000-r15-m",
+    "step": 1000,
+    "written_seq": 31
+  },
+  {
+    "bytes": 195988081,
+    "checksum": "551528809",
+    "entry_id": "CK-000032",
+    "kind": "optimizer",
+    "rank": 15,
+    "shard_id": "s1000-r15-o",
+    "step": 1000,
+    "written_seq": 32
+  },
+  {
+    "bytes": 454633350,
+    "checksum": "407290991",
+    "entry_id": "CK-000033",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s2000-r0-m",
+    "step": 2000,
+    "written_seq": 33
+  },
+  {
+    "bytes": 149973647,
+    "checksum": "635294024",
+    "entry_id": "CK-000034",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s2000-r0-o",
+    "step": 2000,
+    "written_seq": 34
+  },
+  {
+    "bytes": 796690613,
+    "checksum": "986780376",
+    "entry_id": "CK-000035",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s2000-r1-m",
+    "step": 2000,
+    "written_seq": 35
+  },
+  {
+    "bytes": 784360638,
+    "checksum": "543515570",
+    "entry_id": "CK-000036",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s2000-r1-o",
+    "step": 2000,
+    "written_seq": 36
+  },
+  {
+    "bytes": 113021933,
+    "checksum": "566269754",
+    "entry_id": "CK-000037",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s2000-r2-m",
+    "step": 2000,
+    "written_seq": 37
+  },
+  {
+    "bytes": 794774636,
+    "checksum": "451737116",
+    "entry_id": "CK-000038",
+    "kind": "optimizer",
+    "rank": 2,
+    "shard_id": "s2000-r2-o",
+    "step": 2000,
+    "written_seq": 38
+  },
+  {
+    "bytes": 98891927,
+    "checksum": "145759132",
+    "entry_id": "CK-000039",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s2000-r3-m",
+    "step": 2000,
+    "written_seq": 39
+  },
+  {
+    "bytes": 321056267,
+    "checksum": "359958662",
+    "entry_id": "CK-000040",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s2000-r3-o",
+    "step": 2000,
+    "written_seq": 40
+  },
+  {
+    "bytes": 892362744,
+    "checksum": "725248517",
+    "entry_id": "CK-000041",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s2000-r4-m",
+    "step": 2000,
+    "written_seq": 41
+  },
+  {
+    "bytes": 68174525,
+    "checksum": "268180208",
+    "entry_id": "CK-000042",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s2000-r4-o",
+    "step": 2000,
+    "written_seq": 42
+  },
+  {
+    "bytes": 387256518,
+    "checksum": "304737895",
+    "entry_id": "CK-000043",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s2000-r5-m",
+    "step": 2000,
+    "written_seq": 43
+  },
+  {
+    "bytes": 726052150,
+    "checksum": "176401754",
+    "entry_id": "CK-000044",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s2000-r5-o",
+    "step": 2000,
+    "written_seq": 44
+  },
+  {
+    "bytes": 105212689,
+    "checksum": "884227280",
+    "entry_id": "CK-000045",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s2000-r6-m",
+    "step": 2000,
+    "written_seq": 45
+  },
+  {
+    "bytes": 125779312,
+    "checksum": "084623300",
+    "entry_id": "CK-000046",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s2000-r6-o",
+    "step": 2000,
+    "written_seq": 46
+  },
+  {
+    "bytes": 241157466,
+    "checksum": "463716658",
+    "entry_id": "CK-000047",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s2000-r7-m",
+    "step": 2000,
+    "written_seq": 47
+  },
+  {
+    "bytes": 263656015,
+    "checksum": "992844853",
+    "entry_id": "CK-000048",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s2000-r7-o",
+    "step": 2000,
+    "written_seq": 48
+  },
+  {
+    "bytes": 365534618,
+    "checksum": "043206036",
+    "entry_id": "CK-000049",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s2000-r8-m",
+    "step": 2000,
+    "written_seq": 49
+  },
+  {
+    "bytes": 639195060,
+    "checksum": "901066399",
+    "entry_id": "CK-000050",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s2000-r8-o",
+    "step": 2000,
+    "written_seq": 50
+  },
+  {
+    "bytes": 165074551,
+    "checksum": "622695421",
+    "entry_id": "CK-000051",
+    "kind": "model",
+    "rank": 9,
+    "shard_id": "s2000-r9-m",
+    "step": 2000,
+    "written_seq": 51
+  },
+  {
+    "bytes": 105197518,
+    "checksum": "809287945",
+    "entry_id": "CK-000052",
+    "kind": "optimizer",
+    "rank": 9,
+    "shard_id": "s2000-r9-o",
+    "step": 2000,
+    "written_seq": 52
+  },
+  {
+    "bytes": 596363791,
+    "checksum": "355087309",
+    "entry_id": "CK-000053",
+    "kind": "model",
+    "rank": 10,
+    "shard_id": "s2000-r10-m",
+    "step": 2000,
+    "written_seq": 53
+  },
+  {
+    "bytes": 233155239,
+    "checksum": "518002762",
+    "entry_id": "CK-000054",
+    "kind": "optimizer",
+    "rank": 10,
+    "shard_id": "s2000-r10-o",
+    "step": 2000,
+    "written_seq": 54
+  },
+  {
+    "bytes": 741649414,
+    "checksum": "934576694",
+    "entry_id": "CK-000055",
+    "kind": "model",
+    "rank": 11,
+    "shard_id": "s2000-r11-m",
+    "step": 2000,
+    "written_seq": 55
+  },
+  {
+    "bytes": 483906987,
+    "checksum": "426224308",
+    "entry_id": "CK-000056",
+    "kind": "optimizer",
+    "rank": 11,
+    "shard_id": "s2000-r11-o",
+    "step": 2000,
+    "written_seq": 56
+  },
+  {
+    "bytes": 613778336,
+    "checksum": "514066072",
+    "entry_id": "CK-000057",
+    "kind": "model",
+    "rank": 12,
+    "shard_id": "s2000-r12-m",
+    "step": 2000,
+    "written_seq": 57
+  },
+  {
+    "bytes": 725252718,
+    "checksum": "334445854",
+    "entry_id": "CK-000058",
+    "kind": "optimizer",
+    "rank": 12,
+    "shard_id": "s2000-r12-o",
+    "step": 2000,
+    "written_seq": 58
+  },
+  {
+    "bytes": 872312950,
+    "checksum": "093555450",
+    "entry_id": "CK-000059",
+    "kind": "model",
+    "rank": 13,
+    "shard_id": "s2000-r13-m",
+    "step": 2000,
+    "written_seq": 59
+  },
+  {
+    "bytes": 85324494,
+    "checksum": "242667400",
+    "entry_id": "CK-000060",
+    "kind": "optimizer",
+    "rank": 13,
+    "shard_id": "s2000-r13-o",
+    "step": 2000,
+    "written_seq": 60
+  },
+  {
+    "bytes": 458511013,
+    "checksum": "673044835",
+    "entry_id": "CK-000061",
+    "kind": "model",
+    "rank": 14,
+    "shard_id": "s2000-r14-m",
+    "step": 2000,
+    "written_seq": 61
+  },
+  {
+    "bytes": 736565154,
+    "checksum": "150888946",
+    "entry_id": "CK-000062",
+    "kind": "optimizer",
+    "rank": 14,
+    "shard_id": "s2000-r14-o",
+    "step": 2000,
+    "written_seq": 62
+  },
+  {
+    "bytes": 464223973,
+    "checksum": "252534213",
+    "entry_id": "CK-000063",
+    "kind": "model",
+    "rank": 15,
+    "shard_id": "s2000-r15-m",
+    "step": 2000,
+    "written_seq": 63
+  },
+  {
+    "bytes": 564141904,
+    "checksum": "059110492",
+    "entry_id": "CK-000064",
+    "kind": "optimizer",
+    "rank": 15,
+    "shard_id": "s2000-r15-o",
+    "step": 2000,
+    "written_seq": 64
+  },
+  {
+    "bytes": 328052063,
+    "checksum": "315512537",
+    "entry_id": "CK-000065",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s3000-r0-m",
+    "step": 3000,
+    "written_seq": 65
+  },
+  {
+    "bytes": 96044338,
+    "checksum": "371993119",
+    "entry_id": "CK-000066",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s3000-r0-o",
+    "step": 3000,
+    "written_seq": 66
+  },
+  {
+    "bytes": 62408650,
+    "checksum": "895001922",
+    "entry_id": "CK-000067",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s3000-r1-m",
+    "step": 3000,
+    "written_seq": 67
+  },
+  {
+    "bytes": 668218277,
+    "checksum": "280214665",
+    "entry_id": "CK-000068",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s3000-r1-o",
+    "step": 3000,
+    "written_seq": 68
+  },
+  {
+    "bytes": 760185921,
+    "checksum": "474491300",
+    "entry_id": "CK-000069",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s3000-r2-m",
+    "step": 3000,
+    "written_seq": 69
+  },
+  {
+    "bytes": 310703529,
+    "checksum": "188436211",
+    "entry_id": "CK-000070",
+    "kind": "optimizer",
+    "rank": 2,
+    "shard_id": "s3000-r2-o",
+    "step": 3000,
+    "written_seq": 70
+  },
+  {
+    "bytes": 597868375,
+    "checksum": "053980678",
+    "entry_id": "CK-000071",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s3000-r3-m",
+    "step": 3000,
+    "written_seq": 71
+  },
+  {
+    "bytes": 70158299,
+    "checksum": "096657757",
+    "entry_id": "CK-000072",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s3000-r3-o",
+    "step": 3000,
+    "written_seq": 72
+  },
+  {
+    "bytes": 805429061,
+    "checksum": "633470063",
+    "entry_id": "CK-000073",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s3000-r4-m",
+    "step": 3000,
+    "written_seq": 73
+  },
+  {
+    "bytes": 827944843,
+    "checksum": "004879303",
+    "entry_id": "CK-000074",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s3000-r4-o",
+    "step": 3000,
+    "written_seq": 74
+  },
+  {
+    "bytes": 832830025,
+    "checksum": "212959441",
+    "entry_id": "CK-000075",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s3000-r5-m",
+    "step": 3000,
+    "written_seq": 75
+  },
+  {
+    "bytes": 879106556,
+    "checksum": "913100856",
+    "entry_id": "CK-000076",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s3000-r5-o",
+    "step": 3000,
+    "written_seq": 76
+  },
+  {
+    "bytes": 636736586,
+    "checksum": "792448826",
+    "entry_id": "CK-000077",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s3000-r6-m",
+    "step": 3000,
+    "written_seq": 77
+  },
+  {
+    "bytes": 757035511,
+    "checksum": "821322402",
+    "entry_id": "CK-000078",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s3000-r6-o",
+    "step": 3000,
+    "written_seq": 78
+  },
+  {
+    "bytes": 730364243,
+    "checksum": "371938204",
+    "entry_id": "CK-000079",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s3000-r7-m",
+    "step": 3000,
+    "written_seq": 79
+  },
+  {
+    "bytes": 690144239,
+    "checksum": "729543948",
+    "entry_id": "CK-000080",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s3000-r7-o",
+    "step": 3000,
+    "written_seq": 80
+  },
+  {
+    "bytes": 171644960,
+    "checksum": "951427589",
+    "entry_id": "CK-000081",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s3000-r8-m",
+    "step": 3000,
+    "written_seq": 81
+  },
+  {
+    "bytes": 338859792,
+    "checksum": "637765494",
+    "entry_id": "CK-000082",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s3000-r8-o",
+    "step": 3000,
+    "written_seq": 82
+  },
+  {
+    "bytes": 112012698,
+    "checksum": "530916967",
+    "entry_id": "CK-000083",
+    "kind": "model",
+    "rank": 9,
+    "shard_id": "s3000-r9-m",
+    "step": 3000,
+    "written_seq": 83
+  },
+  {
+    "bytes": 458910425,
+    "checksum": "545987040",
+    "entry_id": "CK-000084",
+    "kind": "optimizer",
+    "rank": 9,
+    "shard_id": "s3000-r9-o",
+    "step": 3000,
+    "written_seq": 84
+  },
+  {
+    "bytes": 674044336,
+    "checksum": "332109919",
+    "entry_id": "CK-000085",
+    "kind": "model",
+    "rank": 10,
+    "shard_id": "s3000-r10-m",
+    "step": 3000,
+    "written_seq": 85
+  },
+  {
+    "bytes": 573631953,
+    "checksum": "025584445",
+    "entry_id": "CK-000086",
+    "kind": "optimizer",
+    "rank": 10,
+    "shard_id": "s3000-r10-o",
+    "step": 3000,
+    "written_seq": 86
+  },
+  {
+    "bytes": 785626367,
+    "checksum": "911599304",
+    "entry_id": "CK-000087",
+    "kind": "model",
+    "rank": 11,
+    "shard_id": "s3000-r11-m",
+    "step": 3000,
+    "written_seq": 87
+  },
+  {
+    "bytes": 410723246,
+    "checksum": "933805998",
+    "entry_id": "CK-000088",
+    "kind": "optimizer",
+    "rank": 11,
+    "shard_id": "s3000-r11-o",
+    "step": 3000,
+    "written_seq": 88
+  },
+  {
+    "bytes": 303622362,
+    "checksum": "491088682",
+    "entry_id": "CK-000089",
+    "kind": "model",
+    "rank": 12,
+    "shard_id": "s3000-r12-m",
+    "step": 3000,
+    "written_seq": 89
+  },
+  {
+    "bytes": 260905101,
+    "checksum": "842027544",
+    "entry_id": "CK-000090",
+    "kind": "optimizer",
+    "rank": 12,
+    "shard_id": "s3000-r12-o",
+    "step": 3000,
+    "written_seq": 90
+  },
+  {
+    "bytes": 863523506,
+    "checksum": "070578060",
+    "entry_id": "CK-000091",
+    "kind": "model",
+    "rank": 13,
+    "shard_id": "s3000-r13-m",
+    "step": 3000,
+    "written_seq": 91
+  },
+  {
+    "bytes": 731935990,
+    "checksum": "750249090",
+    "entry_id": "CK-000092",
+    "kind": "optimizer",
+    "rank": 13,
+    "shard_id": "s3000-r13-o",
+    "step": 3000,
+    "written_seq": 92
+  },
+  {
+    "bytes": 758147543,
+    "checksum": "650067445",
+    "entry_id": "CK-000093",
+    "kind": "model",
+    "rank": 14,
+    "shard_id": "s3000-r14-m",
+    "step": 3000,
+    "written_seq": 93
+  },
+  {
+    "bytes": 696795506,
+    "checksum": "658470636",
+    "entry_id": "CK-000094",
+    "kind": "optimizer",
+    "rank": 14,
+    "shard_id": "s3000-r14-o",
+    "step": 3000,
+    "written_seq": 94
+  },
+  {
+    "bytes": 717848168,
+    "checksum": "229556823",
+    "entry_id": "CK-000095",
+    "kind": "model",
+    "rank": 15,
+    "shard_id": "s3000-r15-m",
+    "step": 3000,
+    "written_seq": 95
+  },
+  {
+    "bytes": 299915631,
+    "checksum": "566692182",
+    "entry_id": "CK-000096",
+    "kind": "optimizer",
+    "rank": 15,
+    "shard_id": "s3000-r15-o",
+    "step": 3000,
+    "written_seq": 96
+  },
+  {
+    "bytes": 537932646,
+    "checksum": "223734083",
+    "entry_id": "CK-000097",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s4000-r0-m",
+    "step": 4000,
+    "written_seq": 97
+  },
+  {
+    "bytes": 673770072,
+    "checksum": "108692214",
+    "entry_id": "CK-000098",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s4000-r0-o",
+    "step": 4000,
+    "written_seq": 98
+  },
+  {
+    "bytes": 583364503,
+    "checksum": "803223468",
+    "entry_id": "CK-000099",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s4000-r1-m",
+    "step": 4000,
+    "written_seq": 99
+  },
+  {
+    "bytes": 505823377,
+    "checksum": "016913760",
+    "entry_id": "CK-000100",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s4000-r1-o",
+    "step": 4000,
+    "written_seq": 100
+  },
+  {
+    "bytes": 626102778,
+    "checksum": "382712846",
+    "entry_id": "CK-000101",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s4000-r2-m",
+    "step": 4000,
+    "written_seq": 101
+  },
+  {
+    "bytes": 834367916,
+    "checksum": "925135313",
+    "entry_id": "CK-000102",
+    "kind": "optimizer",
+    "rank": 2,
+    "shard_id": "s4000-r2-o",
+    "step": 4000,
+    "written_seq": 102
+  },
+  {
+    "bytes": 62721252,
+    "checksum": "962202231",
+    "entry_id": "CK-000103",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s4000-r3-m",
+    "step": 4000,
+    "written_seq": 103
+  },
+  {
+    "bytes": 253525526,
+    "checksum": "833356859",
+    "entry_id": "CK-000104",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s4000-r3-o",
+    "step": 4000,
+    "written_seq": 104
+  },
+  {
+    "bytes": 299452944,
+    "checksum": "541691609",
+    "entry_id": "CK-000105",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s4000-r4-m",
+    "step": 4000,
+    "written_seq": 105
+  },
+  {
+    "bytes": 350492739,
+    "checksum": "741578405",
+    "entry_id": "CK-000106",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s4000-r4-o",
+    "step": 4000,
+    "written_seq": 106
+  },
+  {
+    "bytes": 523424793,
+    "checksum": "121180987",
+    "entry_id": "CK-000107",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s4000-r5-m",
+    "step": 4000,
+    "written_seq": 107
+  },
+  {
+    "bytes": 858406782,
+    "checksum": "649799951",
+    "entry_id": "CK-000108",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s4000-r5-o",
+    "step": 4000,
+    "written_seq": 108
+  },
+  {
+    "bytes": 867657885,
+    "checksum": "700670372",
+    "entry_id": "CK-000109",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s4000-r6-m",
+    "step": 4000,
+    "written_seq": 109
+  },
+  {
+    "bytes": 237498746,
+    "checksum": "558021497",
+    "entry_id": "CK-000110",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s4000-r6-o",
+    "step": 4000,
+    "written_seq": 110
+  },
+  {
+    "bytes": 207511291,
+    "checksum": "280159750",
+    "entry_id": "CK-000111",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s4000-r7-m",
+    "step": 4000,
+    "written_seq": 111
+  },
+  {
+    "bytes": 849674616,
+    "checksum": "466243043",
+    "entry_id": "CK-000112",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s4000-r7-o",
+    "step": 4000,
+    "written_seq": 112
+  },
+  {
+    "bytes": 667122258,
+    "checksum": "859649135",
+    "entry_id": "CK-000113",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s4000-r8-m",
+    "step": 4000,
+    "written_seq": 113
+  },
+  {
+    "bytes": 662715057,
+    "checksum": "374464589",
+    "entry_id": "CK-000114",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s4000-r8-o",
+    "step": 4000,
+    "written_seq": 114
+  },
+  {
+    "bytes": 401113831,
+    "checksum": "439138513",
+    "entry_id": "CK-000115",
+    "kind": "model",
+    "rank": 9,
+    "shard_id": "s4000-r9-m",
+    "step": 4000,
+    "written_seq": 115
+  },
+  {
+    "bytes": 846889540,
+    "checksum": "282686135",
+    "entry_id": "CK-000116",
+    "kind": "optimizer",
+    "rank": 9,
+    "shard_id": "s4000-r9-o",
+    "step": 4000,
+    "written_seq": 116
+  },
+  {
+    "bytes": 347183904,
+    "checksum": "309132529",
+    "entry_id": "CK-000117",
+    "kind": "model",
+    "rank": 10,
+    "shard_id": "s4000-r10-m",
+    "step": 4000,
+    "written_seq": 117
+  },
+  {
+    "bytes": 584024616,
+    "checksum": "533166135",
+    "entry_id": "CK-000118",
+    "kind": "optimizer",
+    "rank": 10,
+    "shard_id": "s4000-r10-o",
+    "step": 4000,
+    "written_seq": 118
+  },
+  {
+    "bytes": 895396580,
+    "checksum": "888621914",
+    "entry_id": "CK-000119",
+    "kind": "model",
+    "rank": 11,
+    "shard_id": "s4000-r11-m",
+    "step": 4000,
+    "written_seq": 119
+  },
+  {
+    "bytes": 586237790,
+    "checksum": "441387681",
+    "entry_id": "CK-000120",
+    "kind": "optimizer",
+    "rank": 11,
+    "shard_id": "s4000-r11-o",
+    "step": 4000,
+    "written_seq": 120
+  },
+  {
+    "bytes": 372824681,
+    "checksum": "468111292",
+    "entry_id": "CK-000121",
+    "kind": "model",
+    "rank": 12,
+    "shard_id": "s4000-r12-m",
+    "step": 4000,
+    "written_seq": 121
+  },
+  {
+    "bytes": 299513493,
+    "checksum": "349609227",
+    "entry_id": "CK-000122",
+    "kind": "optimizer",
+    "rank": 12,
+    "shard_id": "s4000-r12-o",
+    "step": 4000,
+    "written_seq": 122
+  },
+  {
+    "bytes": 534673457,
+    "checksum": "047600670",
+    "entry_id": "CK-000123",
+    "kind": "model",
+    "rank": 13,
+    "shard_id": "s4000-r13-m",
+    "step": 4000,
+    "written_seq": 123
+  },
+  {
+    "bytes": 451167647,
+    "checksum": "257830773",
+    "entry_id": "CK-000124",
+    "kind": "optimizer",
+    "rank": 13,
+    "shard_id": "s4000-r13-o",
+    "step": 4000,
+    "written_seq": 124
+  },
+  {
+    "bytes": 387675404,
+    "checksum": "627090055",
+    "entry_id": "CK-000125",
+    "kind": "model",
+    "rank": 14,
+    "shard_id": "s4000-r14-m",
+    "step": 4000,
+    "written_seq": 125
+  },
+  {
+    "bytes": 152081184,
+    "checksum": "166052319",
+    "entry_id": "CK-000126",
+    "kind": "optimizer",
+    "rank": 14,
+    "shard_id": "s4000-r14-o",
+    "step": 4000,
+    "written_seq": 126
+  },
+  {
+    "bytes": 87873550,
+    "checksum": "206579433",
+    "entry_id": "CK-000127",
+    "kind": "model",
+    "rank": 15,
+    "shard_id": "s4000-r15-m",
+    "step": 4000,
+    "written_seq": 127
+  },
+  {
+    "bytes": 150474216,
+    "checksum": "074273865",
+    "entry_id": "CK-000128",
+    "kind": "optimizer",
+    "rank": 15,
+    "shard_id": "s4000-r15-o",
+    "step": 4000,
+    "written_seq": 128
+  },
+  {
+    "bytes": 374979038,
+    "checksum": "131955629",
+    "entry_id": "CK-000129",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s5000-r0-m",
+    "step": 5000,
+    "written_seq": 129
+  },
+  {
+    "bytes": 549977065,
+    "checksum": "845391316",
+    "entry_id": "CK-000130",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s5000-r0-o",
+    "step": 5000,
+    "written_seq": 130
+  },
+  {
+    "bytes": 212266861,
+    "checksum": "711445014",
+    "entry_id": "CK-000131",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s5000-r1-m",
+    "step": 5000,
+    "written_seq": 131
+  },
+  {
+    "bytes": 236116680,
+    "checksum": "753612862",
+    "entry_id": "CK-000132",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s5000-r1-o",
+    "step": 5000,
+    "written_seq": 132
+  },
+  {
+    "bytes": 49905721,
+    "checksum": "290934392",
+    "entry_id": "CK-000133",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s5000-r2-m",
+    "step": 5000,
+    "written_seq": 133
+  },
+  {
+    "bytes": 245014094,
+    "checksum": "661834408",
+    "entry_id": "CK-000134",
+    "kind": "optimizer",
+    "rank": 2,
+    "shard_id": "s5000-r2-o",
+    "step": 5000,
+    "written_seq": 134
+  },
+  {
+    "bytes": 301212375,
+    "checksum": "870423777",
+    "entry_id": "CK-000135",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s5000-r3-m",
+    "step": 5000,
+    "written_seq": 135
+  },
+  {
+    "bytes": 878505831,
+    "checksum": "570055954",
+    "entry_id": "CK-000136",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s5000-r3-o",
+    "step": 5000,
+    "written_seq": 136
+  },
+  {
+    "bytes": 745292581,
+    "checksum": "449913155",
+    "entry_id": "CK-000137",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s5000-r4-m",
+    "step": 5000,
+    "written_seq": 137
+  },
+  {
+    "bytes": 352837415,
+    "checksum": "478277500",
+    "entry_id": "CK-000138",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s5000-r4-o",
+    "step": 5000,
+    "written_seq": 138
+  },
+  {
+    "bytes": 449392226,
+    "checksum": "029402533",
+    "entry_id": "CK-000139",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s5000-r5-m",
+    "step": 5000,
+    "written_seq": 139
+  },
+  {
+    "bytes": 249248859,
+    "checksum": "386499046",
+    "entry_id": "CK-000140",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s5000-r5-o",
+    "step": 5000,
+    "written_seq": 140
+  },
+  {
+    "bytes": 148979773,
+    "checksum": "608891918",
+    "entry_id": "CK-000141",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s5000-r6-m",
+    "step": 5000,
+    "written_seq": 141
+  },
+  {
+    "bytes": 774767129,
+    "checksum": "294720592",
+    "entry_id": "CK-000142",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s5000-r6-o",
+    "step": 5000,
+    "written_seq": 142
+  },
+  {
+    "bytes": 577523175,
+    "checksum": "188381296",
+    "entry_id": "CK-000143",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s5000-r7-m",
+    "step": 5000,
+    "written_seq": 143
+  },
+  {
+    "bytes": 631908172,
+    "checksum": "202942138",
+    "entry_id": "CK-000144",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s5000-r7-o",
+    "step": 5000,
+    "written_seq": 144
+  },
+  {
+    "bytes": 114828581,
+    "checksum": "767870681",
+    "entry_id": "CK-000145",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s5000-r8-m",
+    "step": 5000,
+    "written_seq": 145
+  },
+  {
+    "bytes": 747635518,
+    "checksum": "111163684",
+    "entry_id": "CK-000146",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s5000-r8-o",
+    "step": 5000,
+    "written_seq": 146
+  },
+  {
+    "bytes": 102081924,
+    "checksum": "347360059",
+    "entry_id": "CK-000147",
+    "kind": "model",
+    "rank": 9,
+    "shard_id": "s5000-r9-m",
+    "step": 5000,
+    "written_seq": 147
+  },
+  {
+    "bytes": 48575749,
+    "checksum": "019385230",
+    "entry_id": "CK-000148",
+    "kind": "optimizer",
+    "rank": 9,
+    "shard_id": "s5000-r9-o",
+    "step": 5000,
+    "written_seq": 148
+  },
+  {
+    "bytes": 762608936,
+    "checksum": "286155139",
+    "entry_id": "CK-000149",
+    "kind": "model",
+    "rank": 10,
+    "shard_id": "s5000-r10-m",
+    "step": 5000,
+    "written_seq": 149
+  },
+  {
+    "bytes": 188755750,
+    "checksum": "040747818",
+    "entry_id": "CK-000150",
+    "kind": "optimizer",
+    "rank": 10,
+    "shard_id": "s5000-r10-o",
+    "step": 5000,
+    "written_seq": 150
+  },
+  {
+    "bytes": 193202803,
+    "checksum": "865644524",
+    "entry_id": "CK-000151",
+    "kind": "model",
+    "rank": 11,
+    "shard_id": "s5000-r11-m",
+    "step": 5000,
+    "written_seq": 151
+  },
+  {
+    "bytes": 233458953,
+    "checksum": "948969371",
+    "entry_id": "CK-000152",
+    "kind": "optimizer",
+    "rank": 11,
+    "shard_id": "s5000-r11-o",
+    "step": 5000,
+    "written_seq": 152
+  },
+  {
+    "bytes": 52083364,
+    "checksum": "445133902",
+    "entry_id": "CK-000153",
+    "kind": "model",
+    "rank": 12,
+    "shard_id": "s5000-r12-m",
+    "step": 5000,
+    "written_seq": 153
+  },
+  {
+    "bytes": 181081064,
+    "checksum": "857190917",
+    "entry_id": "CK-000154",
+    "kind": "optimizer",
+    "rank": 12,
+    "shard_id": "s5000-r12-o",
+    "step": 5000,
+    "written_seq": 154
+  },
+  {
+    "bytes": 694897126,
+    "checksum": "024623280",
+    "entry_id": "CK-000155",
+    "kind": "model",
+    "rank": 13,
+    "shard_id": "s5000-r13-m",
+    "step": 5000,
+    "written_seq": 155
+  },
+  {
+    "bytes": 703172176,
+    "checksum": "765412463",
+    "entry_id": "CK-000156",
+    "kind": "optimizer",
+    "rank": 13,
+    "shard_id": "s5000-r13-o",
+    "step": 5000,
+    "written_seq": 156
+  },
+  {
+    "bytes": 426109828,
+    "checksum": "604112665",
+    "entry_id": "CK-000157",
+    "kind": "model",
+    "rank": 14,
+    "shard_id": "s5000-r14-m",
+    "step": 5000,
+    "written_seq": 157
+  },
+  {
+    "bytes": 158446884,
+    "checksum": "673634009",
+    "entry_id": "CK-000158",
+    "kind": "optimizer",
+    "rank": 14,
+    "shard_id": "s5000-r14-o",
+    "step": 5000,
+    "written_seq": 158
+  },
+  {
+    "bytes": 218824028,
+    "checksum": "183602043",
+    "entry_id": "CK-000159",
+    "kind": "model",
+    "rank": 15,
+    "shard_id": "s5000-r15-m",
+    "step": 5000,
+    "written_seq": 159
+  },
+  {
+    "bytes": 449110509,
+    "checksum": "581855555",
+    "entry_id": "CK-000160",
+    "kind": "optimizer",
+    "rank": 15,
+    "shard_id": "s5000-r15-o",
+    "step": 5000,
+    "written_seq": 160
+  },
+  {
+    "bytes": 103328489,
+    "checksum": "040177175",
+    "entry_id": "CK-000161",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s6000-r0-m",
+    "step": 6000,
+    "written_seq": 161
+  },
+  {
+    "bytes": 640346634,
+    "checksum": "582090411",
+    "entry_id": "CK-000162",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s6000-r0-o",
+    "step": 6000,
+    "written_seq": 162
+  },
+  {
+    "bytes": 176214306,
+    "checksum": "619666560",
+    "entry_id": "CK-000163",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s6000-r1-m",
+    "step": 6000,
+    "written_seq": 163
+  },
+  {
+    "bytes": 454892803,
+    "checksum": "490311957",
+    "entry_id": "CK-000164",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s6000-r1-o",
+    "step": 6000,
+    "written_seq": 164
+  },
+  {
+    "bytes": 528769955,
+    "checksum": "199155938",
+    "entry_id": "CK-000165",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s6000-r2-m",
+    "step": 6000,
+    "written_seq": 165
+  },
+  {
+    "bytes": 65602085,
+    "checksum": "398533503",
+    "entry_id": "CK-000166",
+    "kind": "optimizer",
+    "rank": 2,
+    "shard_id": "s6000-r2-o",
+    "step": 6000,
+    "written_seq": 166
+  },
+  {
+    "bytes": 784720802,
+    "checksum": "778645323",
+    "entry_id": "CK-000167",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s6000-r3-m",
+    "step": 6000,
+    "written_seq": 167
+  },
+  {
+    "bytes": 604012078,
+    "checksum": "306755049",
+    "entry_id": "CK-000168",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s6000-r3-o",
+    "step": 6000,
+    "written_seq": 168
+  },
+  {
+    "bytes": 499009575,
+    "checksum": "358134701",
+    "entry_id": "CK-000169",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s6000-r4-m",
+    "step": 6000,
+    "written_seq": 169
+  },
+  {
+    "bytes": 749710720,
+    "checksum": "214976595",
+    "entry_id": "CK-000170",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s6000-r4-o",
+    "step": 6000,
+    "written_seq": 170
+  },
+  {
+    "bytes": 185833572,
+    "checksum": "937624086",
+    "entry_id": "CK-000171",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s6000-r5-m",
+    "step": 6000,
+    "written_seq": 171
+  },
+  {
+    "bytes": 561128868,
+    "checksum": "123198141",
+    "entry_id": "CK-000172",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s6000-r5-o",
+    "step": 6000,
+    "written_seq": 172
+  },
+  {
+    "bytes": 582476636,
+    "checksum": "517113464",
+    "entry_id": "CK-000173",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s6000-r6-m",
+    "step": 6000,
+    "written_seq": 173
+  },
+  {
+    "bytes": 721241428,
+    "checksum": "031419687",
+    "entry_id": "CK-000174",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s6000-r6-o",
+    "step": 6000,
+    "written_seq": 174
+  },
+  {
+    "bytes": 251160726,
+    "checksum": "096602842",
+    "entry_id": "CK-000175",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s6000-r7-m",
+    "step": 6000,
+    "written_seq": 175
+  },
+  {
+    "bytes": 61999803,
+    "checksum": "939641240",
+    "entry_id": "CK-000176",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s6000-r7-o",
+    "step": 6000,
+    "written_seq": 176
+  },
+  {
+    "bytes": 312438234,
+    "checksum": "676092227",
+    "entry_id": "CK-000177",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s6000-r8-m",
+    "step": 6000,
+    "written_seq": 177
+  },
+  {
+    "bytes": 877664364,
+    "checksum": "847862786",
+    "entry_id": "CK-000178",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s6000-r8-o",
+    "step": 6000,
+    "written_seq": 178
+  },
+  {
+    "bytes": 640873313,
+    "checksum": "255581605",
+    "entry_id": "CK-000179",
+    "kind": "model",
+    "rank": 9,
+    "shard_id": "s6000-r9-m",
+    "step": 6000,
+    "written_seq": 179
+  },
+  {
+    "bytes": 856865332,
+    "checksum": "756084332",
+    "entry_id": "CK-000180",
+    "kind": "optimizer",
+    "rank": 9,
+    "shard_id": "s6000-r9-o",
+    "step": 6000,
+    "written_seq": 180
+  },
+  {
+    "bytes": 398654207,
+    "checksum": "263177749",
+    "entry_id": "CK-000181",
+    "kind": "model",
+    "rank": 10,
+    "shard_id": "s6000-r10-m",
+    "step": 6000,
+    "written_seq": 181
+  },
+  {
+    "bytes": 467273891,
+    "checksum": "548329508",
+    "entry_id": "CK-000182",
+    "kind": "optimizer",
+    "rank": 10,
+    "shard_id": "s6000-r10-o",
+    "step": 6000,
+    "written_seq": 182
+  },
+  {
+    "bytes": 786689616,
+    "checksum": "842667134",
+    "entry_id": "CK-000183",
+    "kind": "model",
+    "rank": 11,
+    "shard_id": "s6000-r11-m",
+    "step": 6000,
+    "written_seq": 183
+  },
+  {
+    "bytes": 208042211,
+    "checksum": "456551054",
+    "entry_id": "CK-000184",
+    "kind": "optimizer",
+    "rank": 11,
+    "shard_id": "s6000-r11-o",
+    "step": 6000,
+    "written_seq": 184
+  },
+  {
+    "bytes": 468689029,
+    "checksum": "422156512",
+    "entry_id": "CK-000185",
+    "kind": "model",
+    "rank": 12,
+    "shard_id": "s6000-r12-m",
+    "step": 6000,
+    "written_seq": 185
+  },
+  {
+    "bytes": 76459446,
+    "checksum": "364772600",
+    "entry_id": "CK-000186",
+    "kind": "optimizer",
+    "rank": 12,
+    "shard_id": "s6000-r12-o",
+    "step": 6000,
+    "written_seq": 186
+  },
+  {
+    "bytes": 899927312,
+    "checksum": "001645890",
+    "entry_id": "CK-000187",
+    "kind": "model",
+    "rank": 13,
+    "shard_id": "s6000-r13-m",
+    "step": 6000,
+    "written_seq": 187
+  },
+  {
+    "bytes": 96971995,
+    "checksum": "272994146",
+    "entry_id": "CK-000188",
+    "kind": "optimizer",
+    "rank": 13,
+    "shard_id": "s6000-r13-o",
+    "step": 6000,
+    "written_seq": 188
+  },
+  {
+    "bytes": 349491965,
+    "checksum": "581135275",
+    "entry_id": "CK-000189",
+    "kind": "model",
+    "rank": 14,
+    "shard_id": "s6000-r14-m",
+    "step": 6000,
+    "written_seq": 189
+  },
+  {
+    "bytes": 693933815,
+    "checksum": "181215692",
+    "entry_id": "CK-000190",
+    "kind": "optimizer",
+    "rank": 14,
+    "shard_id": "s6000-r14-o",
+    "step": 6000,
+    "written_seq": 190
+  },
+  {
+    "bytes": 233401585,
+    "checksum": "160624653",
+    "entry_id": "CK-000191",
+    "kind": "model",
+    "rank": 15,
+    "shard_id": "s6000-r15-m",
+    "step": 6000,
+    "written_seq": 191
+  },
+  {
+    "bytes": 414947246,
+    "checksum": "089437238",
+    "entry_id": "CK-000192",
+    "kind": "optimizer",
+    "rank": 15,
+    "shard_id": "s6000-r15-o",
+    "step": 6000,
+    "written_seq": 192
+  },
+  {
+    "bytes": 196895815,
+    "checksum": "948398728",
+    "entry_id": "CK-000193",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s7000-r0-m",
+    "step": 7000,
+    "written_seq": 193
+  },
+  {
+    "bytes": 523328195,
+    "checksum": "318789506",
+    "entry_id": "CK-000194",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s7000-r0-o",
+    "step": 7000,
+    "written_seq": 194
+  },
+  {
+    "bytes": 113853527,
+    "checksum": "527888106",
+    "entry_id": "CK-000195",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s7000-r1-m",
+    "step": 7000,
+    "written_seq": 195
+  },
+  {
+    "bytes": 49478444,
+    "checksum": "227011052",
+    "entry_id": "CK-000196",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s7000-r1-o",
+    "step": 7000,
+    "written_seq": 196
+  },
+  {
+    "bytes": 125100368,
+    "checksum": "107377484",
+    "entry_id": "CK-000197",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s7000-r2-m",
+    "step": 7000,
+    "written_seq": 197
+  },
+  {
+    "bytes": 374494457,
+    "checksum": "135232598",
+    "entry_id": "CK-000198",
+    "kind": "optimizer",
+    "rank": 2,
+    "shard_id": "s7000-r2-o",
+    "step": 7000,
+    "written_seq": 198
+  },
+  {
+    "bytes": 672799250,
+    "checksum": "686866869",
+    "entry_id": "CK-000199",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s7000-r3-m",
+    "step": 7000,
+    "written_seq": 199
+  },
+  {
+    "bytes": 685146165,
+    "checksum": "043454144",
+    "entry_id": "CK-000200",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s7000-r3-o",
+    "step": 7000,
+    "written_seq": 200
+  },
+  {
+    "bytes": 749698264,
+    "checksum": "266356247",
+    "entry_id": "CK-000201",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s7000-r4-m",
+    "step": 7000,
+    "written_seq": 201
+  },
+  {
+    "bytes": 511929847,
+    "checksum": "951675697",
+    "entry_id": "CK-000202",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s7000-r4-o",
+    "step": 7000,
+    "written_seq": 202
+  },
+  {
+    "bytes": 345688576,
+    "checksum": "845845632",
+    "entry_id": "CK-000203",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s7000-r5-m",
+    "step": 7000,
+    "written_seq": 203
+  },
+  {
+    "bytes": 871750606,
+    "checksum": "859897243",
+    "entry_id": "CK-000204",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s7000-r5-o",
+    "step": 7000,
+    "written_seq": 204
+  },
+  {
+    "bytes": 436354611,
+    "checksum": "425335010",
+    "entry_id": "CK-000205",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s7000-r6-m",
+    "step": 7000,
+    "written_seq": 205
+  },
+  {
+    "bytes": 191382802,
+    "checksum": "768118789",
+    "entry_id": "CK-000206",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s7000-r6-o",
+    "step": 7000,
+    "written_seq": 206
+  },
+  {
+    "bytes": 40519429,
+    "checksum": "004824388",
+    "entry_id": "CK-000207",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s7000-r7-m",
+    "step": 7000,
+    "written_seq": 207
+  },
+  {
+    "bytes": 512415654,
+    "checksum": "676340335",
+    "entry_id": "CK-000208",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s7000-r7-o",
+    "step": 7000,
+    "written_seq": 208
+  },
+  {
+    "bytes": 197736665,
+    "checksum": "584313773",
+    "entry_id": "CK-000209",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s7000-r8-m",
+    "step": 7000,
+    "written_seq": 209
+  },
+  {
+    "bytes": 489308583,
+    "checksum": "584561881",
+    "entry_id": "CK-000210",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s7000-r8-o",
+    "step": 7000,
+    "written_seq": 210
+  },
+  {
+    "bytes": 55266666,
+    "checksum": "163803151",
+    "entry_id": "CK-000211",
+    "kind": "model",
+    "rank": 9,
+    "shard_id": "s7000-r9-m",
+    "step": 7000,
+    "written_seq": 211
+  },
+  {
+    "bytes": 295654589,
+    "checksum": "492783427",
+    "entry_id": "CK-000212",
+    "kind": "optimizer",
+    "rank": 9,
+    "shard_id": "s7000-r9-o",
+    "step": 7000,
+    "written_seq": 212
+  },
+  {
+    "bytes": 819660298,
+    "checksum": "240200359",
+    "entry_id": "CK-000213",
+    "kind": "model",
+    "rank": 10,
+    "shard_id": "s7000-r10-m",
+    "step": 7000,
+    "written_seq": 213
+  },
+  {
+    "bytes": 712648145,
+    "checksum": "819689744",
+    "entry_id": "CK-000214",
+    "kind": "model",
+    "rank": 11,
+    "shard_id": "s7000-r11-m",
+    "step": 7000,
+    "written_seq": 214
+  },
+  {
+    "bytes": 116637778,
+    "checksum": "964132744",
+    "entry_id": "CK-000215",
+    "kind": "optimizer",
+    "rank": 11,
+    "shard_id": "s7000-r11-o",
+    "step": 7000,
+    "written_seq": 215
+  },
+  {
+    "bytes": 701285742,
+    "checksum": "399179122",
+    "entry_id": "CK-000216",
+    "kind": "model",
+    "rank": 12,
+    "shard_id": "s7000-r12-m",
+    "step": 7000,
+    "written_seq": 216
+  },
+  {
+    "bytes": 197612654,
+    "checksum": "872354290",
+    "entry_id": "CK-000217",
+    "kind": "optimizer",
+    "rank": 12,
+    "shard_id": "s7000-r12-o",
+    "step": 7000,
+    "written_seq": 217
+  },
+  {
+    "bytes": 428462702,
+    "checksum": "978668507",
+    "entry_id": "CK-000218",
+    "kind": "model",
+    "rank": 13,
+    "shard_id": "s7000-r13-m",
+    "step": 7000,
+    "written_seq": 218
+  },
+  {
+    "bytes": 867979062,
+    "checksum": "780575836",
+    "entry_id": "CK-000219",
+    "kind": "optimizer",
+    "rank": 13,
+    "shard_id": "s7000-r13-o",
+    "step": 7000,
+    "written_seq": 219
+  },
+  {
+    "bytes": 786103607,
+    "checksum": "558157885",
+    "entry_id": "CK-000220",
+    "kind": "model",
+    "rank": 14,
+    "shard_id": "s7000-r14-m",
+    "step": 7000,
+    "written_seq": 220
+  },
+  {
+    "bytes": 640251722,
+    "checksum": "688797382",
+    "entry_id": "CK-000221",
+    "kind": "optimizer",
+    "rank": 14,
+    "shard_id": "s7000-r14-o",
+    "step": 7000,
+    "written_seq": 221
+  },
+  {
+    "bytes": 892062038,
+    "checksum": "137647263",
+    "entry_id": "CK-000222",
+    "kind": "model",
+    "rank": 15,
+    "shard_id": "s7000-r15-m",
+    "step": 7000,
+    "written_seq": 222
+  },
+  {
+    "bytes": 319575684,
+    "checksum": "597018928",
+    "entry_id": "CK-000223",
+    "kind": "optimizer",
+    "rank": 15,
+    "shard_id": "s7000-r15-o",
+    "step": 7000,
+    "written_seq": 223
+  },
+  {
+    "bytes": 877342671,
+    "checksum": "856620274",
+    "entry_id": "CK-000224",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s8000-r0-m",
+    "step": 8000,
+    "written_seq": 224
+  },
+  {
+    "bytes": 181192880,
+    "checksum": "055488601",
+    "entry_id": "CK-000225",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s8000-r0-o",
+    "step": 8000,
+    "written_seq": 225
+  },
+  {
+    "bytes": 388110149,
+    "checksum": "436109652",
+    "entry_id": "CK-000226",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s8000-r1-m",
+    "step": 8000,
+    "written_seq": 226
+  },
+  {
+    "bytes": 562787100,
+    "checksum": "963710154",
+    "entry_id": "CK-000227",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s8000-r1-o",
+    "step": 8000,
+    "written_seq": 227
+  },
+  {
+    "bytes": 70169217,
+    "checksum": "015599030",
+    "entry_id": "CK-000228",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s8000-r2-m",
+    "step": 8000,
+    "written_seq": 228
+  },
+  {
+    "bytes": 837104892,
+    "checksum": "871931700",
+    "entry_id": "CK-000229",
+    "kind": "optimizer",
+    "rank": 2,
+    "shard_id": "s8000-r2-o",
+    "step": 8000,
+    "written_seq": 229
+  },
+  {
+    "bytes": 592417971,
+    "checksum": "595088415",
+    "entry_id": "CK-000230",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s8000-r3-m",
+    "step": 8000,
+    "written_seq": 230
+  },
+  {
+    "bytes": 313445673,
+    "checksum": "780153246",
+    "entry_id": "CK-000231",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s8000-r3-o",
+    "step": 8000,
+    "written_seq": 231
+  },
+  {
+    "bytes": 485043871,
+    "checksum": "174577793",
+    "entry_id": "CK-000232",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s8000-r4-m",
+    "step": 8000,
+    "written_seq": 232
+  },
+  {
+    "bytes": 163646399,
+    "checksum": "688374792",
+    "entry_id": "CK-000233",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s8000-r4-o",
+    "step": 8000,
+    "written_seq": 233
+  },
+  {
+    "bytes": 376016995,
+    "checksum": "754067178",
+    "entry_id": "CK-000234",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s8000-r5-m",
+    "step": 8000,
+    "written_seq": 234
+  },
+  {
+    "bytes": 378255432,
+    "checksum": "596596338",
+    "entry_id": "CK-000235",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s8000-r5-o",
+    "step": 8000,
+    "written_seq": 235
+  },
+  {
+    "bytes": 151175930,
+    "checksum": "333556556",
+    "entry_id": "CK-000236",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s8000-r6-m",
+    "step": 8000,
+    "written_seq": 236
+  },
+  {
+    "bytes": 503298768,
+    "checksum": "504817884",
+    "entry_id": "CK-000237",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s8000-r6-o",
+    "step": 8000,
+    "written_seq": 237
+  },
+  {
+    "bytes": 885385800,
+    "checksum": "913045941",
+    "entry_id": "CK-000238",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s8000-r7-m",
+    "step": 8000,
+    "written_seq": 238
+  },
+  {
+    "bytes": 230070851,
+    "checksum": "413039430",
+    "entry_id": "CK-000239",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s8000-r7-o",
+    "step": 8000,
+    "written_seq": 239
+  },
+  {
+    "bytes": 558245276,
+    "checksum": "492535319",
+    "entry_id": "CK-000240",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s8000-r8-m",
+    "step": 8000,
+    "written_seq": 240
+  },
+  {
+    "bytes": 332698337,
+    "checksum": "321260976",
+    "entry_id": "CK-000241",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s8000-r8-o",
+    "step": 8000,
+    "written_seq": 241
+  },
+  {
+    "bytes": 275025512,
+    "checksum": "072024697",
+    "entry_id": "CK-000242",
+    "kind": "model",
+    "rank": 9,
+    "shard_id": "s8000-r9-m",
+    "step": 8000,
+    "written_seq": 242
+  },
+  {
+    "bytes": 130549485,
+    "checksum": "229482522",
+    "entry_id": "CK-000243",
+    "kind": "optimizer",
+    "rank": 9,
+    "shard_id": "s8000-r9-o",
+    "step": 8000,
+    "written_seq": 243
+  },
+  {
+    "bytes": 795402858,
+    "checksum": "217222969",
+    "entry_id": "CK-000244",
+    "kind": "model",
+    "rank": 10,
+    "shard_id": "s8000-r10-m",
+    "step": 8000,
+    "written_seq": 244
+  },
+  {
+    "bytes": 148682374,
+    "checksum": "563492881",
+    "entry_id": "CK-000245",
+    "kind": "optimizer",
+    "rank": 10,
+    "shard_id": "s8000-r10-o",
+    "step": 8000,
+    "written_seq": 245
+  },
+  {
+    "bytes": 205559383,
+    "checksum": "796712354",
+    "entry_id": "CK-000246",
+    "kind": "model",
+    "rank": 11,
+    "shard_id": "s8000-r11-m",
+    "step": 8000,
+    "written_seq": 246
+  },
+  {
+    "bytes": 81124348,
+    "checksum": "471714427",
+    "entry_id": "CK-000247",
+    "kind": "optimizer",
+    "rank": 11,
+    "shard_id": "s8000-r11-o",
+    "step": 8000,
+    "written_seq": 247
+  },
+  {
+    "bytes": 727907023,
+    "checksum": "376201732",
+    "entry_id": "CK-000248",
+    "kind": "model",
+    "rank": 12,
+    "shard_id": "s8000-r12-m",
+    "step": 8000,
+    "written_seq": 248
+  },
+  {
+    "bytes": 487819281,
+    "checksum": "379935973",
+    "entry_id": "CK-000249",
+    "kind": "optimizer",
+    "rank": 12,
+    "shard_id": "s8000-r12-o",
+    "step": 8000,
+    "written_seq": 249
+  },
+  {
+    "bytes": 657216443,
+    "checksum": "955691117",
+    "entry_id": "CK-000250",
+    "kind": "model",
+    "rank": 13,
+    "shard_id": "s8000-r13-m",
+    "step": 8000,
+    "written_seq": 250
+  },
+  {
+    "bytes": 217561453,
+    "checksum": "288157519",
+    "entry_id": "CK-000251",
+    "kind": "optimizer",
+    "rank": 13,
+    "shard_id": "s8000-r13-o",
+    "step": 8000,
+    "written_seq": 251
+  },
+  {
+    "bytes": 825112023,
+    "checksum": "535180495",
+    "entry_id": "CK-000252",
+    "kind": "model",
+    "rank": 14,
+    "shard_id": "s8000-r14-m",
+    "step": 8000,
+    "written_seq": 252
+  },
+  {
+    "bytes": 203121584,
+    "checksum": "196379065",
+    "entry_id": "CK-000253",
+    "kind": "optimizer",
+    "rank": 14,
+    "shard_id": "s8000-r14-o",
+    "step": 8000,
+    "written_seq": 253
+  },
+  {
+    "bytes": 819790951,
+    "checksum": "114669873",
+    "entry_id": "CK-000254",
+    "kind": "model",
+    "rank": 15,
+    "shard_id": "s8000-r15-m",
+    "step": 8000,
+    "written_seq": 254
+  },
+  {
+    "bytes": 44878139,
+    "checksum": "104600611",
+    "entry_id": "CK-000255",
+    "kind": "optimizer",
+    "rank": 15,
+    "shard_id": "s8000-r15-o",
+    "step": 8000,
+    "written_seq": 255
+  },
+  {
+    "bytes": 241999736,
+    "checksum": "764841820",
+    "entry_id": "CK-000256",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s9000-r0-m",
+    "step": 9000,
+    "written_seq": 256
+  },
+  {
+    "bytes": 100997342,
+    "checksum": "792187703",
+    "entry_id": "CK-000257",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s9000-r0-o",
+    "step": 9000,
+    "written_seq": 257
+  },
+  {
+    "bytes": 167858700,
+    "checksum": "344331198",
+    "entry_id": "CK-000258",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s9000-r1-m",
+    "step": 9000,
+    "written_seq": 258
+  },
+  {
+    "bytes": 463116507,
+    "checksum": "700409249",
+    "entry_id": "CK-000259",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s9000-r1-o",
+    "step": 9000,
+    "written_seq": 259
+  },
+  {
+    "bytes": 359360028,
+    "checksum": "923820583",
+    "entry_id": "CK-000260",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s9000-r2-m",
+    "step": 9000,
+    "written_seq": 260
+  },
+  {
+    "bytes": 42880393,
+    "checksum": "608630795",
+    "entry_id": "CK-000261",
+    "kind": "optimizer",
+    "rank": 2,
+    "shard_id": "s9000-r2-o",
+    "step": 9000,
+    "written_seq": 261
+  },
+  {
+    "bytes": 110624532,
+    "checksum": "503309961",
+    "entry_id": "CK-000262",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s9000-r3-m",
+    "step": 9000,
+    "written_seq": 262
+  },
+  {
+    "bytes": 323216486,
+    "checksum": "516852341",
+    "entry_id": "CK-000263",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s9000-r3-o",
+    "step": 9000,
+    "written_seq": 263
+  },
+  {
+    "bytes": 184039025,
+    "checksum": "082799339",
+    "entry_id": "CK-000264",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s9000-r4-m",
+    "step": 9000,
+    "written_seq": 264
+  },
+  {
+    "bytes": 831684201,
+    "checksum": "425073887",
+    "entry_id": "CK-000265",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s9000-r4-o",
+    "step": 9000,
+    "written_seq": 265
+  },
+  {
+    "bytes": 610216959,
+    "checksum": "662288724",
+    "entry_id": "CK-000266",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s9000-r5-m",
+    "step": 9000,
+    "written_seq": 266
+  },
+  {
+    "bytes": 76813679,
+    "checksum": "333295433",
+    "entry_id": "CK-000267",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s9000-r5-o",
+    "step": 9000,
+    "written_seq": 267
+  },
+  {
+    "bytes": 696661843,
+    "checksum": "241778102",
+    "entry_id": "CK-000268",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s9000-r6-m",
+    "step": 9000,
+    "written_seq": 268
+  },
+  {
+    "bytes": 328938196,
+    "checksum": "241516979",
+    "entry_id": "CK-000269",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s9000-r6-o",
+    "step": 9000,
+    "written_seq": 269
+  },
+  {
+    "bytes": 588779309,
+    "checksum": "821267487",
+    "entry_id": "CK-000270",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s9000-r7-m",
+    "step": 9000,
+    "written_seq": 270
+  },
+  {
+    "bytes": 817397667,
+    "checksum": "149738525",
+    "entry_id": "CK-000271",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s9000-r7-o",
+    "step": 9000,
+    "written_seq": 271
+  },
+  {
+    "bytes": 893436914,
+    "checksum": "400756865",
+    "entry_id": "CK-000272",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s9000-r8-m",
+    "step": 9000,
+    "written_seq": 272
+  },
+  {
+    "bytes": 55183281,
+    "checksum": "057960071",
+    "entry_id": "CK-000273",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s9000-r8-o",
+    "step": 9000,
+    "written_seq": 273
+  },
+  {
+    "bytes": 770369209,
+    "checksum": "980246250",
+    "entry_id": "CK-000274",
+    "kind": "model",
+    "rank": 9,
+    "shard_id": "s9000-r9-m",
+    "step": 9000,
+    "written_seq": 274
+  },
+  {
+    "bytes": 403044382,
+    "checksum": "966181624",
+    "entry_id": "CK-000275",
+    "kind": "optimizer",
+    "rank": 9,
+    "shard_id": "s9000-r9-o",
+    "step": 9000,
+    "written_seq": 275
+  },
+  {
+    "bytes": 695643774,
+    "checksum": "194245579",
+    "entry_id": "CK-000276",
+    "kind": "model",
+    "rank": 10,
+    "shard_id": "s9000-r10-m",
+    "step": 9000,
+    "written_seq": 276
+  },
+  {
+    "bytes": 637654630,
+    "checksum": "071074564",
+    "entry_id": "CK-000277",
+    "kind": "optimizer",
+    "rank": 10,
+    "shard_id": "s9000-r10-o",
+    "step": 9000,
+    "written_seq": 277
+  },
+  {
+    "bytes": 779643206,
+    "checksum": "773734964",
+    "entry_id": "CK-000278",
+    "kind": "model",
+    "rank": 11,
+    "shard_id": "s9000-r11-m",
+    "step": 9000,
+    "written_seq": 278
+  },
+  {
+    "bytes": 241358670,
+    "checksum": "979296117",
+    "entry_id": "CK-000279",
+    "kind": "optimizer",
+    "rank": 11,
+    "shard_id": "s9000-r11-o",
+    "step": 9000,
+    "written_seq": 279
+  },
+  {
+    "bytes": 712269731,
+    "checksum": "353224342",
+    "entry_id": "CK-000280",
+    "kind": "model",
+    "rank": 12,
+    "shard_id": "s9000-r12-m",
+    "step": 9000,
+    "written_seq": 280
+  },
+  {
+    "bytes": 55036350,
+    "checksum": "887517663",
+    "entry_id": "CK-000281",
+    "kind": "optimizer",
+    "rank": 12,
+    "shard_id": "s9000-r12-o",
+    "step": 9000,
+    "written_seq": 281
+  },
+  {
+    "bytes": 769818089,
+    "checksum": "932713727",
+    "entry_id": "CK-000282",
+    "kind": "model",
+    "rank": 13,
+    "shard_id": "s9000-r13-m",
+    "step": 9000,
+    "written_seq": 282
+  },
+  {
+    "bytes": 581981419,
+    "checksum": "795739209",
+    "entry_id": "CK-000283",
+    "kind": "optimizer",
+    "rank": 13,
+    "shard_id": "s9000-r13-o",
+    "step": 9000,
+    "written_seq": 283
+  },
+  {
+    "bytes": 596199051,
+    "checksum": "512203105",
+    "entry_id": "CK-000284",
+    "kind": "model",
+    "rank": 14,
+    "shard_id": "s9000-r14-m",
+    "step": 9000,
+    "written_seq": 284
+  },
+  {
+    "bytes": 186270774,
+    "checksum": "703960755",
+    "entry_id": "CK-000285",
+    "kind": "optimizer",
+    "rank": 14,
+    "shard_id": "s9000-r14-o",
+    "step": 9000,
+    "written_seq": 285
+  },
+  {
+    "bytes": 824898954,
+    "checksum": "091692483",
+    "entry_id": "CK-000286",
+    "kind": "model",
+    "rank": 15,
+    "shard_id": "s9000-r15-m",
+    "step": 9000,
+    "written_seq": 286
+  },
+  {
+    "bytes": 507971582,
+    "checksum": "612182301",
+    "entry_id": "CK-000287",
+    "kind": "optimizer",
+    "rank": 15,
+    "shard_id": "s9000-r15-o",
+    "step": 9000,
+    "written_seq": 287
+  },
+  {
+    "bytes": 744158654,
+    "checksum": "464955796",
+    "entry_id": "CK-000288",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s10000-r0-m",
+    "step": 10000,
+    "written_seq": 288
+  },
+  {
+    "bytes": 889764860,
+    "checksum": "033398462",
+    "entry_id": "CK-000289",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s10000-r0-o",
+    "step": 10000,
+    "written_seq": 289
+  },
+  {
+    "bytes": 72132061,
+    "checksum": "044445174",
+    "entry_id": "CK-000290",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s10000-r1-m",
+    "step": 10000,
+    "written_seq": 290
+  },
+  {
+    "bytes": 212120152,
+    "checksum": "941620015",
+    "entry_id": "CK-000291",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s10000-r1-o",
+    "step": 10000,
+    "written_seq": 291
+  },
+  {
+    "bytes": 475900079,
+    "checksum": "623934559",
+    "entry_id": "CK-000292",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s10000-r2-m",
+    "step": 10000,
+    "written_seq": 292
+  },
+  {
+    "bytes": 716509288,
+    "checksum": "849841561",
+    "entry_id": "CK-000293",
+    "kind": "optimizer",
+    "rank": 2,
+    "shard_id": "s10000-r2-o",
+    "step": 10000,
+    "written_seq": 293
+  },
+  {
+    "bytes": 308246854,
+    "checksum": "203423937",
+    "entry_id": "CK-000294",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s10000-r3-m",
+    "step": 10000,
+    "written_seq": 294
+  },
+  {
+    "bytes": 337479460,
+    "checksum": "758063107",
+    "entry_id": "CK-000295",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s10000-r3-o",
+    "step": 10000,
+    "written_seq": 295
+  },
+  {
+    "bytes": 152569351,
+    "checksum": "782913322",
+    "entry_id": "CK-000296",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s10000-r4-m",
+    "step": 10000,
+    "written_seq": 296
+  },
+  {
+    "bytes": 132693716,
+    "checksum": "666284653",
+    "entry_id": "CK-000297",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s10000-r4-o",
+    "step": 10000,
+    "written_seq": 297
+  },
+  {
+    "bytes": 740156709,
+    "checksum": "362402700",
+    "entry_id": "CK-000298",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s10000-r5-m",
+    "step": 10000,
+    "written_seq": 298
+  },
+  {
+    "bytes": 146066162,
+    "checksum": "574506199",
+    "entry_id": "CK-000299",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s10000-r5-o",
+    "step": 10000,
+    "written_seq": 299
+  },
+  {
+    "bytes": 481033456,
+    "checksum": "941892085",
+    "entry_id": "CK-000300",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s10000-r6-m",
+    "step": 10000,
+    "written_seq": 300
+  },
+  {
+    "bytes": 655885278,
+    "checksum": "482727745",
+    "entry_id": "CK-000301",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s10000-r6-o",
+    "step": 10000,
+    "written_seq": 301
+  },
+  {
+    "bytes": 761982969,
+    "checksum": "521381463",
+    "entry_id": "CK-000302",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s10000-r7-m",
+    "step": 10000,
+    "written_seq": 302
+  },
+  {
+    "bytes": 746158912,
+    "checksum": "390949291",
+    "entry_id": "CK-000303",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s10000-r7-o",
+    "step": 10000,
+    "written_seq": 303
+  },
+  {
+    "bytes": 455050490,
+    "checksum": "100870841",
+    "entry_id": "CK-000304",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s10000-r8-m",
+    "step": 10000,
+    "written_seq": 304
+  },
+  {
+    "bytes": 530927042,
+    "checksum": "299170837",
+    "entry_id": "CK-000305",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s10000-r8-o",
+    "step": 10000,
+    "written_seq": 305
+  },
+  {
+    "bytes": 602524084,
+    "checksum": "680360226",
+    "entry_id": "CK-000306",
+    "kind": "model",
+    "rank": 9,
+    "shard_id": "s10000-r9-m",
+    "step": 10000,
+    "written_seq": 306
+  },
+  {
+    "bytes": 563520028,
+    "checksum": "207392383",
+    "entry_id": "CK-000307",
+    "kind": "optimizer",
+    "rank": 9,
+    "shard_id": "s10000-r9-o",
+    "step": 10000,
+    "written_seq": 307
+  },
+  {
+    "bytes": 697720203,
+    "checksum": "909176715",
+    "entry_id": "CK-000308",
+    "kind": "model",
+    "rank": 10,
+    "shard_id": "s10000-r10-m",
+    "step": 10000,
+    "written_seq": 308
+  },
+  {
+    "bytes": 56828601,
+    "checksum": "669684693",
+    "entry_id": "CK-000309",
+    "kind": "optimizer",
+    "rank": 10,
+    "shard_id": "s10000-r10-o",
+    "step": 10000,
+    "written_seq": 309
+  },
+  {
+    "bytes": 189644060,
+    "checksum": "488666093",
+    "entry_id": "CK-000310",
+    "kind": "model",
+    "rank": 11,
+    "shard_id": "s10000-r11-m",
+    "step": 10000,
+    "written_seq": 310
+  },
+  {
+    "bytes": 721393902,
+    "checksum": "577906239",
+    "entry_id": "CK-000311",
+    "kind": "optimizer",
+    "rank": 11,
+    "shard_id": "s10000-r11-o",
+    "step": 10000,
+    "written_seq": 311
+  },
+  {
+    "bytes": 392173619,
+    "checksum": "068155471",
+    "entry_id": "CK-000312",
+    "kind": "model",
+    "rank": 12,
+    "shard_id": "s10000-r12-m",
+    "step": 10000,
+    "written_seq": 312
+  },
+  {
+    "bytes": 404504297,
+    "checksum": "486127785",
+    "entry_id": "CK-000313",
+    "kind": "optimizer",
+    "rank": 12,
+    "shard_id": "s10000-r12-o",
+    "step": 10000,
+    "written_seq": 313
+  },
+  {
+    "bytes": 678852150,
+    "checksum": "647644856",
+    "entry_id": "CK-000314",
+    "kind": "model",
+    "rank": 13,
+    "shard_id": "s10000-r13-m",
+    "step": 10000,
+    "written_seq": 314
+  },
+  {
+    "bytes": 825180788,
+    "checksum": "394349331",
+    "entry_id": "CK-000315",
+    "kind": "optimizer",
+    "rank": 13,
+    "shard_id": "s10000-r13-o",
+    "step": 10000,
+    "written_seq": 315
+  },
+  {
+    "bytes": 328922759,
+    "checksum": "227134234",
+    "entry_id": "CK-000316",
+    "kind": "model",
+    "rank": 14,
+    "shard_id": "s10000-r14-m",
+    "step": 10000,
+    "written_seq": 316
+  },
+  {
+    "bytes": 863601280,
+    "checksum": "302570877",
+    "entry_id": "CK-000317",
+    "kind": "optimizer",
+    "rank": 14,
+    "shard_id": "s10000-r14-o",
+    "step": 10000,
+    "written_seq": 317
+  },
+  {
+    "bytes": 408630707,
+    "checksum": "806623619",
+    "entry_id": "CK-000318",
+    "kind": "model",
+    "rank": 15,
+    "shard_id": "s10000-r15-m",
+    "step": 10000,
+    "written_seq": 318
+  },
+  {
+    "bytes": 126107167,
+    "checksum": "210792423",
+    "entry_id": "CK-000319",
+    "kind": "optimizer",
+    "rank": 15,
+    "shard_id": "s10000-r15-o",
+    "step": 10000,
+    "written_seq": 319
+  },
+  {
+    "bytes": 452895570,
+    "checksum": "373177342",
+    "entry_id": "CK-000320",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s11000-r0-m",
+    "step": 11000,
+    "written_seq": 320
+  },
+  {
+    "bytes": 497795644,
+    "checksum": "770097564",
+    "entry_id": "CK-000321",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s11000-r0-o",
+    "step": 11000,
+    "written_seq": 321
+  },
+  {
+    "bytes": 180685372,
+    "checksum": "952666727",
+    "entry_id": "CK-000322",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s11000-r1-m",
+    "step": 11000,
+    "written_seq": 322
+  },
+  {
+    "bytes": 790707908,
+    "checksum": "678319110",
+    "entry_id": "CK-000323",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s11000-r1-o",
+    "step": 11000,
+    "written_seq": 323
+  },
+  {
+    "bytes": 357827832,
+    "checksum": "532156105",
+    "entry_id": "CK-000324",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s11000-r2-m",
+    "step": 11000,
+    "written_seq": 324
+  },
+  {
+    "bytes": 454440250,
+    "checksum": "111645483",
+    "entry_id": "CK-000325",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s11000-r3-m",
+    "step": 11000,
+    "written_seq": 325
+  },
+  {
+    "bytes": 813534732,
+    "checksum": "494762202",
+    "entry_id": "CK-000326",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s11000-r3-o",
+    "step": 11000,
+    "written_seq": 326
+  },
+  {
+    "bytes": 757181304,
+    "checksum": "691134868",
+    "entry_id": "CK-000327",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s11000-r4-m",
+    "step": 11000,
+    "written_seq": 327
+  },
+  {
+    "bytes": 211775065,
+    "checksum": "402983748",
+    "entry_id": "CK-000328",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s11000-r4-o",
+    "step": 11000,
+    "written_seq": 328
+  },
+  {
+    "bytes": 91985317,
+    "checksum": "270624246",
+    "entry_id": "CK-000329",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s11000-r5-m",
+    "step": 11000,
+    "written_seq": 329
+  },
+  {
+    "bytes": 211276481,
+    "checksum": "311205294",
+    "entry_id": "CK-000330",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s11000-r5-o",
+    "step": 11000,
+    "written_seq": 330
+  },
+  {
+    "bytes": 651847902,
+    "checksum": "850113631",
+    "entry_id": "CK-000331",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s11000-r6-m",
+    "step": 11000,
+    "written_seq": 331
+  },
+  {
+    "bytes": 419610192,
+    "checksum": "219426840",
+    "entry_id": "CK-000332",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s11000-r6-o",
+    "step": 11000,
+    "written_seq": 332
+  },
+  {
+    "bytes": 129025186,
+    "checksum": "429603009",
+    "entry_id": "CK-000333",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s11000-r7-m",
+    "step": 11000,
+    "written_seq": 333
+  },
+  {
+    "bytes": 285200090,
+    "checksum": "127648386",
+    "entry_id": "CK-000334",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s11000-r7-o",
+    "step": 11000,
+    "written_seq": 334
+  },
+  {
+    "bytes": 71531699,
+    "checksum": "009092387",
+    "entry_id": "CK-000335",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s11000-r8-m",
+    "step": 11000,
+    "written_seq": 335
+  },
+  {
+    "bytes": 182895128,
+    "checksum": "035869932",
+    "entry_id": "CK-000336",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s11000-r8-o",
+    "step": 11000,
+    "written_seq": 336
+  },
+  {
+    "bytes": 759178434,
+    "checksum": "588581772",
+    "entry_id": "CK-000337",
+    "kind": "model",
+    "rank": 9,
+    "shard_id": "s11000-r9-m",
+    "step": 11000,
+    "written_seq": 337
+  },
+  {
+    "bytes": 251935905,
+    "checksum": "944091485",
+    "entry_id": "CK-000338",
+    "kind": "optimizer",
+    "rank": 9,
+    "shard_id": "s11000-r9-o",
+    "step": 11000,
+    "written_seq": 338
+  },
+  {
+    "bytes": 772241310,
+    "checksum": "886199325",
+    "entry_id": "CK-000339",
+    "kind": "model",
+    "rank": 10,
+    "shard_id": "s11000-r10-m",
+    "step": 11000,
+    "written_seq": 339
+  },
+  {
+    "bytes": 195185672,
+    "checksum": "177266376",
+    "entry_id": "CK-000340",
+    "kind": "optimizer",
+    "rank": 10,
+    "shard_id": "s11000-r10-o",
+    "step": 11000,
+    "written_seq": 340
+  },
+  {
+    "bytes": 829200484,
+    "checksum": "465688703",
+    "entry_id": "CK-000341",
+    "kind": "model",
+    "rank": 11,
+    "shard_id": "s11000-r11-m",
+    "step": 11000,
+    "written_seq": 341
+  },
+  {
+    "bytes": 450737929,
+    "checksum": "085487922",
+    "entry_id": "CK-000342",
+    "kind": "optimizer",
+    "rank": 11,
+    "shard_id": "s11000-r11-o",
+    "step": 11000,
+    "written_seq": 342
+  },
+  {
+    "bytes": 527694755,
+    "checksum": "045178081",
+    "entry_id": "CK-000343",
+    "kind": "model",
+    "rank": 12,
+    "shard_id": "s11000-r12-m",
+    "step": 11000,
+    "written_seq": 343
+  },
+  {
+    "bytes": 303156617,
+    "checksum": "993709475",
+    "entry_id": "CK-000344",
+    "kind": "optimizer",
+    "rank": 12,
+    "shard_id": "s11000-r12-o",
+    "step": 11000,
+    "written_seq": 344
+  },
+  {
+    "bytes": 42855138,
+    "checksum": "624667466",
+    "entry_id": "CK-000345",
+    "kind": "model",
+    "rank": 13,
+    "shard_id": "s11000-r13-m",
+    "step": 11000,
+    "written_seq": 345
+  },
+  {
+    "bytes": 502609413,
+    "checksum": "901931021",
+    "entry_id": "CK-000346",
+    "kind": "optimizer",
+    "rank": 13,
+    "shard_id": "s11000-r13-o",
+    "step": 11000,
+    "written_seq": 346
+  },
+  {
+    "bytes": 735081548,
+    "checksum": "204156844",
+    "entry_id": "CK-000347",
+    "kind": "model",
+    "rank": 14,
+    "shard_id": "s11000-r14-m",
+    "step": 11000,
+    "written_seq": 347
+  },
+  {
+    "bytes": 113927018,
+    "checksum": "810152567",
+    "entry_id": "CK-000348",
+    "kind": "optimizer",
+    "rank": 14,
+    "shard_id": "s11000-r14-o",
+    "step": 11000,
+    "written_seq": 348
+  },
+  {
+    "bytes": 812287385,
+    "checksum": "783646229",
+    "entry_id": "CK-000349",
+    "kind": "model",
+    "rank": 15,
+    "shard_id": "s11000-r15-m",
+    "step": 11000,
+    "written_seq": 349
+  },
+  {
+    "bytes": 202004930,
+    "checksum": "718374113",
+    "entry_id": "CK-000350",
+    "kind": "optimizer",
+    "rank": 15,
+    "shard_id": "s11000-r15-o",
+    "step": 11000,
+    "written_seq": 350
+  },
+  {
+    "bytes": 44512467,
+    "checksum": "281398888",
+    "entry_id": "CK-000351",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s12000-r0-m",
+    "step": 12000,
+    "written_seq": 351
+  },
+  {
+    "bytes": 499480107,
+    "checksum": "506796659",
+    "entry_id": "CK-000352",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s12000-r0-o",
+    "step": 12000,
+    "written_seq": 352
+  },
+  {
+    "bytes": 45306214,
+    "checksum": "860888273",
+    "entry_id": "CK-000353",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s12000-r1-m",
+    "step": 12000,
+    "written_seq": 353
+  },
+  {
+    "bytes": 244195141,
+    "checksum": "415018205",
+    "entry_id": "CK-000354",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s12000-r1-o",
+    "step": 12000,
+    "written_seq": 354
+  },
+  {
+    "bytes": 605110851,
+    "checksum": "440377651",
+    "entry_id": "CK-000355",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s12000-r2-m",
+    "step": 12000,
+    "written_seq": 355
+  },
+  {
+    "bytes": 196920111,
+    "checksum": "323239751",
+    "entry_id": "CK-000356",
+    "kind": "optimizer",
+    "rank": 2,
+    "shard_id": "s12000-r2-o",
+    "step": 12000,
+    "written_seq": 356
+  },
+  {
+    "bytes": 404568656,
+    "checksum": "019867029",
+    "entry_id": "CK-000357",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s12000-r3-m",
+    "step": 12000,
+    "written_seq": 357
+  },
+  {
+    "bytes": 760289421,
+    "checksum": "231461297",
+    "entry_id": "CK-000358",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s12000-r3-o",
+    "step": 12000,
+    "written_seq": 358
+  },
+  {
+    "bytes": 717950760,
+    "checksum": "599356414",
+    "entry_id": "CK-000359",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s12000-r4-m",
+    "step": 12000,
+    "written_seq": 359
+  },
+  {
+    "bytes": 440539507,
+    "checksum": "139682843",
+    "entry_id": "CK-000360",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s12000-r4-o",
+    "step": 12000,
+    "written_seq": 360
+  },
+  {
+    "bytes": 590526237,
+    "checksum": "178845792",
+    "entry_id": "CK-000361",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s12000-r5-m",
+    "step": 12000,
+    "written_seq": 361
+  },
+  {
+    "bytes": 600796496,
+    "checksum": "047904389",
+    "entry_id": "CK-000362",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s12000-r5-o",
+    "step": 12000,
+    "written_seq": 362
+  },
+  {
+    "bytes": 517186769,
+    "checksum": "758335177",
+    "entry_id": "CK-000363",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s12000-r6-m",
+    "step": 12000,
+    "written_seq": 363
+  },
+  {
+    "bytes": 328268698,
+    "checksum": "956125942",
+    "entry_id": "CK-000364",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s12000-r6-o",
+    "step": 12000,
+    "written_seq": 364
+  },
+  {
+    "bytes": 785992805,
+    "checksum": "337824555",
+    "entry_id": "CK-000365",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s12000-r7-m",
+    "step": 12000,
+    "written_seq": 365
+  },
+  {
+    "bytes": 688801993,
+    "checksum": "864347488",
+    "entry_id": "CK-000366",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s12000-r7-o",
+    "step": 12000,
+    "written_seq": 366
+  },
+  {
+    "bytes": 519785256,
+    "checksum": "917313940",
+    "entry_id": "CK-000367",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s12000-r8-m",
+    "step": 12000,
+    "written_seq": 367
+  },
+  {
+    "bytes": 240543034,
+    "checksum": "772569034",
+    "entry_id": "CK-000368",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s12000-r8-o",
+    "step": 12000,
+    "written_seq": 368
+  },
+  {
+    "bytes": 188911752,
+    "checksum": "496803318",
+    "entry_id": "CK-000369",
+    "kind": "model",
+    "rank": 9,
+    "shard_id": "s12000-r9-m",
+    "step": 12000,
+    "written_seq": 369
+  },
+  {
+    "bytes": 80207879,
+    "checksum": "680790580",
+    "entry_id": "CK-000370",
+    "kind": "optimizer",
+    "rank": 9,
+    "shard_id": "s12000-r9-o",
+    "step": 12000,
+    "written_seq": 370
+  },
+  {
+    "bytes": 368746528,
+    "checksum": "863221935",
+    "entry_id": "CK-000371",
+    "kind": "model",
+    "rank": 10,
+    "shard_id": "s12000-r10-m",
+    "step": 12000,
+    "written_seq": 371
+  },
+  {
+    "bytes": 80043401,
+    "checksum": "684848066",
+    "entry_id": "CK-000372",
+    "kind": "optimizer",
+    "rank": 10,
+    "shard_id": "s12000-r10-o",
+    "step": 12000,
+    "written_seq": 372
+  },
+  {
+    "bytes": 789848604,
+    "checksum": "442711313",
+    "entry_id": "CK-000373",
+    "kind": "model",
+    "rank": 11,
+    "shard_id": "s12000-r11-m",
+    "step": 12000,
+    "written_seq": 373
+  },
+  {
+    "bytes": 589663463,
+    "checksum": "593069612",
+    "entry_id": "CK-000374",
+    "kind": "optimizer",
+    "rank": 11,
+    "shard_id": "s12000-r11-o",
+    "step": 12000,
+    "written_seq": 374
+  },
+  {
+    "bytes": 547028291,
+    "checksum": "022200691",
+    "entry_id": "CK-000375",
+    "kind": "model",
+    "rank": 12,
+    "shard_id": "s12000-r12-m",
+    "step": 12000,
+    "written_seq": 375
+  },
+  {
+    "bytes": 613949532,
+    "checksum": "501291158",
+    "entry_id": "CK-000376",
+    "kind": "optimizer",
+    "rank": 12,
+    "shard_id": "s12000-r12-o",
+    "step": 12000,
+    "written_seq": 376
+  },
+  {
+    "bytes": 733711615,
+    "checksum": "601690076",
+    "entry_id": "CK-000377",
+    "kind": "model",
+    "rank": 13,
+    "shard_id": "s12000-r13-m",
+    "step": 12000,
+    "written_seq": 377
+  },
+  {
+    "bytes": 345674291,
+    "checksum": "409512704",
+    "entry_id": "CK-000378",
+    "kind": "optimizer",
+    "rank": 13,
+    "shard_id": "s12000-r13-o",
+    "step": 12000,
+    "written_seq": 378
+  },
+  {
+    "bytes": 773178530,
+    "checksum": "181179454",
+    "entry_id": "CK-000379",
+    "kind": "model",
+    "rank": 14,
+    "shard_id": "s12000-r14-m",
+    "step": 12000,
+    "written_seq": 379
+  },
+  {
+    "bytes": 260443192,
+    "checksum": "317734250",
+    "entry_id": "CK-000380",
+    "kind": "optimizer",
+    "rank": 14,
+    "shard_id": "s12000-r14-o",
+    "step": 12000,
+    "written_seq": 380
+  },
+  {
+    "bytes": 541590291,
+    "checksum": "760668839",
+    "entry_id": "CK-000381",
+    "kind": "model",
+    "rank": 15,
+    "shard_id": "s12000-r15-m",
+    "step": 12000,
+    "written_seq": 381
+  },
+  {
+    "bytes": 213023497,
+    "checksum": "225955796",
+    "entry_id": "CK-000382",
+    "kind": "optimizer",
+    "rank": 15,
+    "shard_id": "s12000-r15-o",
+    "step": 12000,
+    "written_seq": 382
+  },
+  {
+    "bytes": 160069135,
+    "checksum": "189620434",
+    "entry_id": "CK-000383",
+    "kind": "model",
+    "rank": 0,
+    "shard_id": "s13000-r0-m",
+    "step": 13000,
+    "written_seq": 383
+  },
+  {
+    "bytes": 663351843,
+    "checksum": "243495754",
+    "entry_id": "CK-000384",
+    "kind": "optimizer",
+    "rank": 0,
+    "shard_id": "s13000-r0-o",
+    "step": 13000,
+    "written_seq": 384
+  },
+  {
+    "bytes": 162934600,
+    "checksum": "769109819",
+    "entry_id": "CK-000385",
+    "kind": "model",
+    "rank": 1,
+    "shard_id": "s13000-r1-m",
+    "step": 13000,
+    "written_seq": 385
+  },
+  {
+    "bytes": 667827053,
+    "checksum": "151717300",
+    "entry_id": "CK-000386",
+    "kind": "optimizer",
+    "rank": 1,
+    "shard_id": "s13000-r1-o",
+    "step": 13000,
+    "written_seq": 386
+  },
+  {
+    "bytes": 610965283,
+    "checksum": "348599197",
+    "entry_id": "CK-000387",
+    "kind": "model",
+    "rank": 2,
+    "shard_id": "s13000-r2-m",
+    "step": 13000,
+    "written_seq": 387
+  },
+  {
+    "bytes": 647576916,
+    "checksum": "059938846",
+    "entry_id": "CK-000388",
+    "kind": "optimizer",
+    "rank": 2,
+    "shard_id": "s13000-r2-o",
+    "step": 13000,
+    "written_seq": 388
+  },
+  {
+    "bytes": 170937610,
+    "checksum": "928088582",
+    "entry_id": "CK-000389",
+    "kind": "model",
+    "rank": 3,
+    "shard_id": "s13000-r3-m",
+    "step": 13000,
+    "written_seq": 389
+  },
+  {
+    "bytes": 664883579,
+    "checksum": "968160399",
+    "entry_id": "CK-000390",
+    "kind": "optimizer",
+    "rank": 3,
+    "shard_id": "s13000-r3-o",
+    "step": 13000,
+    "written_seq": 390
+  },
+  {
+    "bytes": 65092214,
+    "checksum": "507577960",
+    "entry_id": "CK-000391",
+    "kind": "model",
+    "rank": 4,
+    "shard_id": "s13000-r4-m",
+    "step": 13000,
+    "written_seq": 391
+  },
+  {
+    "bytes": 324627675,
+    "checksum": "876381945",
+    "entry_id": "CK-000392",
+    "kind": "optimizer",
+    "rank": 4,
+    "shard_id": "s13000-r4-o",
+    "step": 13000,
+    "written_seq": 392
+  },
+  {
+    "bytes": 831635141,
+    "checksum": "087067338",
+    "entry_id": "CK-000393",
+    "kind": "model",
+    "rank": 5,
+    "shard_id": "s13000-r5-m",
+    "step": 13000,
+    "written_seq": 393
+  },
+  {
+    "bytes": 122692050,
+    "checksum": "784603491",
+    "entry_id": "CK-000394",
+    "kind": "optimizer",
+    "rank": 5,
+    "shard_id": "s13000-r5-o",
+    "step": 13000,
+    "written_seq": 394
+  },
+  {
+    "bytes": 203237822,
+    "checksum": "666556723",
+    "entry_id": "CK-000395",
+    "kind": "model",
+    "rank": 6,
+    "shard_id": "s13000-r6-m",
+    "step": 13000,
+    "written_seq": 395
+  },
+  {
+    "bytes": 548942657,
+    "checksum": "692825037",
+    "entry_id": "CK-000396",
+    "kind": "optimizer",
+    "rank": 6,
+    "shard_id": "s13000-r6-o",
+    "step": 13000,
+    "written_seq": 396
+  },
+  {
+    "bytes": 551546556,
+    "checksum": "246046101",
+    "entry_id": "CK-000397",
+    "kind": "model",
+    "rank": 7,
+    "shard_id": "s13000-r7-m",
+    "step": 13000,
+    "written_seq": 397
+  },
+  {
+    "bytes": 783395600,
+    "checksum": "601046583",
+    "entry_id": "CK-000398",
+    "kind": "optimizer",
+    "rank": 7,
+    "shard_id": "s13000-r7-o",
+    "step": 13000,
+    "written_seq": 398
+  },
+  {
+    "bytes": 637129789,
+    "checksum": "825535486",
+    "entry_id": "CK-000399",
+    "kind": "model",
+    "rank": 8,
+    "shard_id": "s13000-r8-m",
+    "step": 13000,
+    "written_seq": 399
+  },
+  {
+    "bytes": 284740215,
+    "checksum": "509268129",
+    "entry_id": "CK-000400",
+    "kind": "optimizer",
+    "rank": 8,
+    "shard_id": "s13000-r8-o",
+    "step": 13000,
+    "written_seq": 400
+  }
+]

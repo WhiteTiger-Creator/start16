@@ -1,0 +1,10 @@
+{
+  "note": "epochs written while the faulty adapter was in service",
+  "poisoned_epochs": [
+    18,
+    24,
+    32,
+    33
+  ],
+  "steps_per_epoch": 1500
+}

@@ -1,0 +1,116 @@
+{
+  "cli": {
+    "fixed_paths": [
+      "/app/data/shard_catalog.json",
+      "/app/data/data_incident.json",
+      "/app/data/resume_policy.json"
+    ],
+    "input": "--input selects the checkpoint registry only; default /app/data/checkpoint_registry.json",
+    "output_dir": "--output-dir selects the output directory; default /app/output"
+  },
+  "contract_version": "resume-plan-v1",
+  "description": "Output contract for the resume planner. Shapes, paths, field lists and sort orders only; no derivation rule lives here.",
+  "outputs": {
+    "refetch_queue": {
+      "container": "jsonl",
+      "element_fields": [
+        "shard_id",
+        "epoch",
+        "bytes",
+        "reason"
+      ],
+      "path": "/app/output/refetch_queue.jsonl",
+      "reasons": [
+        "checksum_mismatch",
+        "poisoned_epoch"
+      ],
+      "serialisation": "one compact JSON object per line, trailing newline",
+      "sort": "ascending by epoch, then shard_id"
+    },
+    "resume_plan": {
+      "checkpoint_fields": [
+        "step",
+        "shard_count",
+        "rank_count",
+        "complete",
+        "admissible",
+        "total_bytes"
+      ],
+      "container": "object",
+      "path": "/app/output/resume_plan.json",
+      "refetch_fields": [
+        "shard_id",
+        "epoch",
+        "bytes",
+        "reason"
+      ],
+      "required_fields": [
+        "resume_step",
+        "checkpoints",
+        "refetch"
+      ],
+      "serialisation": "JSON object, two-space indent, trailing newline",
+      "sort": "checkpoints ascending by step; refetch in the admitted order"
+    },
+    "summary": {
+      "container": "object",
+      "field_types": {
+        "admissible_checkpoint_count": "integer",
+        "checkpoint_count": "integer",
+        "complete_checkpoint_count": "integer",
+        "effective_max_refetch": "integer",
+        "effective_refetch_budget": "integer",
+        "effective_world_size": "integer",
+        "entry_count": "integer",
+        "first_poisoned_step": "integer",
+        "refetch_deferred_count": "integer",
+        "refetch_needed_count": "integer",
+        "refetch_planned_bytes": "integer",
+        "refetch_planned_count": "integer",
+        "resume_step": "integer",
+        "schema_version": "string"
+      },
+      "path": "/app/output/summary.json",
+      "required_fields": [
+        "schema_version",
+        "entry_count",
+        "checkpoint_count",
+        "complete_checkpoint_count",
+        "admissible_checkpoint_count",
+        "resume_step",
+        "first_poisoned_step",
+        "refetch_needed_count",
+        "refetch_planned_count",
+        "refetch_deferred_count",
+        "refetch_planned_bytes",
+        "effective_world_size",
+        "effective_refetch_budget",
+        "effective_max_refetch"
+      ],
+      "serialisation": "JSON object, two-space indent, trailing newline"
+    }
+  },
+  "reconciled_inputs": {
+    "checkpoint_registry": {
+      "container": "array",
+      "path": "/app/data/checkpoint_registry.json",
+      "record_fields": [
+        "entry_id",
+        "step",
+        "rank",
+        "kind",
+        "shard_id",
+        "bytes",
+        "checksum",
+        "written_seq"
+      ],
+      "serialisation": "JSON array, two-space indent, trailing newline",
+      "sort": "ascending by step, then rank, then kind, then entry_id"
+    }
+  },
+  "runtime_budget_seconds": 90,
+  "units": {
+    "bytes": "whole bytes",
+    "step": "optimizer steps since the run began"
+  }
+}

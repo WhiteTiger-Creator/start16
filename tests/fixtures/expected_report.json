@@ -1,0 +1,47 @@
+{
+  "alternate": {
+    "plan_digest": "452fcb195569a12e9b114a5c680b7eba4f85a547e7503fafaf74231816dc6fbf",
+    "queue_digest": "dfa3bbe113c2295b300fd1e0e889bc0182b770c533b48f33b13a578263261e60",
+    "summary": {
+      "admissible_checkpoint_count": 1,
+      "checkpoint_count": 90,
+      "complete_checkpoint_count": 2,
+      "effective_max_refetch": 120,
+      "effective_refetch_budget": 35000000000,
+      "effective_world_size": 16,
+      "entry_count": 2579,
+      "first_poisoned_step": 27000,
+      "refetch_deferred_count": 43,
+      "refetch_needed_count": 76,
+      "refetch_planned_bytes": 34931064462,
+      "refetch_planned_count": 33,
+      "resume_step": 20000,
+      "schema_version": "resume-plan-v1"
+    }
+  },
+  "broken_planner_sha256": "9203c80e7de4b5e887810f7d89d8cd2d30962967cd35b574f658882f0812b39e",
+  "primary": {
+    "plan_digest": "20038069abc37d9b7b1928be577ccf6c2c90953c5306706d31acf8f2859d5737",
+    "queue_digest": "dfa3bbe113c2295b300fd1e0e889bc0182b770c533b48f33b13a578263261e60",
+    "summary": {
+      "admissible_checkpoint_count": 3,
+      "checkpoint_count": 90,
+      "complete_checkpoint_count": 9,
+      "effective_max_refetch": 120,
+      "effective_refetch_budget": 35000000000,
+      "effective_world_size": 16,
+      "entry_count": 2660,
+      "first_poisoned_step": 27000,
+      "refetch_deferred_count": 43,
+      "refetch_needed_count": 76,
+      "refetch_planned_bytes": 34931064462,
+      "refetch_planned_count": 33,
+      "resume_step": 20000,
+      "schema_version": "resume-plan-v1"
+    }
+  },
+  "recovered_entry_count": 2660,
+  "recovered_registry_digest": "92535963543100ac7dfba2125d2f1e1e8ed389f5ad30176b2f962608f185b73e",
+  "rule_sources_digest": "141cbf13d34af6dfe35333a9a7786c0dadcef95f413e5ce8634b6803d080615c",
+  "shipped_truncated_digest": "45fdc3f72a27d19dbc8eefc8c7c00a11d7c145a729e8824759cef500a619906e"
+}
