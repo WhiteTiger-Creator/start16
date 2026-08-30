@@ -255,13 +255,18 @@ def _full(step, world=2):
 
 
 def _probe(entries, *, world=2, poisoned=(5,), steps_per_epoch=1000,
-           catalog=None, budget=10**15, max_refetch=1000):
-    """Run the submitted planner over a crafted world and return its artifacts."""
+           catalog=None, budget=10**15, max_refetch=1000, policy=None):
+    """Run the submitted planner over a crafted world and return its artifacts.
+
+    `policy` overrides the staged policy outright, which is how the baseline
+    fallback is exercised: every other caller writes all three fields, so an
+    omitted one was never tested.
+    """
     names = ("resume_policy.json", "data_incident.json", "shard_catalog.json")
     saved = {n: (DATA / n).read_text(encoding="utf-8") for n in names}
     staged = _CWORK / f"probe-{next(_run_ctr)}.json"
     try:
-        _write_json(DATA / "resume_policy.json", {"default": {
+        _write_json(DATA / "resume_policy.json", policy if policy is not None else {"default": {
             "world_size": world, "refetch_budget_bytes": budget,
             "max_refetch_shards": max_refetch}})
         _write_json(DATA / "data_incident.json", {
@@ -273,6 +278,32 @@ def _probe(entries, *, world=2, poisoned=(5,), steps_per_epoch=1000,
     finally:
         for n, text in saved.items():
             (DATA / n).write_text(text, encoding="utf-8")
+
+
+def test_a_policy_that_omits_a_field_keeps_the_governed_baseline():
+    """#ML-6210 states the baselines a field the policy file omits falls back to.
+
+    Every policy the suite stages writes all three fields, so the fallback was
+    never exercised and a planner that ignored it passed. Dropping world_size
+    leaves the baseline of 16, which a two-rank checkpoint does not satisfy, so
+    nothing is complete and the resume point stays at -1.
+    """
+    sparse = {"default": {"refetch_budget_bytes": 35000000000, "max_refetch_shards": 120}}
+    registry = [
+        {"entry_id": "e-1", "step": 1000, "rank": 0, "kind": "model",
+         "shard_id": "sh-0", "bytes": 10, "checksum": "c0", "written_seq": 1},
+        {"entry_id": "e-2", "step": 1000, "rank": 0, "kind": "optimizer",
+         "shard_id": "sh-1", "bytes": 10, "checksum": "c1", "written_seq": 2},
+        {"entry_id": "e-3", "step": 1000, "rank": 1, "kind": "model",
+         "shard_id": "sh-2", "bytes": 10, "checksum": "c2", "written_seq": 3},
+        {"entry_id": "e-4", "step": 1000, "rank": 1, "kind": "optimizer",
+         "shard_id": "sh-3", "bytes": 10, "checksum": "c3", "written_seq": 4},
+    ]
+    _, summary, _plan, _queue = _probe(registry, policy=sparse, poisoned=())
+    assert summary["effective_world_size"] == 16, (
+        "the omitted world_size did not fall back to the governed baseline")
+    assert summary["complete_checkpoint_count"] == 0
+    assert summary["resume_step"] == -1
 
 
 def test_a_rank_missing_its_optimizer_shard_leaves_the_checkpoint_incomplete():
@@ -534,3 +565,4 @@ def test_shipped_contract_matches_the_golden_copy():
     """
     shipped = json.loads(SPEC_PATH.read_text(encoding="utf-8"))
     assert shipped == json.loads(GOLDEN_CONTRACT_PATH.read_text(encoding="utf-8"))
+

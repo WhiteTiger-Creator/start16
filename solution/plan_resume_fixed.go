@@ -207,15 +207,23 @@ func main() {
 		return needed[i].ShardID < needed[j].ShardID
 	})
 
+	// #ML-6194 admits a PREFIX of the ordered set: shards go in "until either
+	// the policy's refetch_budget_bytes would be exceeded or its
+	// max_refetch_shards is reached", so the first shard that does not fit ends
+	// the admission and everything from there on is deferred in the same order.
+	// Continuing past it to pick up a smaller later shard reorders the queue
+	// against the rule and admits a set the board never described.
 	planned := make([]refetchRow, 0)
 	deferred := make([]refetchRow, 0)
 	var spent int64
+	full := false
 	for _, row := range needed {
-		if len(planned) < maxRefetch && spent+row.Bytes <= budget {
+		if !full && len(planned) < maxRefetch && spent+row.Bytes <= budget {
 			planned = append(planned, row)
 			spent += row.Bytes
 			continue
 		}
+		full = true
 		deferred = append(deferred, row)
 	}
 

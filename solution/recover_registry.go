@@ -43,8 +43,31 @@ func readJSON(path string, into any) {
 	}
 }
 
+func asInt64(value any) (int64, bool) {
+	switch t := value.(type) {
+	case float64:
+		return int64(t), true
+	case string:
+		n, err := strconv.ParseInt(t, 10, 64)
+		return n, err == nil
+	}
+	return 0, false
+}
+
+// #ML-6170 says an amendment "overwrites the named field in place" and does not
+// restrict which field it may name, so every field the record declares is
+// settable here. Covering only checksum, shard_id and bytes silently dropped an
+// amendment against any of the others rather than applying it.
 func setField(e *entry, field string, value any) {
 	switch field {
+	case "entry_id":
+		if s, ok := value.(string); ok {
+			e.EntryID = s
+		}
+	case "kind":
+		if s, ok := value.(string); ok {
+			e.Kind = s
+		}
 	case "checksum":
 		if s, ok := value.(string); ok {
 			e.Checksum = s
@@ -53,14 +76,21 @@ func setField(e *entry, field string, value any) {
 		if s, ok := value.(string); ok {
 			e.ShardID = s
 		}
+	case "step":
+		if n, ok := asInt64(value); ok {
+			e.Step = n
+		}
+	case "rank":
+		if n, ok := asInt64(value); ok {
+			e.Rank = int(n)
+		}
+	case "written_seq":
+		if n, ok := asInt64(value); ok {
+			e.WrittenSeq = int(n)
+		}
 	case "bytes":
-		switch t := value.(type) {
-		case float64:
-			e.Bytes = int64(t)
-		case string:
-			if n, err := strconv.ParseInt(t, 10, 64); err == nil {
-				e.Bytes = n
-			}
+		if n, ok := asInt64(value); ok {
+			e.Bytes = n
 		}
 	}
 }

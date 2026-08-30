@@ -1,7 +1,7 @@
 {
   "alternate": {
-    "plan_digest": "452fcb195569a12e9b114a5c680b7eba4f85a547e7503fafaf74231816dc6fbf",
-    "queue_digest": "dfa3bbe113c2295b300fd1e0e889bc0182b770c533b48f33b13a578263261e60",
+    "plan_digest": "9efeecf83f438e006c00ecee5fca73ca8d7b570be143b97631452095371f311b",
+    "queue_digest": "e8752642880d78a860e6c3e03dab129eda66a369a521297e1a3ff519dcd4c852",
     "summary": {
       "admissible_checkpoint_count": 1,
       "checkpoint_count": 90,
@@ -11,18 +11,18 @@
       "effective_world_size": 16,
       "entry_count": 2579,
       "first_poisoned_step": 27000,
-      "refetch_deferred_count": 43,
+      "refetch_deferred_count": 45,
       "refetch_needed_count": 76,
-      "refetch_planned_bytes": 34931064462,
-      "refetch_planned_count": 33,
+      "refetch_planned_bytes": 34069534139,
+      "refetch_planned_count": 31,
       "resume_step": 20000,
       "schema_version": "resume-plan-v1"
     }
   },
   "broken_planner_sha256": "af1e6d99d866aff92ed5c47d7fc3bb42299d822b7be4a54116428580fbf0080a",
   "primary": {
-    "plan_digest": "20038069abc37d9b7b1928be577ccf6c2c90953c5306706d31acf8f2859d5737",
-    "queue_digest": "dfa3bbe113c2295b300fd1e0e889bc0182b770c533b48f33b13a578263261e60",
+    "plan_digest": "10ff70f197e0cc19c81df8721d4a87b11ae5cb5b485d4265f215495f9d2601d4",
+    "queue_digest": "e8752642880d78a860e6c3e03dab129eda66a369a521297e1a3ff519dcd4c852",
     "summary": {
       "admissible_checkpoint_count": 3,
       "checkpoint_count": 90,
@@ -32,16 +32,16 @@
       "effective_world_size": 16,
       "entry_count": 2660,
       "first_poisoned_step": 27000,
-      "refetch_deferred_count": 43,
+      "refetch_deferred_count": 45,
       "refetch_needed_count": 76,
-      "refetch_planned_bytes": 34931064462,
-      "refetch_planned_count": 33,
+      "refetch_planned_bytes": 34069534139,
+      "refetch_planned_count": 31,
       "resume_step": 20000,
       "schema_version": "resume-plan-v1"
     }
   },
   "recovered_entry_count": 2660,
   "recovered_registry_digest": "92535963543100ac7dfba2125d2f1e1e8ed389f5ad30176b2f962608f185b73e",
-  "rule_sources_digest": "141cbf13d34af6dfe35333a9a7786c0dadcef95f413e5ce8634b6803d080615c",
+  "rule_sources_digest": "8dac39aaf5f181b8af62df83ce4aa4c0d736926a072394d517f4971363a46c5a",
   "shipped_truncated_digest": "45fdc3f72a27d19dbc8eefc8c7c00a11d7c145a729e8824759cef500a619906e"
 }
