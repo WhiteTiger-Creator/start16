@@ -86,8 +86,8 @@ func main() {
 	var shards []dataShard
 	var inc incident
 	var pol policy
-	// #ML-6150: the shard catalogue, the data incident and the resume policy are
-	// always read from their fixed absolute paths; --input selects the registry.
+	// the catalogue, the incident and the policy live at fixed paths;
+	// --input selects the registry
 	readJSON("/app/data/shard_catalog.json", &shards)
 	readJSON("/app/data/data_incident.json", &inc)
 	readJSON("/app/data/resume_policy.json", &pol)
@@ -97,9 +97,7 @@ func main() {
 	budget := pol.Default["refetch_budget_bytes"]
 	maxRefetch := int(pol.Default["max_refetch_shards"])
 
-	// #ML-6182: a checkpoint is COMPLETE only when every rank of the world holds
-	// both a model and an optimizer shard. A rank missing either one leaves the
-	// whole checkpoint unusable, however many other shards landed.
+	// which checkpoints count as complete
 	type key struct {
 		rank int
 		kind string
@@ -114,10 +112,8 @@ func main() {
 		bytesAt[e.Step] += e.Bytes
 	}
 
-	// #ML-6186: the run trained through the poisoned epochs, so a checkpoint is
-	// admissible only where it was written STRICTLY BEFORE the first step of the
-	// earliest poisoned epoch. A later checkpoint has already learned from the
-	// corrupt shards and cannot be resumed from, complete or not.
+	// admissibility against the incident window
+	// admissibility against the incident window
 	firstPoisoned := int64(-1)
 	for _, ep := range inc.PoisonedEpochs {
 		start := int64(ep) * inc.StepsPerEpoch
@@ -163,10 +159,8 @@ func main() {
 		})
 	}
 
-	// #ML-6190: a data shard must be re-fetched when its stored checksum disagrees
-	// with the catalogue's expected checksum. Every shard of a poisoned epoch is
-	// re-fetched as well, whatever its checksum says, because the adapter that
-	// wrote them is not trusted.
+	// which shards go back on the fetch queue
+	// which shards go back on the fetch queue
 	poisoned := map[int]bool{}
 	for _, ep := range inc.PoisonedEpochs {
 		poisoned[ep] = true
@@ -184,8 +178,7 @@ func main() {
 			needed = append(needed, refetchRow{s.ShardID, s.Epoch, s.Bytes, reason})
 		}
 	}
-	// #ML-6194: the queue is taken in ascending epoch, then shard id -- the oldest
-	// data the run will read again comes back first, never the largest shard.
+	// emission order for the fetch queue
 	sort.Slice(needed, func(i, j int) bool {
 		if needed[i].Bytes != needed[j].Bytes {
 			return needed[i].Bytes > needed[j].Bytes

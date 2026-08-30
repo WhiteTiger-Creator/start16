@@ -4,6 +4,7 @@ Every test below corresponds to something instruction.md states is graded.
 Shared machinery lives in harness.py.
 """
 
+import harness
 from harness import *  # noqa: F401,F403
 
 @pytest.fixture(scope="session")
@@ -29,6 +30,22 @@ def test_recovery_sources_are_intact():
         ("catalog", DATA / "shard_catalog.json"), ("incident", DATA / "data_incident.json"),
         ("policy", DATA / "resume_policy.json"), ("log", LOG_PATH))}
     assert _digest(live) == FIXTURE["rule_sources_digest"]
+
+
+def test_recovery_sources_are_still_intact_after_the_graded_run(primary_outputs):
+    """Checked again once the planner has run, not only before it.
+
+    The digest above is taken at collection, before the verifier drives the
+    submitted planner. A planner that rewrote one of its own inputs mid-run --
+    repairing data it had misread, say -- would pass that check and be caught
+    only sideways. Depending on primary_outputs orders this one after the run.
+    """
+    live = {n: hashlib.sha256(Path(p).read_bytes()).hexdigest() for n, p in (
+        ("snapshot", SNAPSHOT_PATH), ("journal", JOURNAL_PATH),
+        ("catalog", DATA / "shard_catalog.json"), ("incident", DATA / "data_incident.json"),
+        ("policy", DATA / "resume_policy.json"), ("log", LOG_PATH))}
+    assert _digest(live) == FIXTURE["rule_sources_digest"], (
+        "an input was rewritten while the graded run was in flight")
 
 
 def test_registry_was_recovered():
@@ -174,6 +191,28 @@ def test_a_newer_complete_checkpoint_was_available_and_rejected(primary_outputs)
     newest_complete = max(c["step"] for c in plan["checkpoints"] if c["complete"])
     assert newest_complete >= summary["first_poisoned_step"]
     assert newest_complete > summary["resume_step"]
+
+
+def test_the_refetch_counts_partition_what_was_needed(primary_outputs):
+    """needed is planned plus deferred, and the planned bytes are the planned ones.
+
+    The three counters are the only place the budget's effect is reported, and
+    the contract now states that needed splits into exactly those two. Without
+    this, a run could report a needed count that had nothing to do with the two
+    it split into and still satisfy every other check.
+    """
+    _, summary, plan, queue = primary_outputs
+    assert summary["refetch_needed_count"] == (
+        summary["refetch_planned_count"] + summary["refetch_deferred_count"])
+    # the plan carries what was admitted, the queue what was deferred
+    assert summary["refetch_planned_count"] == len(plan["refetch"])
+    assert summary["refetch_deferred_count"] == len(queue)
+    assert summary["refetch_planned_bytes"] == sum(row["bytes"] for row in plan["refetch"])
+    assert summary["refetch_planned_bytes"] <= summary["effective_refetch_budget"], (
+        "the plan spent more than the resolved budget allows")
+    # and the two sets are disjoint, so nothing is both planned and deferred
+    assert not ({row["shard_id"] for row in plan["refetch"]}
+                & {row["shard_id"] for row in queue})
 
 
 def test_summary_counts_track_the_artifacts(primary_outputs):
@@ -408,6 +447,47 @@ def test_submitted_program_runs_unprivileged_and_cannot_write_reward(tmp_path):
     assert result.returncode == 0, result.stderr
     parts = result.stdout.split()
     assert parts[0] == str(CANDIDATE_UID) and parts[1] == "true"
+
+
+def test_a_candidate_that_leaves_the_process_group_does_not_survive_the_run():
+    """A setsid escape is reaped, because the sweep is by owner and not by group.
+
+    The probe forks a child, puts it in a session of its own and leaves it
+    sleeping well past the run. Killing the process group alone would let it
+    live into the next test, holding staged inputs or still writing where a
+    later run reads.
+    """
+    probe_dir = Path("/probe-work")
+    probe_dir.mkdir(parents=True, exist_ok=True)
+    os.chmod(probe_dir, 0o755)
+    probe = probe_dir / "escape.py"
+    probe.write_text(
+        "import os, sys, time\n"
+        "if os.fork() == 0:\n"
+        "    os.setsid()\n"
+        "    time.sleep(600)\n"
+        "    sys.exit(0)\n"
+        "print('spawned')\n",
+        encoding="utf-8")
+    os.chmod(probe, 0o644)
+    _run_agent([sys.executable, str(probe)], cwd=probe_dir)
+    assert not harness._pids_owned_by(harness.CANDIDATE_UID), (
+        "a candidate process outlived its run by leaving its process group")
+
+
+def test_the_strictest_setpriv_this_image_supports_is_the_one_in_use():
+    """Capabilities are dropped as well as the uid, where setpriv allows it."""
+    assert "--no-new-privs" in harness._SETPRIV
+    assert f"--reuid={harness.CANDIDATE_UID}" in harness._SETPRIV
+    probe = subprocess.run(
+        ["setpriv", f"--reuid={harness.CANDIDATE_UID}", f"--regid={harness.CANDIDATE_UID}",
+         "--clear-groups", "--no-new-privs", "--inh-caps=-all", "--bounding-set=-all",
+         "/bin/true"],
+        capture_output=True)
+    if probe.returncode == 0:
+        assert "--inh-caps=-all" in harness._SETPRIV, (
+            "setpriv accepts the strict capability flags but the harness is not using them")
+        assert "--bounding-set=-all" in harness._SETPRIV
 
 
 def test_frozen_snapshot_preserved():

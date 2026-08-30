@@ -55,8 +55,98 @@ HARD_TIMEOUT_SEC = int(RUNTIME_BUDGET_SEC)
 
 CANDIDATE_UID = 65534
 _CWORK = Path("/candidate-work")
-_SETPRIV = ["setpriv", f"--reuid={CANDIDATE_UID}", f"--regid={CANDIDATE_UID}",
-            "--clear-groups", "--no-new-privs"]
+def _setpriv_prefix(base: list) -> list:
+    """The strictest setpriv invocation this image actually supports.
+
+    Dropping the uid is not the whole of it: a candidate that kept inheritable
+    or bounding-set capabilities could regain privilege across an exec. The two
+    flags are probed rather than assumed, because a util-linux without them
+    would make every run fail on the flag rather than on the task.
+    """
+    strict = base + ["--inh-caps=-all", "--bounding-set=-all"]
+    try:
+        probe = subprocess.run(strict + ["/bin/true"], capture_output=True, timeout=30)
+        if probe.returncode == 0:
+            return strict
+    except (OSError, subprocess.SubprocessError):
+        pass
+    return base
+
+
+# Resource ceilings for anything run as the candidate. Deliberately not
+# RLIMIT_AS or RLIMIT_DATA: a language runtime that reserves a large virtual
+# arena at start-up dies under those, so they would kill a correct program
+# rather than a runaway one. These bound the failure modes that actually escape
+# a process group -- forking without end, filling the disk, dumping core.
+_CANDIDATE_NPROC = 512
+_CANDIDATE_FSIZE = 512 * 1024 * 1024
+_CANDIDATE_NOFILE = 1024
+
+
+def _apply_rlimits() -> None:
+    """Run in the child between fork and exec: own session, plus ceilings."""
+    import resource
+
+    for what, limit in (
+        (resource.RLIMIT_NPROC, _CANDIDATE_NPROC),
+        (resource.RLIMIT_FSIZE, _CANDIDATE_FSIZE),
+        (resource.RLIMIT_NOFILE, _CANDIDATE_NOFILE),
+        (resource.RLIMIT_CORE, 0),
+    ):
+        try:
+            _soft, hard = resource.getrlimit(what)
+            ceiling = limit if hard == resource.RLIM_INFINITY else min(limit, hard)
+            resource.setrlimit(what, (ceiling, ceiling))
+        except (ValueError, OSError):
+            continue
+    os.setsid()
+
+
+def _pids_owned_by(uid: int) -> list:
+    """Every live pid whose owner is `uid`, read from /proc."""
+    pids = []
+    for entry in os.listdir("/proc"):
+        if not entry.isdigit():
+            continue
+        try:
+            if os.stat("/proc/" + entry).st_uid == uid:
+                pids.append(int(entry))
+        except OSError:
+            continue
+    return pids
+
+
+def reap_candidate_uid(uid: int = CANDIDATE_UID) -> None:
+    """Kill everything still running as the candidate, whatever group it is in.
+
+    Killing the process group is not enough on its own: a submitted program can
+    call setsid and leave its own group, and would then survive into later tests
+    -- holding the staged inputs of the next run, or still writing into an
+    output directory being read. Ownership is the property that cannot be
+    escaped, so the sweep is by owner.
+    """
+    import signal as _signal
+    import time as _time
+
+    for _ in range(50):
+        pids = _pids_owned_by(uid)
+        if not pids:
+            return
+        for pid in pids:
+            try:
+                os.kill(pid, _signal.SIGKILL)
+            except (ProcessLookupError, PermissionError, OSError):
+                continue
+        for pid in pids:
+            try:
+                os.waitpid(pid, os.WNOHANG)
+            except (ChildProcessError, OSError):
+                continue
+        _time.sleep(0.02)
+
+
+_SETPRIV = _setpriv_prefix(["setpriv", f"--reuid={CANDIDATE_UID}", f"--regid={CANDIDATE_UID}",
+            "--clear-groups", "--no-new-privs"])
 CHILD_ENV = {"PATH": "/usr/local/bin:/usr/bin:/bin", "HOME": "/candidate-work",
              "LANG": "C.UTF-8", "GOCACHE": "/candidate-work/gocache",
              "GO111MODULE": "off", "GOPATH": "/candidate-work/gopath"}
@@ -76,7 +166,21 @@ def _load_json(path):
 
 
 def _load_jsonl(path):
-    return [json.loads(x) for x in Path(path).read_text(encoding="utf-8").splitlines() if x.strip()]
+    """Read a contracted JSONL artifact, taking every line as written.
+
+    Skipping blank lines here softened a contract that says one compact object
+    per line: a run that padded its output with empty lines read back the same
+    as a clean one and scored full marks. A blank line is a malformed line and
+    is read as one.
+    """
+    text = Path(path).read_text(encoding="utf-8")
+    if not text:
+        return []
+    assert text.endswith("\n"), f"{Path(path).name} has no trailing newline"
+    lines = text.split("\n")[:-1]
+    for number, line in enumerate(lines, start=1):
+        assert line.strip(), f"{Path(path).name} line {number} is blank"
+    return [json.loads(line) for line in lines]
 
 
 def _write_json(path, value):
@@ -102,7 +206,9 @@ def _build(script_path: Path) -> str:
         ["go", "build", "-o", str(binary), str(src)],
         capture_output=True, text=True,
         env={**os.environ, "GOCACHE": "/tmp/gocache", "GO111MODULE": "off", "GOPATH": "/tmp/gopath"},
+        preexec_fn=_apply_rlimits,
     )
+    reap_candidate_uid()
     assert result.returncode == 0, f"go build failed:\n{result.stderr}"
     os.chmod(binary, 0o755)
     _BIN_CACHE[key] = str(binary)
@@ -110,8 +216,17 @@ def _build(script_path: Path) -> str:
 
 
 def _candidate_dir() -> Path:
-    d = _CWORK / f"run-{next(_run_ctr)}"
-    d.mkdir(parents=True, exist_ok=True)
+    """A fresh work area for one run, created where nothing can pre-empt it.
+
+    /candidate-work is world-writable, so a predictable name here was an opening:
+    a submission could plant the next `run-N` as a symlink to the sealed fixtures
+    and wait. The root-side mkdir(exist_ok=True) would succeed through the link
+    and the chmod would follow it, since os.chmod resolves symlinks and Linux has
+    no lchmod. mkdtemp closes both halves -- the name is unpredictable and the
+    directory is created fresh or not at all.
+    """
+    d = Path(tempfile.mkdtemp(prefix=f"run-{next(_run_ctr)}-", dir=str(_CWORK)))
+    assert not d.is_symlink(), d
     os.chmod(d, 0o777)
     return d
 
@@ -160,25 +275,38 @@ def _reap_group(pgid: int) -> None:
 
 
 def _run_agent(argv, cwd: Path):
-    """Run the submitted program unprivileged and in its own process group."""
-    proc = subprocess.Popen(
-        _SETPRIV + argv, cwd=str(cwd), env=dict(CHILD_ENV),
-        stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
-        start_new_session=True,
-    )
-    pgid = proc.pid          # session leader: pgid == pid, captured before the wait
-    try:
-        stdout, stderr = proc.communicate(timeout=HARD_TIMEOUT_SEC)
-    except subprocess.TimeoutExpired:
-        _reap_group(pgid)
-        proc.wait()
-        raise
-    finally:
-        # even on a clean exit, anything the program left running is stopped
-        # before its outputs are read
-        _reap_group(pgid)
-    result = subprocess.CompletedProcess(argv, proc.returncode, stdout, stderr)
-    return result
+    """Run the submitted program unprivileged and in its own process group.
+
+    Output goes to temporary files rather than pipes. A program that forks a
+    child into its own session leaves that child holding the inherited pipe, and
+    communicate() then waits for an EOF that never comes -- stalling the run for
+    the whole budget and timing out a submission that had already finished. A
+    file has no reader to wait on, so the parent's exit ends the wait and the
+    reaps below clear whatever is left.
+    """
+    with tempfile.TemporaryFile("w+", encoding="utf-8", errors="replace") as out, \
+            tempfile.TemporaryFile("w+", encoding="utf-8", errors="replace") as err:
+        proc = subprocess.Popen(
+            _SETPRIV + argv, cwd=str(cwd), env=dict(CHILD_ENV),
+            stdout=out, stderr=err,
+            preexec_fn=_apply_rlimits,
+        )
+        pgid = proc.pid      # session leader: pgid == pid, captured before the wait
+        try:
+            proc.wait(timeout=HARD_TIMEOUT_SEC)
+        except subprocess.TimeoutExpired:
+            _reap_group(pgid)
+            reap_candidate_uid()
+            proc.wait()
+            raise
+        finally:
+            # even on a clean exit, anything the program left running is stopped
+            # before its outputs are read
+            _reap_group(pgid)
+            reap_candidate_uid()
+        out.seek(0)
+        err.seek(0)
+        return subprocess.CompletedProcess(argv, proc.returncode, out.read(), err.read())
 
 
 def _run_pipeline(script_path: Path = WORKFLOW_PATH, input_path: Path = REGISTRY_PATH):
