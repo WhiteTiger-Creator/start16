@@ -1,8 +1,8 @@
 # Planning governance log
 
-How the resume planner is *meant* to behave -- the recovery of the truncated checkpoint registry, what makes a checkpoint complete, which checkpoint the run may resume from after the data incident, and which shards come back and in what order -- was settled incrementally by the training governance board, and those decisions live in the review entries below, not in any single summary. Several stages deliberately DEVIATE from the intuitive reading: completeness needs the optimizer shards as well as the model shards, the resume point rolls back behind the poisoned epochs rather than taking the newest complete checkpoint, a poisoned shard is re-fetched whatever its checksum says, and the queue is taken oldest-epoch first rather than largest first. The February draft proposals were revisited during the 2026-05 run review and several were reversed; where a draft or interim conflicts with a later decision, the later dated decision governs. `/app/docs/resume_contract.json` is the output contract only.
+How the resume planner is *meant* to behave -- the recovery of the truncated checkpoint registry, what makes a checkpoint complete, which checkpoint the run may resume from after the data incident, and which shards come back and in what order -- was settled incrementally by the training governance board, and those decisions live in the review entries below, not in any single summary. Several stages deliberately depart from the intuitive reading, and which ones they are is settled in the entries below rather than here. The February draft proposals were revisited during the 2026-05 run review and several were reversed; where a draft or interim conflicts with a later decision, the later dated decision governs. `/app/docs/resume_contract.json` is the output contract only.
 
-- 2026-02-04: Platform desk noted retry storms on the parameter server in window 1003. Raised with the storage owner; the resume parameters were not touched.
+- 2026-02-04: The exceptions queue owner carried forward a routine observation. A query about a prior-period entry was answered from the published schedule. Referred to the dated decisions and closed.
 
 > **Recovery draft proposal (2026-02-05 - #ML-6020)** Rosa: rebuild the truncated registry by concatenating the pre-migration snapshot with the migrator journal and keeping the last row seen for each entry; a reinstated entry is re-read from the snapshot *(Superseded -- reversed in the 2026-05 run review.)*
 
@@ -10,151 +10,151 @@ How the resume planner is *meant* to behave -- the recovery of the truncated che
 
 > **Recovery draft proposal (2026-02-18 - #ML-6032)** Marek: restart from the newest complete checkpoint, since that is the furthest the run got *(Superseded -- reversed in the 2026-05 run review.)*
 
-- 2026-02-09: Engineer on call logged a routine observation for the shard loader during review window 1005. Throughput drift reviewed; no policy change requested.
+- 2026-02-09: The platform team filed a routine observation. A typo in a reference record was corrected before the run started. Referred to the dated decisions and closed.
 
-- 2026-02-19: Engineer on call logged a routine observation for the run telemetry pipeline during review window 1007. Throughput drift reviewed; no policy change requested.
+- 2026-02-19: The operations desk recorded a routine observation. Nightly reconciliation matched exactly and the file was released without comment.
 
-- 2026-02-27: Engineer on call logged a routine observation for the run telemetry pipeline during review window 1010. Throughput drift reviewed; no policy change requested.
+- 2026-02-27: A reviewer on shift noted a routine observation. Late inputs arrived from one feed and were loaded before the cut.
 
-- 2026-02-21: Platform desk noted retry storms on the object-store gateway in window 1013. Raised with the storage owner; the resume parameters were not touched.
+- 2026-02-21: The exceptions queue owner opened a query on a routine observation. A question raised on the floor was withdrawn once the entry was reread. The desk confirmed no downstream impact.
 
-- 2026-02-20: Run review of the shard loader in window 1014 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-02-20: The controls team noted a routine observation. A duplicate order was cancelled at source and never reached the run.
 
-- 2026-02-08: Platform desk noted retry storms on the object-store gateway in window 1015. Raised with the storage owner; the resume parameters were not touched.
+- 2026-02-08: A weekly review filed a routine observation. A query about a prior-period entry was answered from the published schedule.
 
-- 2026-02-17: Training stand-up recorded a routine note against the shard loader for window 1017. The restart backlog was cleared with no amendment raised.
+- 2026-02-17: A stand-up note reviewed a routine observation. Late inputs arrived from one feed and were loaded before the cut. No action was carried forward.
 
-- 2026-02-12: Platform desk noted retry storms on the parameter server in window 1020. Raised with the storage owner; the resume parameters were not touched.
+- 2026-02-12: The platform team carried forward a routine observation. An operator asked whether a credit had posted; it had, in the preceding period.
 
-- 2026-02-27: Engineer on call logged a routine observation for the parameter server during review window 1023. Throughput drift reviewed; no policy change requested.
+- 2026-02-27: The controls team reviewed a routine observation. The overnight window ran long behind an unrelated platform patch. Referred to the dated decisions and closed.
 
-- 2026-02-27: Training stand-up recorded a routine note against the checkpoint writer for window 1025. The restart backlog was cleared with no amendment raised.
+- 2026-02-27: A stand-up note reviewed a routine observation. Storage on the staging host was extended after the export outgrew its allocation. The desk confirmed no downstream impact.
 
-- 2026-02-15: Training stand-up recorded a routine note against the run telemetry pipeline for window 1028. The restart backlog was cleared with no amendment raised.
+- 2026-02-15: A shift handover opened a query on a routine observation. Dashboard tiles lagged the refresh; traced to cache staleness rather than the engine. The desk confirmed no downstream impact.
 
-- 2026-02-04: Engineer on call logged a routine observation for the parameter server during review window 1029. Throughput drift reviewed; no policy change requested.
+- 2026-02-04: A weekly review logged a routine observation. Two accounts showed a same-day transfer the export had not yet picked up.
 
-- 2026-02-21: Platform desk noted retry storms on the checkpoint writer in window 1030. Raised with the storage owner; the resume parameters were not touched.
+- 2026-02-21: The audit lead raised and closed a routine observation. Nightly reconciliation matched exactly and the file was released without comment.
 
-- 2026-02-23: Training stand-up recorded a routine note against the parameter server for window 1033. The restart backlog was cleared with no amendment raised.
+- 2026-02-23: The platform team filed a routine observation. The count sat a little above the running mean, entirely from estimated inputs. The desk confirmed no downstream impact.
 
-- 2026-02-23: Engineer on call logged a routine observation for the parameter server during review window 1035. Throughput drift reviewed; no policy change requested.
+- 2026-02-23: A reviewer on shift signed off a routine observation. A question raised on the floor was withdrawn once the entry was reread. Referred to the dated decisions and closed.
 
-- 2026-02-25: Platform desk noted retry storms on the shard loader in window 1036. Raised with the storage owner; the resume parameters were not touched.
+- 2026-02-25: The duty analyst filed a routine observation. The overnight window ran long behind an unrelated platform patch. Referred to the dated decisions and closed.
 
-- 2026-02-11: Engineer on call logged a routine observation for the object-store gateway during review window 1039. Throughput drift reviewed; no policy change requested.
+- 2026-02-11: A shift handover signed off a routine observation. A batch retried once after a transient timeout and completed on the second pass. The thread was archived after review.
 
-- 2026-02-23: Engineer on call logged a routine observation for the shard loader during review window 1042. Throughput drift reviewed; no policy change requested.
+- 2026-02-23: The operations desk opened a query on a routine observation. A query about a prior-period entry was answered from the published schedule. Filed for the record.
 
-- 2026-02-16: Engineer on call logged a routine observation for the shard loader during review window 1043. Throughput drift reviewed; no policy change requested.
+- 2026-02-16: The audit lead opened a query on a routine observation. The downstream vendor confirmed receipt inside the agreed window. No action was carried forward.
 
-- 2026-02-12: Platform desk noted retry storms on the run telemetry pipeline in window 1046. Raised with the storage owner; the resume parameters were not touched.
+- 2026-02-12: The duty analyst reviewed a routine observation. Storage on the staging host was extended after the export outgrew its allocation.
 
-- 2026-02-17: Run review of the checkpoint writer in window 1048 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-02-17: An on-call engineer raised and closed a routine observation. The count sat a little above the running mean, entirely from estimated inputs.
 
-- 2026-02-08: Training stand-up recorded a routine note against the checkpoint writer for window 1049. The restart backlog was cleared with no amendment raised.
+- 2026-02-08: The operations desk noted a routine observation. The count sat a little above the running mean, entirely from estimated inputs.
 
-- 2026-02-03: Training stand-up recorded a routine note against the object-store gateway for window 1051. The restart backlog was cleared with no amendment raised.
+- 2026-02-03: A weekly review logged a routine observation. The overnight window ran long behind an unrelated platform patch. The thread was archived after review.
 
-- 2026-03-04: Run review of the object-store gateway in window 1052 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-03-04: The duty analyst spot-checked a routine observation. A question raised on the floor was withdrawn once the entry was reread. Filed for the record.
 
 > **Interim decision (2026-03-04 - #ML-6044)** Priya: the re-fetch queue is taken largest shard first, so the biggest gaps close soonest *(Revised -- see the 2026-05 run review.)*
 
-- 2026-03-23: Engineer on call logged a routine observation for the checkpoint writer during review window 1053. Throughput drift reviewed; no policy change requested.
+- 2026-03-23: The operations desk signed off a routine observation. Two accounts showed a same-day transfer the export had not yet picked up.
 
-- 2026-03-03: Training stand-up recorded a routine note against the checkpoint writer for window 1056. The restart backlog was cleared with no amendment raised.
+- 2026-03-03: A weekly review spot-checked a routine observation. An operator asked whether a credit had posted; it had, in the preceding period. Nothing here bears on engine behaviour.
 
-- 2026-03-09: Engineer on call logged a routine observation for the object-store gateway during review window 1058. Throughput drift reviewed; no policy change requested.
+- 2026-03-09: A reviewer on shift recorded a routine observation. An operator asked whether a credit had posted; it had, in the preceding period. No follow-up was requested.
 
-- 2026-03-01: Platform desk noted retry storms on the parameter server in window 1059. Raised with the storage owner; the resume parameters were not touched.
+- 2026-03-01: The operations desk filed a routine observation. Storage on the staging host was extended after the export outgrew its allocation.
 
-- 2026-03-01: Run review of the parameter server in window 1061 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-03-01: The reconciliation desk reviewed a routine observation. Nightly reconciliation matched exactly and the file was released without comment.
 
-- 2026-03-20: Platform desk noted retry storms on the run telemetry pipeline in window 1062. Raised with the storage owner; the resume parameters were not touched.
+- 2026-03-20: A reviewer on shift raised and closed a routine observation. A typo in a reference record was corrected before the run started. The thread was archived after review.
 
-- 2026-03-15: Engineer on call logged a routine observation for the shard loader during review window 1065. Throughput drift reviewed; no policy change requested.
+- 2026-03-15: A stand-up note opened a query on a routine observation. Late inputs arrived from one feed and were loaded before the cut. Closed with no parameter change.
 
-- 2026-03-08: Run review of the parameter server in window 1067 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-03-08: The reconciliation desk filed a routine observation. A question raised on the floor was withdrawn once the entry was reread.
 
-- 2026-03-20: Training stand-up recorded a routine note against the run telemetry pipeline for window 1068. The restart backlog was cleared with no amendment raised.
+- 2026-03-20: The exceptions queue owner filed a routine observation. The downstream vendor confirmed receipt inside the agreed window. No action was carried forward.
 
-- 2026-03-05: Training stand-up recorded a routine note against the checkpoint writer for window 1070. The restart backlog was cleared with no amendment raised.
+- 2026-03-05: A weekly review recorded a routine observation. Storage on the staging host was extended after the export outgrew its allocation.
 
-- 2026-03-03: Run review of the run telemetry pipeline in window 1073 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-03-03: The operations desk spot-checked a routine observation. The variance sat inside tolerance and no adjustment was raised. No action was carried forward.
 
-- 2026-03-14: Training stand-up recorded a routine note against the parameter server for window 1076. The restart backlog was cleared with no amendment raised.
+- 2026-03-14: The reconciliation desk noted a routine observation. Nightly reconciliation matched exactly and the file was released without comment.
 
-- 2026-03-17: Training stand-up recorded a routine note against the parameter server for window 1079. The restart backlog was cleared with no amendment raised.
+- 2026-03-17: The duty analyst reviewed a routine observation. The count sat a little above the running mean, entirely from estimated inputs.
 
-- 2026-03-10: Platform desk noted retry storms on the parameter server in window 1080. Raised with the storage owner; the resume parameters were not touched.
+- 2026-03-10: A shift handover spot-checked a routine observation. The variance sat inside tolerance and no adjustment was raised. Nothing here bears on engine behaviour.
 
-- 2026-03-18: Engineer on call logged a routine observation for the run telemetry pipeline during review window 1082. Throughput drift reviewed; no policy change requested.
+- 2026-03-18: An on-call engineer raised and closed a routine observation. Nightly reconciliation matched exactly and the file was released without comment. No action was carried forward.
 
-- 2026-03-21: Run review of the parameter server in window 1084 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-03-21: A shift handover noted a routine observation. The variance sat inside tolerance and no adjustment was raised.
 
-- 2026-03-12: Platform desk noted retry storms on the run telemetry pipeline in window 1087. Raised with the storage owner; the resume parameters were not touched.
+- 2026-03-12: The operations desk carried forward a routine observation. The overnight window ran long behind an unrelated platform patch. Filed for the record.
 
-- 2026-03-01: Engineer on call logged a routine observation for the checkpoint writer during review window 1088. Throughput drift reviewed; no policy change requested.
+- 2026-03-01: An on-call engineer logged a routine observation. Nightly reconciliation matched exactly and the file was released without comment. The desk confirmed no downstream impact.
 
-- 2026-03-13: Run review of the object-store gateway in window 1091 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-03-13: The duty analyst raised and closed a routine observation. The variance sat inside tolerance and no adjustment was raised. No action was carried forward.
 
-- 2026-03-14: Platform desk noted retry storms on the checkpoint writer in window 1094. Raised with the storage owner; the resume parameters were not touched.
+- 2026-03-14: A shift handover reviewed a routine observation. Dashboard tiles lagged the refresh; traced to cache staleness rather than the engine.
 
-- 2026-03-22: Run review of the run telemetry pipeline in window 1096 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-03-22: The audit lead spot-checked a routine observation. Storage on the staging host was extended after the export outgrew its allocation. Closed with no parameter change.
 
-- 2026-03-13: Run review of the parameter server in window 1097 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-03-13: The reconciliation desk spot-checked a routine observation. Late inputs arrived from one feed and were loaded before the cut. Nothing here bears on engine behaviour.
 
-- 2026-03-16: Platform desk noted retry storms on the parameter server in window 1100. Raised with the storage owner; the resume parameters were not touched.
+- 2026-03-16: The audit lead logged a routine observation. Two accounts showed a same-day transfer the export had not yet picked up. The desk confirmed no downstream impact.
 
-- 2026-03-16: Platform desk noted retry storms on the checkpoint writer in window 1103. Raised with the storage owner; the resume parameters were not touched.
+- 2026-03-16: The controls team reviewed a routine observation. Storage on the staging host was extended after the export outgrew its allocation. The thread was archived after review.
 
-- 2026-04-02: Run review of the shard loader in window 1106 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-04-02: A shift handover noted a routine observation. The overnight window ran long behind an unrelated platform patch. Nothing here bears on engine behaviour.
 
-- 2026-04-10: Engineer on call logged a routine observation for the object-store gateway during review window 1107. Throughput drift reviewed; no policy change requested.
+- 2026-04-10: An on-call engineer logged a routine observation. Nightly reconciliation matched exactly and the file was released without comment.
 
-- 2026-04-16: Training stand-up recorded a routine note against the parameter server for window 1110. The restart backlog was cleared with no amendment raised.
+- 2026-04-16: A stand-up note raised and closed a routine observation. The overnight window ran long behind an unrelated platform patch. Filed for the record.
 
-- 2026-04-19: Engineer on call logged a routine observation for the shard loader during review window 1111. Throughput drift reviewed; no policy change requested.
+- 2026-04-19: The controls team recorded a routine observation. The overnight window ran long behind an unrelated platform patch. Referred to the dated decisions and closed.
 
-- 2026-04-06: Platform desk noted retry storms on the checkpoint writer in window 1112. Raised with the storage owner; the resume parameters were not touched.
+- 2026-04-06: The duty analyst raised and closed a routine observation. An operator asked whether a credit had posted; it had, in the preceding period.
 
-- 2026-04-10: Run review of the run telemetry pipeline in window 1113 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-04-10: The operations desk raised and closed a routine observation. Nightly reconciliation matched exactly and the file was released without comment.
 
-- 2026-04-06: Training stand-up recorded a routine note against the shard loader for window 1115. The restart backlog was cleared with no amendment raised.
+- 2026-04-06: The controls team filed a routine observation. The downstream vendor confirmed receipt inside the agreed window.
 
-- 2026-04-27: Platform desk noted retry storms on the checkpoint writer in window 1117. Raised with the storage owner; the resume parameters were not touched.
+- 2026-04-27: The reconciliation desk raised and closed a routine observation. Dashboard tiles lagged the refresh; traced to cache staleness rather than the engine. Closed with no parameter change.
 
-- 2026-04-13: Platform desk noted retry storms on the checkpoint writer in window 1119. Raised with the storage owner; the resume parameters were not touched.
+- 2026-04-13: The duty analyst filed a routine observation. A duplicate order was cancelled at source and never reached the run. Closed with no parameter change.
 
-- 2026-04-07: Engineer on call logged a routine observation for the object-store gateway during review window 1120. Throughput drift reviewed; no policy change requested.
+- 2026-04-07: The operations desk filed a routine observation. Late inputs arrived from one feed and were loaded before the cut. No action was carried forward.
 
-- 2026-04-03: Engineer on call logged a routine observation for the shard loader during review window 1122. Throughput drift reviewed; no policy change requested.
+- 2026-04-03: The platform team spot-checked a routine observation. A question raised on the floor was withdrawn once the entry was reread. Filed for the record.
 
-- 2026-04-01: Platform desk noted retry storms on the checkpoint writer in window 1124. Raised with the storage owner; the resume parameters were not touched.
+- 2026-04-01: A reviewer on shift signed off a routine observation. Late inputs arrived from one feed and were loaded before the cut. Referred to the dated decisions and closed.
 
-- 2026-04-11: Run review of the parameter server in window 1126 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-04-11: The controls team filed a routine observation. A duplicate order was cancelled at source and never reached the run. Nothing here bears on engine behaviour.
 
-- 2026-04-09: Training stand-up recorded a routine note against the shard loader for window 1129. The restart backlog was cleared with no amendment raised.
+- 2026-04-09: A stand-up note noted a routine observation. A query about a prior-period entry was answered from the published schedule.
 
-- 2026-04-25: Training stand-up recorded a routine note against the object-store gateway for window 1132. The restart backlog was cleared with no amendment raised.
+- 2026-04-25: A weekly review carried forward a routine observation. A duplicate order was cancelled at source and never reached the run.
 
-- 2026-04-01: Training stand-up recorded a routine note against the run telemetry pipeline for window 1135. The restart backlog was cleared with no amendment raised.
+- 2026-04-01: The platform team spot-checked a routine observation. A duplicate order was cancelled at source and never reached the run. Filed for the record.
 
-- 2026-04-02: Platform desk noted retry storms on the object-store gateway in window 1137. Raised with the storage owner; the resume parameters were not touched.
+- 2026-04-02: The reconciliation desk carried forward a routine observation. A batch retried once after a transient timeout and completed on the second pass.
 
-- 2026-04-10: Platform desk noted retry storms on the shard loader in window 1140. Raised with the storage owner; the resume parameters were not touched.
+- 2026-04-10: A weekly review signed off a routine observation. A query about a prior-period entry was answered from the published schedule.
 
-- 2026-04-23: Engineer on call logged a routine observation for the run telemetry pipeline during review window 1143. Throughput drift reviewed; no policy change requested.
+- 2026-04-23: The duty analyst opened a query on a routine observation. Storage on the staging host was extended after the export outgrew its allocation. Closed with no parameter change.
 
-- 2026-04-12: Run review of the object-store gateway in window 1146 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-04-12: An on-call engineer signed off a routine observation. Nightly reconciliation matched exactly and the file was released without comment. No follow-up was requested.
 
-- 2026-04-01: Engineer on call logged a routine observation for the run telemetry pipeline during review window 1147. Throughput drift reviewed; no policy change requested.
+- 2026-04-01: The controls team carried forward a routine observation. Two accounts showed a same-day transfer the export had not yet picked up. Filed for the record.
 
-- 2026-04-19: Training stand-up recorded a routine note against the shard loader for window 1149. The restart backlog was cleared with no amendment raised.
+- 2026-04-19: The exceptions queue owner recorded a routine observation. A batch retried once after a transient timeout and completed on the second pass. Closed with no parameter change.
 
-- 2026-04-07: Engineer on call logged a routine observation for the parameter server during review window 1152. Throughput drift reviewed; no policy change requested.
+- 2026-04-07: The audit lead signed off a routine observation. Late inputs arrived from one feed and were loaded before the cut. Filed for the record.
 
-- 2026-05-18: Training stand-up recorded a routine note against the run telemetry pipeline for window 1153. The restart backlog was cleared with no amendment raised.
+- 2026-05-18: The operations desk logged a routine observation. The overnight window ran long behind an unrelated platform patch. The desk confirmed no downstream impact.
 
 > **Governance decision (2026-05-06 - #ML-6150)** Priya: Input paths, final. The shard catalogue, the data incident record and the resume policy are always read from their fixed absolute paths under /app/data; `--input` selects the checkpoint registry only. Both `--input` and `--output-dir` keep their documented defaults.
 
@@ -172,88 +172,88 @@ How the resume planner is *meant* to behave -- the recovery of the truncated che
 
 > **Governance decision (2026-05-28 - #ML-6196)** Lena: Emission order, final. The plan lists every checkpoint ascending by step, whether complete or not, and its re-fetch list in the admitted order. The deferred queue keeps the same ascending epoch and shard id order.
 
-- 2026-05-02: Engineer on call logged a routine observation for the object-store gateway during review window 1155. Throughput drift reviewed; no policy change requested.
+- 2026-05-02: A shift handover recorded a routine observation. A typo in a reference record was corrected before the run started. The thread was archived after review.
 
-- 2026-05-17: Training stand-up recorded a routine note against the parameter server for window 1158. The restart backlog was cleared with no amendment raised.
+- 2026-05-17: A shift handover noted a routine observation. Two accounts showed a same-day transfer the export had not yet picked up. No action was carried forward.
 
-- 2026-05-13: Engineer on call logged a routine observation for the parameter server during review window 1161. Throughput drift reviewed; no policy change requested.
+- 2026-05-13: A weekly review opened a query on a routine observation. A typo in a reference record was corrected before the run started. No follow-up was requested.
 
-- 2026-05-03: Platform desk noted retry storms on the checkpoint writer in window 1162. Raised with the storage owner; the resume parameters were not touched.
+- 2026-05-03: The platform team logged a routine observation. A duplicate order was cancelled at source and never reached the run. No action was carried forward.
 
-- 2026-05-16: Run review of the run telemetry pipeline in window 1165 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-05-16: The controls team spot-checked a routine observation. Storage on the staging host was extended after the export outgrew its allocation. No follow-up was requested.
 
-- 2026-05-23: Engineer on call logged a routine observation for the object-store gateway during review window 1166. Throughput drift reviewed; no policy change requested.
+- 2026-05-23: The audit lead noted a routine observation. The count sat a little above the running mean, entirely from estimated inputs.
 
-- 2026-05-05: Engineer on call logged a routine observation for the run telemetry pipeline during review window 1169. Throughput drift reviewed; no policy change requested.
+- 2026-05-05: The platform team logged a routine observation. A duplicate order was cancelled at source and never reached the run. Referred to the dated decisions and closed.
 
-- 2026-05-05: Engineer on call logged a routine observation for the shard loader during review window 1171. Throughput drift reviewed; no policy change requested.
+- 2026-05-05: The reconciliation desk logged a routine observation. A typo in a reference record was corrected before the run started.
 
-- 2026-05-19: Platform desk noted retry storms on the shard loader in window 1174. Raised with the storage owner; the resume parameters were not touched.
+- 2026-05-19: A shift handover raised and closed a routine observation. Storage on the staging host was extended after the export outgrew its allocation. Closed with no parameter change.
 
-- 2026-05-23: Run review of the checkpoint writer in window 1176 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-05-23: A shift handover recorded a routine observation. The variance sat inside tolerance and no adjustment was raised. Closed with no parameter change.
 
-- 2026-05-03: Engineer on call logged a routine observation for the parameter server during review window 1177. Throughput drift reviewed; no policy change requested.
+- 2026-05-03: A reviewer on shift signed off a routine observation. A question raised on the floor was withdrawn once the entry was reread. No action was carried forward.
 
-- 2026-05-12: Engineer on call logged a routine observation for the checkpoint writer during review window 1180. Throughput drift reviewed; no policy change requested.
+- 2026-05-12: A reviewer on shift logged a routine observation. Dashboard tiles lagged the refresh; traced to cache staleness rather than the engine. Closed with no parameter change.
 
-- 2026-05-19: Engineer on call logged a routine observation for the shard loader during review window 1182. Throughput drift reviewed; no policy change requested.
+- 2026-05-19: A weekly review opened a query on a routine observation. A batch retried once after a transient timeout and completed on the second pass. Filed for the record.
 
-- 2026-05-10: Platform desk noted retry storms on the checkpoint writer in window 1184. Raised with the storage owner; the resume parameters were not touched.
+- 2026-05-10: An on-call engineer reviewed a routine observation. A question raised on the floor was withdrawn once the entry was reread. Referred to the dated decisions and closed.
 
-- 2026-05-07: Run review of the run telemetry pipeline in window 1186 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-05-07: The exceptions queue owner opened a query on a routine observation. The variance sat inside tolerance and no adjustment was raised.
 
-- 2026-05-02: Engineer on call logged a routine observation for the object-store gateway during review window 1187. Throughput drift reviewed; no policy change requested.
+- 2026-05-02: The audit lead carried forward a routine observation. A question raised on the floor was withdrawn once the entry was reread.
 
-- 2026-05-22: Platform desk noted retry storms on the parameter server in window 1188. Raised with the storage owner; the resume parameters were not touched.
+- 2026-05-22: An on-call engineer raised and closed a routine observation. The variance sat inside tolerance and no adjustment was raised. Closed with no parameter change.
 
-- 2026-05-23: Training stand-up recorded a routine note against the parameter server for window 1191. The restart backlog was cleared with no amendment raised.
+- 2026-05-23: The exceptions queue owner carried forward a routine observation. A typo in a reference record was corrected before the run started.
 
-- 2026-05-09: Run review of the object-store gateway in window 1193 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-05-09: The reconciliation desk recorded a routine observation. Nightly reconciliation matched exactly and the file was released without comment. The desk confirmed no downstream impact.
 
-- 2026-05-16: Run review of the checkpoint writer in window 1195 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-05-16: The duty analyst noted a routine observation. Dashboard tiles lagged the refresh; traced to cache staleness rather than the engine. No action was carried forward.
 
-- 2026-06-03: Training stand-up recorded a routine note against the run telemetry pipeline for window 1198. The restart backlog was cleared with no amendment raised.
+- 2026-06-03: A shift handover raised and closed a routine observation. Storage on the staging host was extended after the export outgrew its allocation. The thread was archived after review.
 
 > **Governance decision (2026-06-02 - #ML-6210)** Priya: Resume policy baseline, read from /app/data/resume_policy.json at that fixed absolute path. Any field the policy file omits keeps its baseline: world_size = 16; refetch_budget_bytes = 35000000000; max_refetch_shards = 120.
 
-- 2026-06-14: Platform desk noted retry storms on the object-store gateway in window 1199. Raised with the storage owner; the resume parameters were not touched.
+- 2026-06-14: The platform team filed a routine observation. One record appeared twice in the export after a mid-cycle correction. No follow-up was requested.
 
-- 2026-06-02: Run review of the object-store gateway in window 1200 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-06-02: The duty analyst opened a query on a routine observation. The overnight window ran long behind an unrelated platform patch. Closed with no parameter change.
 
-- 2026-06-19: Training stand-up recorded a routine note against the object-store gateway for window 1201. The restart backlog was cleared with no amendment raised.
+- 2026-06-19: The platform team carried forward a routine observation. The count sat a little above the running mean, entirely from estimated inputs. The thread was archived after review.
 
-- 2026-06-16: Run review of the shard loader in window 1204 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-06-16: An on-call engineer reviewed a routine observation. Dashboard tiles lagged the refresh; traced to cache staleness rather than the engine.
 
-- 2026-06-13: Platform desk noted retry storms on the checkpoint writer in window 1206. Raised with the storage owner; the resume parameters were not touched.
+- 2026-06-13: The operations desk spot-checked a routine observation. A question raised on the floor was withdrawn once the entry was reread. Filed for the record.
 
-- 2026-06-14: Engineer on call logged a routine observation for the run telemetry pipeline during review window 1209. Throughput drift reviewed; no policy change requested.
+- 2026-06-14: The platform team carried forward a routine observation. A question raised on the floor was withdrawn once the entry was reread.
 
-- 2026-06-11: Training stand-up recorded a routine note against the object-store gateway for window 1212. The restart backlog was cleared with no amendment raised.
+- 2026-06-11: The reconciliation desk opened a query on a routine observation. Dashboard tiles lagged the refresh; traced to cache staleness rather than the engine. Referred to the dated decisions and closed.
 
-- 2026-06-02: Platform desk noted retry storms on the shard loader in window 1214. Raised with the storage owner; the resume parameters were not touched.
+- 2026-06-02: The audit lead recorded a routine observation. The overnight window ran long behind an unrelated platform patch.
 
-- 2026-06-16: Run review of the object-store gateway in window 1215 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-06-16: The reconciliation desk logged a routine observation. Two accounts showed a same-day transfer the export had not yet picked up.
 
-- 2026-06-05: Platform desk noted retry storms on the checkpoint writer in window 1218. Raised with the storage owner; the resume parameters were not touched.
+- 2026-06-05: The operations desk signed off a routine observation. The count sat a little above the running mean, entirely from estimated inputs.
 
-- 2026-06-22: Run review of the shard loader in window 1219 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-06-22: A reviewer on shift noted a routine observation. The overnight window ran long behind an unrelated platform patch.
 
-- 2026-06-07: Platform desk noted retry storms on the parameter server in window 1222. Raised with the storage owner; the resume parameters were not touched.
+- 2026-06-07: The audit lead noted a routine observation. A query about a prior-period entry was answered from the published schedule.
 
-- 2026-06-05: Run review of the parameter server in window 1223 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-06-05: A weekly review carried forward a routine observation. A question raised on the floor was withdrawn once the entry was reread.
 
-- 2026-06-26: Training stand-up recorded a routine note against the shard loader for window 1224. The restart backlog was cleared with no amendment raised.
+- 2026-06-26: The controls team opened a query on a routine observation. Dashboard tiles lagged the refresh; traced to cache staleness rather than the engine. No action was carried forward.
 
-- 2026-06-25: Training stand-up recorded a routine note against the checkpoint writer for window 1226. The restart backlog was cleared with no amendment raised.
+- 2026-06-25: The controls team reviewed a routine observation. The count sat a little above the running mean, entirely from estimated inputs. No action was carried forward.
 
-- 2026-06-26: Training stand-up recorded a routine note against the parameter server for window 1229. The restart backlog was cleared with no amendment raised.
+- 2026-06-26: The platform team opened a query on a routine observation. Dashboard tiles lagged the refresh; traced to cache staleness rather than the engine. The desk confirmed no downstream impact.
 
-- 2026-06-23: Training stand-up recorded a routine note against the run telemetry pipeline for window 1232. The restart backlog was cleared with no amendment raised.
+- 2026-06-23: A weekly review logged a routine observation. The downstream vendor confirmed receipt inside the agreed window. The desk confirmed no downstream impact.
 
-- 2026-06-17: Engineer on call logged a routine observation for the parameter server during review window 1234. Throughput drift reviewed; no policy change requested.
+- 2026-06-17: The exceptions queue owner reviewed a routine observation. A question raised on the floor was withdrawn once the entry was reread.
 
-- 2026-06-24: Run review of the run telemetry pipeline in window 1236 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-06-24: A reviewer on shift logged a routine observation. Nightly reconciliation matched exactly and the file was released without comment. Filed for the record.
 
-- 2026-06-10: Platform desk noted retry storms on the checkpoint writer in window 1239. Raised with the storage owner; the resume parameters were not touched.
+- 2026-06-10: The reconciliation desk reviewed a routine observation. The overnight window ran long behind an unrelated platform patch. Filed for the record.
 
-- 2026-06-02: Run review of the parameter server in window 1240 closed with no action; the standing thresholds were reconfirmed as they are.
+- 2026-06-02: A shift handover carried forward a routine observation. Storage on the staging host was extended after the export outgrew its allocation.
