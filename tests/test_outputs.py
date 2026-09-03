@@ -122,6 +122,34 @@ def test_alternate_registry_matches_fixture(alternate_outputs):
     assert _digest(queue) == FIXTURE["alternate"]["queue_digest"]
 
 
+def test_a_stale_file_in_the_given_output_dir_is_cleared(tmp_path: Path):
+    """The contract's "exactly the three named files" holds for --output-dir too.
+
+    The default-path run above plants a stale artifact; this does the same for an
+    explicitly supplied directory, which is the case the reference missed -- it
+    created the directory if absent but never removed what was already there.
+    """
+    binary = _build(WORKFLOW_PATH)
+    _publish_inputs()
+    work = _candidate_dir()
+    out_dir = work / "given"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    os.chmod(out_dir, 0o777)
+    (out_dir / "stale.txt").write_text("left over\n", encoding="utf-8")
+    os.chmod(out_dir / "stale.txt", 0o666)
+    before = out_dir.stat()
+    result = _run_agent([binary, "--output-dir", str(out_dir)], cwd=work)
+    assert result.returncode == 0, (
+        f"the run exited {result.returncode}\n"
+        f"stdout: {result.stdout[-2000:]}\nstderr: {result.stderr[-2000:]}")
+    assert sorted(q.name for q in out_dir.iterdir()) == [
+        "refetch_queue.jsonl", "resume_plan.json", "summary.json"], (
+        "a stale file survived into the output directory")
+    after = out_dir.stat()
+    assert (after.st_ino, after.st_dev) == (before.st_ino, before.st_dev), (
+        "the directory was replaced rather than cleared")
+
+
 def test_output_dir_contains_exactly_three_files(primary_outputs):
     """A run writes the three contracted artifacts and nothing else."""
     out_dir, _, _, _ = primary_outputs
@@ -533,13 +561,23 @@ def test_no_argument_run_writes_to_the_documented_defaults(primary_outputs):
     for stale in sorted(default_out.iterdir()):
         stale.unlink() if stale.is_file() or stale.is_symlink() else shutil.rmtree(stale)
     os.chmod(default_out, 0o777)
+    # something for the run to clear. resume_contract.json states that the output
+    # directory carries exactly the three named files, so a stale artifact left
+    # by an earlier run must not survive into this one -- a rule I previously
+    # read only out of instruction.md, where it is not written.
+    (default_out / "left_behind.json").write_text("{}\n", encoding="utf-8")
+    os.chmod(default_out / "left_behind.json", 0o666)
+    (default_out / "scratch").mkdir()
+    os.chmod(default_out / "scratch", 0o777)
     try:
         result = _run_agent([binary], cwd=_candidate_dir())
         assert result.returncode == 0, (
             f"the no-argument run exited {result.returncode}\n"
             f"stdout: {result.stdout[-2000:]}\nstderr: {result.stderr[-2000:]}")
         assert sorted(q.name for q in default_out.iterdir()) == [
-            "refetch_queue.jsonl", "resume_plan.json", "summary.json"]
+            "refetch_queue.jsonl", "resume_plan.json", "summary.json"], (
+            "the run did not clear what an earlier run left in the output "
+            "directory, which the contract requires to carry exactly three files")
         _, summary, doc, queue = primary_outputs
         assert _load_json(default_out / "summary.json") == summary
         assert _digest(_load_json(default_out / "resume_plan.json")) == _digest(doc)
@@ -666,6 +704,12 @@ def test_shipped_contract_matches_the_golden_copy():
     from the verifier's own image; this proves the agent's copy still agrees with
     it, so the contract cannot be trimmed to weaken a schema check.
     """
+    # bytes first: instruction.md names the contract among the files that come
+    # back byte for byte unchanged, and a re-dump at a different indent or key
+    # order satisfied the parsed comparison while breaking that promise
+    assert hashlib.sha256(SPEC_PATH.read_bytes()).hexdigest() == \
+        hashlib.sha256(GOLDEN_CONTRACT_PATH.read_bytes()).hexdigest(), (
+        "the shipped contract differs from the golden copy in its bytes")
     shipped = json.loads(SPEC_PATH.read_text(encoding="utf-8"))
     assert shipped == json.loads(GOLDEN_CONTRACT_PATH.read_text(encoding="utf-8"))
 

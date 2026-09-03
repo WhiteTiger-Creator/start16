@@ -10,6 +10,11 @@
   },
   "contract_version": "resume-plan-v1",
   "description": "Output contract for the resume planner. Shapes, paths, field lists and sort orders only; no derivation rule lives here.",
+  "field_notes": {
+    "rank_count": "how many distinct ranks those entries cover",
+    "shard_count": "how many registry entries the checkpoint at that step carries, model and optimizer shards together",
+    "total_bytes": "the sum of the bytes those entries report"
+  },
   "outputs": {
     "refetch_queue": {
       "container": "jsonl",
@@ -19,14 +24,14 @@
         "bytes",
         "reason"
       ],
+      "fields_are_exclusive": "the listed fields are the whole record: it carries these and no others, the same way the output directory carries exactly the three named files",
       "path": "/app/output/refetch_queue.jsonl",
       "reasons": [
         "checksum_mismatch",
         "poisoned_epoch"
       ],
       "serialisation": "one compact JSON object per line, trailing newline",
-      "sort": "ascending by epoch, then shard_id",
-      "fields_are_exclusive": "the listed fields are the whole record: it carries these and no others, the same way the output directory carries exactly the three named files"
+      "sort": "ascending by epoch, then shard_id"
     },
     "resume_plan": {
       "checkpoint_fields": [
@@ -38,6 +43,7 @@
         "total_bytes"
       ],
       "container": "object",
+      "fields_are_exclusive": "the listed fields are the whole record: it carries these and no others, the same way the output directory carries exactly the three named files",
       "path": "/app/output/resume_plan.json",
       "refetch_fields": [
         "shard_id",
@@ -51,11 +57,23 @@
         "refetch"
       ],
       "serialisation": "JSON object, two-space indent, trailing newline",
-      "sort": "checkpoints ascending by step; refetch in the admitted order",
-      "fields_are_exclusive": "the listed fields are the whole record: it carries these and no others, the same way the output directory carries exactly the three named files"
+      "sort": "checkpoints ascending by step; refetch in the admitted order"
     },
     "summary": {
       "container": "object",
+      "field_notes": {
+        "admissible_checkpoint_count": "of those complete steps, the ones written strictly before the first poisoned step, so a complete checkpoint the run poisoned is counted by complete_checkpoint_count and not by this",
+        "checkpoint_count": "distinct steps those records name, complete or not",
+        "complete_checkpoint_count": "steps carrying a model and an optimizer shard for EVERY rank in the effective world size; poisoning is not considered here",
+        "effective_world_size/effective_refetch_budget/effective_max_refetch": "the values in force once the policy is resolved, whether from the policy file or from the governed baseline",
+        "entry_count": "records in the registry handed to --input",
+        "first_poisoned_step": "the first step of the earliest poisoned epoch, or -1 when the incident poisons no epoch",
+        "refetch_deferred_count": "of those, the ones deferred; needed is always planned plus deferred",
+        "refetch_needed_count": "shards needing refetch before the resume, before the budget and the cap",
+        "refetch_planned_bytes": "stored bytes of the planned refetches only, not of the deferred",
+        "refetch_planned_count": "of those, the ones the budget and the cap admit into the plan",
+        "resume_step": "the highest admissible step, or -1 when none is admissible"
+      },
       "field_types": {
         "admissible_checkpoint_count": "integer",
         "checkpoint_count": "integer",
@@ -72,6 +90,7 @@
         "resume_step": "integer",
         "schema_version": "string"
       },
+      "fields_are_exclusive": "the listed fields are the whole record: it carries these and no others, the same way the output directory carries exactly the three named files",
       "path": "/app/output/summary.json",
       "required_fields": [
         "schema_version",
@@ -89,26 +108,13 @@
         "effective_refetch_budget",
         "effective_max_refetch"
       ],
-      "serialisation": "JSON object, two-space indent, trailing newline",
-      "fields_are_exclusive": "the listed fields are the whole record: it carries these and no others, the same way the output directory carries exactly the three named files",
-      "field_notes": {
-        "entry_count": "records in the registry handed to --input",
-        "checkpoint_count": "distinct steps those records name, complete or not",
-        "complete_checkpoint_count": "steps carrying a model and an optimizer shard for EVERY rank in the effective world size; poisoning is not considered here",
-        "admissible_checkpoint_count": "of those complete steps, the ones written strictly before the first poisoned step, so a complete checkpoint the run poisoned is counted by complete_checkpoint_count and not by this",
-        "resume_step": "the highest admissible step, or -1 when none is admissible",
-        "first_poisoned_step": "the first step of the earliest poisoned epoch, or -1 when the incident poisons no epoch",
-        "refetch_needed_count": "shards needing refetch before the resume, before the budget and the cap",
-        "refetch_planned_count": "of those, the ones the budget and the cap admit into the plan",
-        "refetch_deferred_count": "of those, the ones deferred; needed is always planned plus deferred",
-        "refetch_planned_bytes": "stored bytes of the planned refetches only, not of the deferred",
-        "effective_world_size/effective_refetch_budget/effective_max_refetch": "the values in force once the policy is resolved, whether from the policy file or from the governed baseline"
-      }
+      "serialisation": "JSON object, two-space indent, trailing newline"
     }
   },
   "reconciled_inputs": {
     "checkpoint_registry": {
       "container": "array",
+      "fields_are_exclusive": "the listed fields are the whole record: it carries these and no others, the same way the output directory carries exactly the three named files",
       "path": "/app/data/checkpoint_registry.json",
       "record_fields": [
         "entry_id",
@@ -121,8 +127,7 @@
         "written_seq"
       ],
       "serialisation": "JSON array, two-space indent, trailing newline",
-      "sort": "ascending by step, then rank, then kind, then entry_id",
-      "fields_are_exclusive": "the listed fields are the whole record: it carries these and no others, the same way the output directory carries exactly the three named files"
+      "sort": "ascending by step, then rank, then kind, then entry_id"
     }
   },
   "runtime_budget_seconds": 90,
