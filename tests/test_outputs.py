@@ -193,6 +193,67 @@ def test_a_newer_complete_checkpoint_was_available_and_rejected(primary_outputs)
     assert newest_complete > summary["resume_step"]
 
 
+def test_the_artifacts_are_serialised_exactly_as_the_contract_states(primary_outputs):
+    """Read off the raw bytes, which _digest normalises away by parsing first.
+
+    The contract fixes a two-space indent and a trailing newline for the summary,
+    the resume plan and the rebuilt registry, and every check here decoded them
+    before comparing -- so a run emitting the same values compactly matched every
+    sealed digest while breaking the stated form.
+    """
+    out_dir = primary_outputs[0]
+    spec = SPEC["outputs"]
+    for name, section in (("summary.json", "summary"),
+                          ("resume_plan.json", "resume_plan")):
+        raw = (out_dir / name).read_text(encoding="utf-8")
+        stated = spec[section]["serialisation"]
+        assert "two-space indent" in stated and "trailing newline" in stated, stated
+        assert raw.endswith("\n") and not raw.endswith("\n\n"), name
+        assert raw == json.dumps(json.loads(raw), indent=2) + "\n", (
+            f"{name} is not the contract's two-space indent")
+
+    raw = (out_dir / "refetch_queue.jsonl").read_text(encoding="utf-8")
+    assert "compact JSON object per line" in spec["refetch_queue"]["serialisation"]
+    assert raw == "" or raw.endswith("\n")
+    for line in raw.splitlines():
+        assert line.strip(), "the queue carries a blank line"
+        assert line == json.dumps(json.loads(line), separators=(",", ":")), (
+            "a queue line is not compact JSON")
+
+    # the rebuilt registry is a graded artifact too, and carries its own rule
+    raw = REGISTRY_PATH.read_text(encoding="utf-8")
+    stated = SPEC["reconciled_inputs"]["checkpoint_registry"]["serialisation"]
+    assert "two-space indent" in stated and "trailing newline" in stated, stated
+    assert raw.endswith("\n") and not raw.endswith("\n\n")
+    assert raw == json.dumps(json.loads(raw), indent=2) + "\n", (
+        "the rebuilt registry is not the contract's two-space indent")
+
+
+def test_a_shard_that_is_both_poisoned_and_mismatched_reads_poisoned(primary_outputs):
+    """#ML-6190: the epoch is the stronger finding, and it decides the label.
+
+    Twenty-seven shards on the graded run are in a poisoned epoch AND carry a
+    checksum that disagrees with the catalogue, so the precedence is not a corner
+    case -- it settles the reason on every one of them. The rule was only implied
+    by the order the reference happened to test in, so a solution labelling them
+    checksum_mismatch failed the sealed digests with nothing to explain why.
+    """
+    _, _, plan, queue = primary_outputs
+    catalog = _load_json(DATA / "shard_catalog.json")
+    rows = catalog if isinstance(catalog, list) else catalog["shards"]
+    poisoned = set(_load_json(DATA / "data_incident.json")["poisoned_epochs"])
+    both = {s["shard_id"] for s in rows
+            if s["epoch"] in poisoned
+            and s["stored_checksum"] != s["expected_checksum"]}
+    assert both, "no shard is both poisoned and mismatched, so this rule is unreachable"
+    seen = {row["shard_id"]: row["reason"] for row in list(plan["refetch"]) + list(queue)}
+    for shard_id in sorted(both):
+        if shard_id in seen:
+            assert seen[shard_id] == "poisoned_epoch", (
+                f"{shard_id} is in a poisoned epoch and mismatched, so #ML-6190 "
+                f"gives it poisoned_epoch, not {seen[shard_id]!r}")
+
+
 def test_the_refetch_counts_partition_what_was_needed(primary_outputs):
     """needed is planned plus deferred, and the planned bytes are the planned ones.
 
@@ -435,13 +496,19 @@ def test_no_argument_run_writes_to_the_documented_defaults(primary_outputs):
     """
     binary = _build(WORKFLOW_PATH)
     _publish_inputs()
+    # /app is root-owned, so the run cannot replace this directory -- only empty
+    # it. Removing it outright also mutated shared state that nothing restored.
     default_out = Path("/app/output")
-    shutil.rmtree(default_out, ignore_errors=True)
     default_out.mkdir(parents=True, exist_ok=True)
+    for stale in sorted(default_out.iterdir()):
+        stale.unlink() if stale.is_file() or stale.is_symlink() else shutil.rmtree(stale)
     os.chmod(default_out, 0o777)
     result = _run_agent([binary], cwd=_candidate_dir())
-    assert result.returncode == 0, result.stderr
-    assert sorted(q.name for q in default_out.iterdir()) == ['refetch_queue.jsonl', 'resume_plan.json', 'summary.json']
+    assert result.returncode == 0, (
+        f"the no-argument run exited {result.returncode}\n"
+        f"stdout: {result.stdout[-2000:]}\nstderr: {result.stderr[-2000:]}")
+    assert sorted(q.name for q in default_out.iterdir()) == [
+        'refetch_queue.jsonl', 'resume_plan.json', 'summary.json']
     _, summary, doc, queue = primary_outputs
     assert _load_json(default_out / "summary.json") == summary
     assert _digest(_load_json(default_out / "resume_plan.json")) == _digest(doc)
