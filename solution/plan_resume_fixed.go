@@ -218,7 +218,11 @@ func main() {
 	var spent int64
 	full := false
 	for _, row := range needed {
-		if !full && len(planned) < maxRefetch && spent+row.Bytes <= budget {
+		// budget-spent rather than spent+bytes: the sum overflows int64 for a
+		// budget near the type's ceiling and wraps negative, which admits a
+		// shard the budget cannot actually hold. spent never exceeds budget,
+		// so the difference is non-negative and the comparison cannot wrap.
+		if !full && len(planned) < maxRefetch && row.Bytes <= budget-spent {
 			planned = append(planned, row)
 			spent += row.Bytes
 			continue

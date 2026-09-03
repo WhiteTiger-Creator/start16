@@ -247,11 +247,40 @@ def test_a_shard_that_is_both_poisoned_and_mismatched_reads_poisoned(primary_out
             and s["stored_checksum"] != s["expected_checksum"]}
     assert both, "no shard is both poisoned and mismatched, so this rule is unreachable"
     seen = {row["shard_id"]: row["reason"] for row in list(plan["refetch"]) + list(queue)}
+    assert both <= set(seen), (
+        "a shard that is both poisoned and mismatched appears in neither the plan "
+        "nor the queue, so the rule it pins is not reachable here")
     for shard_id in sorted(both):
-        if shard_id in seen:
-            assert seen[shard_id] == "poisoned_epoch", (
-                f"{shard_id} is in a poisoned epoch and mismatched, so #ML-6190 "
-                f"gives it poisoned_epoch, not {seen[shard_id]!r}")
+        assert seen[shard_id] == "poisoned_epoch", (
+            f"{shard_id} is in a poisoned epoch and mismatched, so #ML-6190 "
+            f"gives it poisoned_epoch, not {seen[shard_id]!r}")
+
+
+def test_a_budget_near_the_int64_ceiling_still_defers_what_it_cannot_hold():
+    """The byte budget is a mathematical bound, not a wrapping one.
+
+    Admission was decided by `spent + bytes <= budget`, which overflows int64
+    once the running total plus the next shard passes the type's ceiling: the sum
+    wraps negative, the comparison passes, and a shard the budget cannot hold is
+    planned. Comparing against `budget - spent` cannot wrap, since spent never
+    exceeds budget. Two shards of five exabytes each sum past max-int64, so
+    the second has to defer however large the budget looks.
+    """
+    huge = 5 * 10**18                       # 10^19 > max int64, so two cannot both fit
+    catalog = [
+        {"shard_id": "data-e01-p00", "epoch": 1, "bytes": huge,
+         "expected_checksum": "a", "stored_checksum": "b"},
+        {"shard_id": "data-e01-p01", "epoch": 1, "bytes": huge,
+         "expected_checksum": "a", "stored_checksum": "b"},
+    ]
+    _, summary, plan, queue = _probe(
+        _full(1000), poisoned=(), catalog=catalog, budget=2**63 - 1)
+    assert [r["shard_id"] for r in plan["refetch"]] == ["data-e01-p00"], (
+        "both shards were planned against a budget that cannot mathematically "
+        "hold them, so the admission test wrapped")
+    assert [r["shard_id"] for r in queue] == ["data-e01-p01"]
+    assert summary["refetch_planned_bytes"] == huge
+
 
 
 def test_the_refetch_counts_partition_what_was_needed(primary_outputs):
@@ -497,22 +526,29 @@ def test_no_argument_run_writes_to_the_documented_defaults(primary_outputs):
     binary = _build(WORKFLOW_PATH)
     _publish_inputs()
     # /app is root-owned, so the run cannot replace this directory -- only empty
-    # it. Removing it outright also mutated shared state that nothing restored.
+    # it. The directory is shared state, so it is restored in the finally below.
     default_out = Path("/app/output")
     default_out.mkdir(parents=True, exist_ok=True)
+    before_mode = default_out.stat().st_mode & 0o777
     for stale in sorted(default_out.iterdir()):
         stale.unlink() if stale.is_file() or stale.is_symlink() else shutil.rmtree(stale)
     os.chmod(default_out, 0o777)
-    result = _run_agent([binary], cwd=_candidate_dir())
-    assert result.returncode == 0, (
-        f"the no-argument run exited {result.returncode}\n"
-        f"stdout: {result.stdout[-2000:]}\nstderr: {result.stderr[-2000:]}")
-    assert sorted(q.name for q in default_out.iterdir()) == [
-        'refetch_queue.jsonl', 'resume_plan.json', 'summary.json']
-    _, summary, doc, queue = primary_outputs
-    assert _load_json(default_out / "summary.json") == summary
-    assert _digest(_load_json(default_out / "resume_plan.json")) == _digest(doc)
-    assert _digest(_load_jsonl(default_out / "refetch_queue.jsonl")) == _digest(queue)
+    try:
+        result = _run_agent([binary], cwd=_candidate_dir())
+        assert result.returncode == 0, (
+            f"the no-argument run exited {result.returncode}\n"
+            f"stdout: {result.stdout[-2000:]}\nstderr: {result.stderr[-2000:]}")
+        assert sorted(q.name for q in default_out.iterdir()) == [
+            "refetch_queue.jsonl", "resume_plan.json", "summary.json"]
+        _, summary, doc, queue = primary_outputs
+        assert _load_json(default_out / "summary.json") == summary
+        assert _digest(_load_json(default_out / "resume_plan.json")) == _digest(doc)
+        assert _digest(_load_jsonl(default_out / "refetch_queue.jsonl")) == _digest(queue)
+    finally:
+        for stale in sorted(default_out.iterdir()):
+            stale.unlink() if stale.is_file() or stale.is_symlink() else shutil.rmtree(stale)
+        os.chmod(default_out, before_mode)
+
 
 
 def test_the_budget_is_enforced_by_killing_an_overrunning_run(primary_outputs):
