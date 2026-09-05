@@ -148,6 +148,16 @@ def test_a_stale_file_in_the_given_output_dir_is_cleared(tmp_path: Path):
     after = out_dir.stat()
     assert (after.st_ino, after.st_dev) == (before.st_ino, before.st_dev), (
         "the directory was replaced rather than cleared")
+    # names and an exit code are not enough: a planner that emitted three empty
+    # documents whenever --output-dir was given satisfied every line above while
+    # staying correct on every other run here. This run reads the same default
+    # input as the graded one, so it has to produce the same three artifacts.
+    assert _load_json(out_dir / "summary.json") == FIXTURE["primary"]["summary"], (
+        "the run cleared the directory but did not produce the graded result")
+    assert _digest(_load_json(out_dir / "resume_plan.json")) == \
+        FIXTURE["primary"]["plan_digest"]
+    assert _digest(_load_jsonl(out_dir / "refetch_queue.jsonl")) == \
+        FIXTURE["primary"]["queue_digest"]
 
 
 def test_output_dir_contains_exactly_three_files(primary_outputs):
@@ -396,6 +406,39 @@ def _probe(entries, *, world=2, poisoned=(5,), steps_per_epoch=1000,
     finally:
         for n, text in saved.items():
             (DATA / n).write_text(text, encoding="utf-8")
+
+
+def test_a_repeated_registry_row_counts_again_toward_shard_count():
+    """The contract counts shard_count in REGISTRY ENTRIES, not distinct shards.
+
+    Every registry the suite stages lists each (rank, kind) once, so counting the
+    distinct pairs and counting the rows gave the same number and nothing could
+    tell them apart. total_bytes has always summed the rows, so a registry that
+    lists one shard twice is where the two readings part company: four rows over
+    three distinct pairs, and the bytes of both copies.
+    """
+    registry = [
+        {"entry_id": "e-1", "step": 1000, "rank": 0, "kind": "model",
+         "shard_id": "sh-0", "bytes": 10, "checksum": "c0", "written_seq": 1},
+        {"entry_id": "e-2", "step": 1000, "rank": 0, "kind": "optimizer",
+         "shard_id": "sh-1", "bytes": 20, "checksum": "c1", "written_seq": 2},
+        {"entry_id": "e-3", "step": 1000, "rank": 1, "kind": "model",
+         "shard_id": "sh-2", "bytes": 30, "checksum": "c2", "written_seq": 3},
+        # the same shard listed a second time: another row, another entry_id
+        {"entry_id": "e-4", "step": 1000, "rank": 1, "kind": "model",
+         "shard_id": "sh-2", "bytes": 30, "checksum": "c2", "written_seq": 4},
+    ]
+    _, summary, plan, _ = _probe(registry, world=2, poisoned=())
+    row = next(c for c in plan["checkpoints"] if c["step"] == 1000)
+    assert row["shard_count"] == 4, (
+        "shard_count collapsed the repeated row to three, though the contract "
+        "counts the registry entries the step carries and total_bytes already "
+        "counts both copies")
+    assert row["total_bytes"] == 90, row["total_bytes"]
+    assert row["rank_count"] == 2, row["rank_count"]
+    # the repeat adds nothing to completeness: rank 1 still holds no optimizer
+    assert row["complete"] is False
+    assert summary["entry_count"] == 4
 
 
 def test_a_policy_that_omits_a_field_keeps_the_governed_baseline():

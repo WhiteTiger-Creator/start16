@@ -121,11 +121,17 @@ func main() {
 	}
 	present := map[int64]map[key]bool{}
 	bytesAt := map[int64]int64{}
+	// shard_count is the number of REGISTRY ENTRIES the step carries, so it is
+	// counted off the rows rather than off the distinct (rank, kind) pairs: a
+	// registry that lists the same shard twice contributes both rows here, the
+	// way total_bytes already counts both. Completeness still reads the pair set.
+	rowsAt := map[int64]int{}
 	for _, e := range entries {
 		if present[e.Step] == nil {
 			present[e.Step] = map[key]bool{}
 		}
 		present[e.Step][key{e.Rank, e.Kind}] = true
+		rowsAt[e.Step]++
 		bytesAt[e.Step] += e.Bytes
 	}
 
@@ -173,7 +179,7 @@ func main() {
 			}
 		}
 		checkpoints = append(checkpoints, checkpointRow{
-			Step: s, ShardCount: len(present[s]), RankCount: len(ranks),
+			Step: s, ShardCount: rowsAt[s], RankCount: len(ranks),
 			Complete: complete, Admissible: admissible, TotalBytes: bytesAt[s],
 		})
 	}
