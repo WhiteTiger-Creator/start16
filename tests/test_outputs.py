@@ -7,13 +7,35 @@ Shared machinery lives in harness.py.
 import harness
 from harness import *  # noqa: F401,F403
 
+
+# The policy, the incident record and the shard catalogue as the image ships
+# them, captured once at import. The crafted probes below rewrite those three
+# files and restore them in a finally, so a graded run reads the shipped state
+# -- but only because the session fixtures happen to be instantiated by a test
+# that precedes the probes in file order. Under `-k`, a reordering or a partial
+# run, a fixture could be built while a probe's crafted world was still on disk
+# and grade the run against inputs the task never ships. Restoring these bytes
+# first makes the two graded runs independent of when they are asked for.
+SHIPPED_INPUTS = {p: p.read_bytes() for p in (
+    DATA / "resume_policy.json", DATA / "data_incident.json",
+    DATA / "shard_catalog.json")}
+
+
+def _restore_shipped_inputs():
+    for path, blob in SHIPPED_INPUTS.items():
+        if path.read_bytes() != blob:
+            path.write_bytes(blob)
+
+
 @pytest.fixture(scope="session")
 def primary_outputs():
+    _restore_shipped_inputs()
     return _run_pipeline()
 
 
 @pytest.fixture(scope="session")
 def alternate_outputs():
+    _restore_shipped_inputs()
     return _run_pipeline(input_path=ALT_INPUT)
 
 
@@ -986,5 +1008,15 @@ def test_a_stale_entry_the_run_cannot_clear_is_reported_rather_than_ignored():
         assert (stuck / "inner.json").exists(), "the probe removed its own obstacle"
         assert not (out_dir / "summary.json").exists(), (
             "the run wrote its artifacts beside content it could not clear")
+        # instruction.md has the run NAME the offending path on standard error.
+        # Graded on the diagnostic as well as the status, because an exit code
+        # alone leaves an operator with a failed run and nothing to act on, and
+        # a run that exits non-zero silently is indistinguishable here from one
+        # that crashed for some other reason entirely.
+        assert str(stuck) in result.stderr or str(stuck / "inner.json") in result.stderr, (
+            "the run exited non-zero but did not say what it could not clear; "
+            f"stderr was {result.stderr[-2000:]!r}")
+        assert not result.stdout.strip() or "summary" not in result.stdout, (
+            "the run reported artifacts it did not write")
     finally:
         os.chmod(stuck, 0o777)
