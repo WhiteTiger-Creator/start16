@@ -541,6 +541,41 @@ def test_a_policy_that_omits_a_field_keeps_the_governed_baseline():
     assert summary["resume_step"] == -1
 
 
+def test_every_complete_checkpoint_past_the_incident_leaves_no_resume_point():
+    """-1 is not only the no-complete-checkpoint case.
+
+    The contract has resume_step read -1 whenever nothing is admissible, and
+    complete checkpoints that all sit at or after the first poisoned step are
+    exactly that: they exist, they are complete, and none of them may be resumed
+    from, so the run starts over. A planner patched in two passes -- take the
+    highest complete step, then walk back below the first poisoned step when an
+    incident names one -- keeps the first pass's answer here, because the
+    walk-back finds nothing and leaves what was already set. Every other world
+    in this suite has a clean checkpoint underneath to fall back to, so that
+    mistake survived them all.
+    """
+    entries = _full(5000) + _full(6000)
+    _, summary, plan, _ = _probe(entries, poisoned=(5,), steps_per_epoch=1000)
+    assert summary["first_poisoned_step"] == 5000
+    assert summary["complete_checkpoint_count"] == 2, (
+        "the probe has no complete checkpoint, so it cannot separate the two "
+        "readings of -1")
+    assert summary["admissible_checkpoint_count"] == 0
+    assert summary["resume_step"] == -1, (
+        f"resume_step is {summary['resume_step']}; both complete checkpoints sit "
+        "at or after the first poisoned step, so none is admissible and the run "
+        "has no resume point to return")
+    assert plan["resume_step"] == -1
+    assert [c["step"] for c in plan["checkpoints"]] == [5000, 6000]
+    assert all(c["complete"] is True for c in plan["checkpoints"])
+    assert all(c["admissible"] is False for c in plan["checkpoints"])
+
+    # and the same world with the incident moved later does have a resume point,
+    # so the -1 above is the rule biting rather than the probe being empty
+    _, later, _, _ = _probe(entries, poisoned=(7,), steps_per_epoch=1000)
+    assert later["resume_step"] == 6000
+
+
 def test_a_rank_missing_its_optimizer_shard_leaves_the_checkpoint_incomplete():
     """Every rank needs both shards, not the model alone.
 

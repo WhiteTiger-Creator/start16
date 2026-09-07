@@ -7,7 +7,10 @@
 **/.mypy_cache/
 **/.ruff_cache/
 **/node_modules/
-# Verifier and reference material must never reach the agent image.
+# Verifier and reference material must never reach the agent image. Both sit
+# beside this directory rather than inside it, so the build context already
+# excludes them and these two lines are belt and braces against a future
+# Dockerfile whose context is the task root.
 tests/
 solution/
 # Local secrets and environment overrides.

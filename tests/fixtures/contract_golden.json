@@ -72,7 +72,7 @@
         "refetch_needed_count": "shards needing refetch before the resume, before the budget and the cap",
         "refetch_planned_bytes": "stored bytes of the planned refetches only, not of the deferred",
         "refetch_planned_count": "of those, the ones the budget and the cap admit into the plan",
-        "resume_step": "the highest admissible step, or -1 when none is admissible"
+        "resume_step": "the highest admissible step, or -1 when none is admissible -- which covers both the case where no checkpoint is complete and the case where complete checkpoints exist but every one of them sits at or after first_poisoned_step, the run then restarting from the beginning rather than from any of them"
       },
       "field_types": {
         "admissible_checkpoint_count": "integer",
