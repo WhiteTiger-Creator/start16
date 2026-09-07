@@ -441,6 +441,80 @@ def test_a_repeated_registry_row_counts_again_toward_shard_count():
     assert summary["entry_count"] == 4
 
 
+def _four_rank_pair():
+    """Two ranks, both kinds, at one step -- complete under a world size of two."""
+    return [
+        {"entry_id": "e-1", "step": 1000, "rank": 0, "kind": "model",
+         "shard_id": "sh-0", "bytes": 10, "checksum": "c0", "written_seq": 1},
+        {"entry_id": "e-2", "step": 1000, "rank": 0, "kind": "optimizer",
+         "shard_id": "sh-1", "bytes": 10, "checksum": "c1", "written_seq": 2},
+        {"entry_id": "e-3", "step": 1000, "rank": 1, "kind": "model",
+         "shard_id": "sh-2", "bytes": 10, "checksum": "c2", "written_seq": 3},
+        {"entry_id": "e-4", "step": 1000, "rank": 1, "kind": "optimizer",
+         "shard_id": "sh-3", "bytes": 10, "checksum": "c3", "written_seq": 4},
+    ]
+
+
+def test_each_policy_field_falls_back_on_its_own():
+    """#ML-6210 names a baseline per field, and each is exercised alone.
+
+    Dropping world_size was the only case here, and every other run supplied
+    both limits, so a planner that fell back for world_size and read a missing
+    refetch_budget_bytes or max_refetch_shards as Go's zero passed everything:
+    nothing ever handed it a policy without them. Each field is left out in turn
+    below, and each case checks the effective value AND the plan that value
+    produced, since an echoed number proves nothing on its own.
+    """
+    catalog = [{"shard_id": f"data-e01-p{i:02d}", "epoch": 1, "bytes": 1000,
+                "expected_checksum": "a", "stored_checksum": "b"} for i in range(3)]
+    full = {"world_size": 2, "refetch_budget_bytes": 35_000_000_000,
+            "max_refetch_shards": 120}
+
+    # refetch_budget_bytes omitted: the baseline of 35 GB admits all three
+    # shards, where a zero budget would admit none of them
+    sparse = {"default": {k: v for k, v in full.items()
+                          if k != "refetch_budget_bytes"}}
+    _, summary, plan, queue = _probe(_four_rank_pair(), policy=sparse,
+                                     poisoned=(), catalog=catalog)
+    assert summary["effective_refetch_budget"] == 35_000_000_000, summary
+    assert summary["effective_world_size"] == 2
+    assert summary["effective_max_refetch"] == 120
+    assert [r["shard_id"] for r in plan["refetch"]] == [
+        c["shard_id"] for c in catalog], (
+        "an omitted refetch_budget_bytes admitted no shard, so it fell back to "
+        "nought rather than to the governed 35000000000")
+    assert queue == []
+    assert summary["refetch_planned_count"] == 3
+
+    # max_refetch_shards omitted: the baseline of 120 admits all three, where a
+    # zero cap would admit none
+    sparse = {"default": {k: v for k, v in full.items()
+                          if k != "max_refetch_shards"}}
+    _, summary, plan, queue = _probe(_four_rank_pair(), policy=sparse,
+                                     poisoned=(), catalog=catalog)
+    assert summary["effective_max_refetch"] == 120, summary
+    assert summary["effective_world_size"] == 2
+    assert summary["effective_refetch_budget"] == 35_000_000_000
+    assert [r["shard_id"] for r in plan["refetch"]] == [
+        c["shard_id"] for c in catalog], (
+        "an omitted max_refetch_shards admitted no shard, so it fell back to "
+        "nought rather than to the governed 120")
+    assert queue == []
+    assert summary["refetch_planned_count"] == 3
+
+    # and the whole policy omitted: all three baselines at once. A world size of
+    # 16 is not met by two ranks, so nothing is complete and the resume point
+    # stays at -1 while the shards are still admitted under the other two.
+    _, summary, plan, queue = _probe(_four_rank_pair(), policy={"default": {}},
+                                     poisoned=(), catalog=catalog)
+    assert summary["effective_world_size"] == 16
+    assert summary["effective_refetch_budget"] == 35_000_000_000
+    assert summary["effective_max_refetch"] == 120
+    assert summary["complete_checkpoint_count"] == 0
+    assert summary["resume_step"] == -1
+    assert len(plan["refetch"]) == 3 and queue == []
+
+
 def test_a_policy_that_omits_a_field_keeps_the_governed_baseline():
     """#ML-6210 states the baselines a field the policy file omits falls back to.
 
@@ -606,8 +680,7 @@ def test_no_argument_run_writes_to_the_documented_defaults(primary_outputs):
     os.chmod(default_out, 0o777)
     # something for the run to clear. resume_contract.json states that the output
     # directory carries exactly the three named files, so a stale artifact left
-    # by an earlier run must not survive into this one -- a rule I previously
-    # read only out of instruction.md, where it is not written.
+    # by an earlier run must not survive into this one.
     (default_out / "left_behind.json").write_text("{}\n", encoding="utf-8")
     os.chmod(default_out / "left_behind.json", 0o666)
     (default_out / "scratch").mkdir()
@@ -756,3 +829,127 @@ def test_shipped_contract_matches_the_golden_copy():
     shipped = json.loads(SPEC_PATH.read_text(encoding="utf-8"))
     assert shipped == json.loads(GOLDEN_CONTRACT_PATH.read_text(encoding="utf-8"))
 
+
+def test_an_amendment_past_two_to_the_fifty_third_keeps_every_digit():
+    """A byte figure the contract admits, decoded through the wrong number type.
+
+    resume_contract.json puts every byte figure anywhere in the signed 64-bit
+    range. A journal value decoded into an untyped Go `any` arrives as float64,
+    and a float64 carries 53 bits of mantissa, so 9007199254740993 comes back
+    9007199254740992 -- off by one, silently, on a value the contract allows.
+    The journal now carries such an amendment against CK-000002, and the
+    recovered registry has to hold it digit for digit.
+    """
+    journal = _load_json(JOURNAL_PATH)
+    big = [c for c in journal if c.get("value") == 9007199254740993]
+    assert big, "the journal carries no amendment past 2^53, so this proves nothing"
+    assert len(big) == 1, big
+    change = big[0]
+    assert change["kind"] == "amend" and change["field"] == "bytes"
+    # the file itself holds the digits, not a rounded neighbour
+    assert "9007199254740993" in JOURNAL_PATH.read_text(encoding="utf-8")
+
+    recovered = {row["entry_id"]: row for row in _load_json(REGISTRY_PATH)}
+    row = recovered.get(change["entry_id"])
+    assert row is not None, f"{change['entry_id']} is not in the recovered registry"
+    assert row["bytes"] == 9007199254740993, (
+        f"{change['entry_id']} carries {row['bytes']}, not the 9007199254740993 the "
+        "journal amended it to; the value went through a float on the way in")
+    assert row["bytes"] != 9007199254740992, "the value was rounded to the nearest float64"
+
+
+def test_the_admitted_refetch_set_is_a_prefix_of_the_order():
+    """#ML-6194 admits a prefix and never steps over a shard to reach a smaller one.
+
+    Every crafted world here used shards of one size, where the two readings of
+    the rule agree. With sizes that vary, they part company: under a budget of
+    2500 the first two shards fit, the third does not, and the fourth would.
+    Skipping the third to pick up the fourth fills the budget better and is the
+    reading the minute now rules out; the admitted set stops at the first shard
+    that does not fit.
+    """
+    catalog = [
+        {"shard_id": "data-e01-p00", "epoch": 1, "bytes": 1000,
+         "expected_checksum": "a", "stored_checksum": "b"},
+        {"shard_id": "data-e01-p01", "epoch": 1, "bytes": 1000,
+         "expected_checksum": "a", "stored_checksum": "b"},
+        {"shard_id": "data-e01-p02", "epoch": 1, "bytes": 900,
+         "expected_checksum": "a", "stored_checksum": "b"},
+        {"shard_id": "data-e01-p03", "epoch": 1, "bytes": 400,
+         "expected_checksum": "a", "stored_checksum": "b"},
+    ]
+    _, summary, plan, queue = _probe(_four_rank_pair(), poisoned=(),
+                                     catalog=catalog, budget=2500)
+    assert [r["shard_id"] for r in plan["refetch"]] == [
+        "data-e01-p00", "data-e01-p01"], (
+        "the plan stepped over the shard that did not fit to admit a smaller one "
+        "further down, which #ML-6194 rules out")
+    assert [r["shard_id"] for r in queue] == ["data-e01-p02", "data-e01-p03"], (
+        "the deferred queue is not the rest of the order, in order")
+    assert summary["refetch_planned_bytes"] == 2000
+    assert summary["refetch_planned_count"] == 2
+    assert summary["refetch_deferred_count"] == 2
+    # and the better-filling set really was available, so the case discriminates
+    assert 1000 + 1000 + 400 <= 2500
+
+
+def test_an_incident_naming_no_poisoned_epoch_admits_every_complete_checkpoint():
+    """#ML-6186's edge: with nothing poisoned there is no step to fall before.
+
+    Every world here named a poisoned epoch, so what an empty list means was
+    settled only by the reference's own arithmetic. The minute now says it: no
+    poisoned epoch leaves every complete checkpoint admissible, the resume point
+    is the highest of them, and first_poisoned_step is reported as -1.
+    """
+    entries = _four_rank_pair() + [
+        {"entry_id": "e-5", "step": 9000, "rank": 0, "kind": "model",
+         "shard_id": "sh-4", "bytes": 10, "checksum": "c4", "written_seq": 5},
+        {"entry_id": "e-6", "step": 9000, "rank": 0, "kind": "optimizer",
+         "shard_id": "sh-5", "bytes": 10, "checksum": "c5", "written_seq": 6},
+        {"entry_id": "e-7", "step": 9000, "rank": 1, "kind": "model",
+         "shard_id": "sh-6", "bytes": 10, "checksum": "c6", "written_seq": 7},
+        {"entry_id": "e-8", "step": 9000, "rank": 1, "kind": "optimizer",
+         "shard_id": "sh-7", "bytes": 10, "checksum": "c7", "written_seq": 8},
+    ]
+    _, summary, plan, _ = _probe(entries, poisoned=())
+    assert summary["first_poisoned_step"] == -1, summary
+    assert summary["complete_checkpoint_count"] == 2
+    assert summary["admissible_checkpoint_count"] == 2, (
+        "a checkpoint was ruled inadmissible though no epoch is poisoned")
+    assert summary["resume_step"] == 9000, (
+        "the resume point is not the highest complete checkpoint")
+    assert [row["admissible"] for row in plan["checkpoints"]] == [True, True]
+
+
+def test_a_stale_entry_the_run_cannot_clear_is_reported_rather_than_ignored():
+    """The contract's three-file output is not met, so the run must not claim it.
+
+    Both the directory read and the removals had their errors dropped, so a
+    stale subdirectory the run could not remove left the output carrying more
+    than the three named files while the run still exited nought. Here the
+    output directory is left writable but the stale subdirectory inside it is
+    not, so its contents cannot be unlinked.
+    """
+    binary = _build(WORKFLOW_PATH)
+    _publish_inputs()
+    work = _candidate_dir()
+    out_dir = work / "given-output"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    os.chmod(out_dir, 0o777)
+    stuck = out_dir / "stuck"
+    stuck.mkdir()
+    (stuck / "inner.json").write_text("{}\n", encoding="utf-8")
+    # the directory holding it is read and executable but not writable, so the
+    # entry inside it cannot be removed by the unprivileged run
+    os.chmod(stuck / "inner.json", 0o444)
+    os.chmod(stuck, 0o555)
+    try:
+        result = _run_agent([binary, "--output-dir", str(out_dir)], cwd=work)
+        assert result.returncode != 0, (
+            "the run could not clear the output directory and reported success "
+            "anyway; the contract's three-file output was not met")
+        assert (stuck / "inner.json").exists(), "the probe removed its own obstacle"
+        assert not (out_dir / "summary.json").exists(), (
+            "the run wrote its artifacts beside content it could not clear")
+    finally:
+        os.chmod(stuck, 0o777)

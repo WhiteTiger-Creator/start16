@@ -245,9 +245,23 @@ func main() {
 	// The contract has the output directory carry exactly the three named files,
 	// so anything an earlier run left there is cleared before this run writes.
 	// The directory itself stays: the run does not own the path it writes into.
-	if entries, err := os.ReadDir(*outputDir); err == nil {
-		for _, e := range entries {
-			os.RemoveAll(filepath.Join(*outputDir, e.Name()))
+	//
+	// Every error here is reported. Reading the directory and removing what is in
+	// it were both attempted and their failures dropped, so a stale subdirectory
+	// the run could not remove left the output holding more than the three named
+	// files while the run still exited nought and reported success. A run that
+	// cannot meet the contract says so and stops.
+	stale, err := os.ReadDir(*outputDir)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "cannot read the output directory %s: %v\n", *outputDir, err)
+		os.Exit(1)
+	}
+	for _, e := range stale {
+		target := filepath.Join(*outputDir, e.Name())
+		if err := os.RemoveAll(target); err != nil {
+			fmt.Fprintf(os.Stderr, "cannot clear %s from the output directory: %v\n",
+				target, err)
+			os.Exit(1)
 		}
 	}
 	summary := map[string]any{

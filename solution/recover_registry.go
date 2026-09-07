@@ -5,6 +5,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -37,7 +38,16 @@ func readJSON(path string, into any) {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
-	if err := json.Unmarshal(raw, into); err != nil {
+	// UseNumber, not a plain Unmarshal: a journal value decoded into `any` lands
+	// as float64, and a float64 cannot hold every int64. 9007199254740993 comes
+	// back 9007199254740992 -- a byte figure the contract says may take any value
+	// up to the int64 ceiling, silently rewritten by one on the way in. A
+	// json.Number keeps the digits as written and is converted exactly below.
+	// Fields decoded into typed int64 struct members were never affected; only
+	// the amendment's untyped value was.
+	decoder := json.NewDecoder(bytes.NewReader(raw))
+	decoder.UseNumber()
+	if err := decoder.Decode(into); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
@@ -45,6 +55,11 @@ func readJSON(path string, into any) {
 
 func asInt64(value any) (int64, bool) {
 	switch t := value.(type) {
+	case json.Number:
+		// the digits exactly as the journal wrote them, so a value past 2^53
+		// keeps every one of them
+		n, err := t.Int64()
+		return n, err == nil
 	case float64:
 		return int64(t), true
 	case string:

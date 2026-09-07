@@ -26398,5 +26398,13 @@
     "posted_by": "migrator",
     "seq": 1372,
     "value": 104885964
+  },
+  {
+    "entry_id": "CK-000002",
+    "field": "bytes",
+    "kind": "amend",
+    "posted_by": "migrator",
+    "seq": 3501,
+    "value": 9007199254740993
   }
 ]
