@@ -6,6 +6,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -70,13 +71,33 @@ func readJSON(path string, into any) {
 	}
 }
 
-func writeJSON(path string, value any) {
+// Encoding and writing are separate so that every artifact can be rendered to
+// bytes BEFORE the output directory is cleared. Clearing first and marshalling
+// afterwards puts a window between the two where a failure leaves the directory
+// holding neither the previous run's output nor this one's.
+func encodeJSON(value any) []byte {
 	encoded, err := json.MarshalIndent(value, "", "  ")
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
-	if err := os.WriteFile(path, append(encoded, '\n'), 0o644); err != nil {
+	return append(encoded, '\n')
+}
+
+func encodeJSONL(rows []refetchRow) []byte {
+	var buf bytes.Buffer
+	enc := json.NewEncoder(&buf)
+	for _, row := range rows {
+		if err := enc.Encode(row); err != nil {
+			fmt.Fprintln(os.Stderr, err)
+			os.Exit(1)
+		}
+	}
+	return buf.Bytes()
+}
+
+func writeBytes(path string, payload []byte) {
+	if err := os.WriteFile(path, payload, 0o644); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
@@ -251,20 +272,9 @@ func main() {
 	// the run could not remove left the output holding more than the three named
 	// files while the run still exited nought and reported success. A run that
 	// cannot meet the contract says so and stops.
-	stale, err := os.ReadDir(*outputDir)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "cannot read the output directory %s: %v\n", *outputDir, err)
-		os.Exit(1)
-	}
-	for _, e := range stale {
-		target := filepath.Join(*outputDir, e.Name())
-		if err := os.RemoveAll(target); err != nil {
-			fmt.Fprintf(os.Stderr, "cannot clear %s from the output directory: %v\n",
-				target, err)
-			os.Exit(1)
-		}
-	}
-	summary := map[string]any{
+	// Rendered first, so the directory is cleared only once there is something
+	// to put in its place.
+	summaryBytes := encodeJSON(map[string]any{
 		"schema_version":              "resume-plan-v1",
 		"entry_count":                 len(entries),
 		"checkpoint_count":            len(checkpoints),
@@ -279,27 +289,30 @@ func main() {
 		"effective_world_size":        worldSize,
 		"effective_refetch_budget":    budget,
 		"effective_max_refetch":       maxRefetch,
-	}
-	writeJSON(*outputDir+"/summary.json", summary)
-	writeJSON(*outputDir+"/resume_plan.json", map[string]any{
+	})
+	planBytes := encodeJSON(map[string]any{
 		"resume_step": resumeStep,
 		"checkpoints": checkpoints,
 		"refetch":     planned,
 	})
+	queueBytes := encodeJSONL(deferred)
 
-	handle, err := os.Create(*outputDir + "/refetch_queue.jsonl")
+	stale, err := os.ReadDir(*outputDir)
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		fmt.Fprintf(os.Stderr, "cannot read the output directory %s: %v\n", *outputDir, err)
 		os.Exit(1)
 	}
-	defer handle.Close()
-	enc := json.NewEncoder(handle)
-	for _, row := range deferred {
-		if err := enc.Encode(row); err != nil {
-			fmt.Fprintln(os.Stderr, err)
+	for _, e := range stale {
+		target := filepath.Join(*outputDir, e.Name())
+		if err := os.RemoveAll(target); err != nil {
+			fmt.Fprintf(os.Stderr, "cannot clear %s from the output directory: %v\n",
+				target, err)
 			os.Exit(1)
 		}
 	}
+	writeBytes(*outputDir+"/summary.json", summaryBytes)
+	writeBytes(*outputDir+"/resume_plan.json", planBytes)
+	writeBytes(*outputDir+"/refetch_queue.jsonl", queueBytes)
 	fmt.Fprintf(os.Stderr, "resume at step %d, %d shards planned, %d deferred\n",
 		resumeStep, len(planned), len(deferred))
 }

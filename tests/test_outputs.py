@@ -182,6 +182,40 @@ def test_a_stale_file_in_the_given_output_dir_is_cleared(tmp_path: Path):
         FIXTURE["primary"]["queue_digest"]
 
 
+def test_an_output_directory_that_does_not_exist_is_created():
+    """instruction.md says an absent --output-dir is created, not a failure.
+
+    Every other run here hands the planner a directory that already exists --
+    _run_pipeline makes one, and the two clearing probes make theirs before the
+    run -- so the branch the instruction states outright was never reached, and a
+    planner that refused a path it could not stat would have passed the whole
+    suite. The parent is missing as well, so nothing short of creating the chain
+    gets the run through.
+    """
+    binary = _build(WORKFLOW_PATH)
+    _publish_inputs()
+    work = _candidate_dir()
+    out_dir = work / "absent-parent" / "absent-output"
+    assert not out_dir.exists() and not out_dir.parent.exists(), (
+        "the probe's output directory is already there, so it proves nothing")
+
+    result = _run_agent([binary, "--output-dir", str(out_dir)], cwd=work)
+    assert result.returncode == 0, (
+        f"the run exited {result.returncode} over an output directory that does "
+        f"not yet exist, though the instruction has it created rather than "
+        f"treated as a failure\n"
+        f"stdout: {result.stdout[-2000:]}\nstderr: {result.stderr[-2000:]}")
+    assert out_dir.is_dir(), "the run exited nought but created no output directory"
+    assert sorted(q.name for q in out_dir.iterdir()) == [
+        "refetch_queue.jsonl", "resume_plan.json", "summary.json"]
+    # and it is the graded run that was written there, not three empty documents
+    assert _load_json(out_dir / "summary.json") == FIXTURE["primary"]["summary"]
+    assert _digest(_load_json(out_dir / "resume_plan.json")) == \
+        FIXTURE["primary"]["plan_digest"]
+    assert _digest(_load_jsonl(out_dir / "refetch_queue.jsonl")) == \
+        FIXTURE["primary"]["queue_digest"]
+
+
 def test_output_dir_contains_exactly_three_files(primary_outputs):
     """A run writes the three contracted artifacts and nothing else."""
     out_dir, _, _, _ = primary_outputs

@@ -132,7 +132,7 @@
   },
   "runtime_budget_seconds": 90,
   "units": {
-    "byte_range": "every byte figure is a signed 64-bit integer and may carry any value from 0 to 9223372036854775807: a shard's bytes, a checkpoint's total_bytes, the policy's refetch_budget_bytes and refetch_planned_bytes alike. The budget is a mathematical bound. A shard is admitted only where the planned total including it is genuinely no greater than the budget, so a running total that would pass the ceiling defers the shard rather than admitting it on a wrapped comparison",
+    "byte_range": "every byte figure is a signed 64-bit integer and may carry any value from 0 to 9223372036854775807: a shard's bytes, a checkpoint's total_bytes, the policy's refetch_budget_bytes and refetch_planned_bytes alike. The budget is a mathematical bound. A shard is admitted only where the planned total including it is genuinely no greater than the budget, so a running total that would pass the ceiling defers the shard rather than admitting it on a wrapped comparison. A conforming registry keeps its aggregates inside that range too: the bytes a step's entries report sum to a total_bytes that is itself a signed 64-bit figure, so a registry whose entries at one step would sum past the ceiling is not one this contract describes",
     "bytes": "whole bytes",
     "step": "optimizer steps since the run began"
   }
