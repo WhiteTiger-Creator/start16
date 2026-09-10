@@ -9,6 +9,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import platform
 import re
 import shutil
 import signal
@@ -205,7 +206,18 @@ def _build(script_path: Path) -> str:
     result = subprocess.run(
         ["go", "build", "-o", str(binary), str(src)],
         capture_output=True, text=True,
-        env={**os.environ, "GOCACHE": "/tmp/gocache", "GO111MODULE": "off", "GOPATH": "/tmp/gopath"},
+        # The build environment is written out rather than inherited. Copying
+        # os.environ carried whatever the surrounding run happened to hold: a
+        # GOOS or GOARCH left in the environment cross-compiles the submission
+        # into a binary this container cannot execute, and a correct submission
+        # then fails for a reason that has nothing to do with it. The target is
+        # this machine, named outright.
+        env={"PATH": os.environ.get("PATH", "/usr/local/go/bin:/usr/bin:/bin"),
+             "HOME": "/tmp", "LANG": "C.UTF-8",
+             "GOCACHE": "/tmp/gocache", "GO111MODULE": "off",
+             "GOPATH": "/tmp/gopath", "GOFLAGS": "", "GOOS": "linux",
+             "GOARCH": "arm64" if platform.machine() in ("aarch64", "arm64") else "amd64",
+             "CGO_ENABLED": "0", "GOTOOLCHAIN": "local"},
         preexec_fn=_apply_rlimits,
     )
     reap_candidate_uid()

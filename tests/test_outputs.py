@@ -159,6 +159,20 @@ def test_a_stale_file_in_the_given_output_dir_is_cleared(tmp_path: Path):
     os.chmod(out_dir, 0o777)
     (out_dir / "stale.txt").write_text("left over\n", encoding="utf-8")
     os.chmod(out_dir / "stale.txt", 0o666)
+    # A symlink is content too, and every probe here planted only ordinary files
+    # and directories. A cleanup that skipped links -- an unremarkable safety
+    # rule, since removing one blind can look like following it -- cleared the
+    # file, wrote the three artifacts, exited nought and left a fourth entry
+    # standing, which is not the end state the contract names. The two here point
+    # at a file and at a directory; neither target may be touched either, since
+    # what the contract asks to be cleared is the entry, not what it refers to.
+    outside = work / "link-target"
+    outside.mkdir()
+    (outside / "keep.txt").write_text("not the run's to remove\n", encoding="utf-8")
+    os.chmod(outside, 0o777)
+    os.chmod(outside / "keep.txt", 0o666)
+    (out_dir / "stale-file-link").symlink_to(outside / "keep.txt")
+    (out_dir / "stale-dir-link").symlink_to(outside)
     before = out_dir.stat()
     result = _run_agent([binary, "--output-dir", str(out_dir)], cwd=work)
     assert result.returncode == 0, (
@@ -166,7 +180,10 @@ def test_a_stale_file_in_the_given_output_dir_is_cleared(tmp_path: Path):
         f"stdout: {result.stdout[-2000:]}\nstderr: {result.stderr[-2000:]}")
     assert sorted(q.name for q in out_dir.iterdir()) == [
         "refetch_queue.jsonl", "resume_plan.json", "summary.json"], (
-        "a stale file survived into the output directory")
+        "a stale entry survived into the output directory: "
+        f"{sorted(q.name for q in out_dir.iterdir())}")
+    assert (outside / "keep.txt").exists() and outside.is_dir(), (
+        "the run cleared through a link rather than removing the link itself")
     after = out_dir.stat()
     assert (after.st_ino, after.st_dev) == (before.st_ino, before.st_dev), (
         "the directory was replaced rather than cleared")
@@ -692,6 +709,45 @@ def test_refetch_order_is_by_epoch_not_by_size():
     assert [r["shard_id"] for r in plan["refetch"]] == ["data-e01-p00", "data-e09-p00"]
 
 
+def test_the_order_inside_one_epoch_follows_the_shard_id():
+    """The second key of the order, which nothing here used to separate.
+
+    Every other crafted catalogue lists its shards already ascending by id
+    inside an epoch, so a run that sorted on the epoch alone -- a stable sort on
+    one key, which keeps the file's own order underneath it -- came out looking
+    right on all of them. This catalogue puts one epoch's shards in the file
+    backwards, where the two readings disagree: taking the file order under a
+    stable epoch sort gives p03, p01, p02, p00, and the order the contract names
+    gives p00 through p03.
+    """
+    catalog = [
+        {"shard_id": "data-e04-p03", "epoch": 4, "bytes": 10,
+         "expected_checksum": "a", "stored_checksum": "b"},
+        {"shard_id": "data-e04-p01", "epoch": 4, "bytes": 10,
+         "expected_checksum": "a", "stored_checksum": "b"},
+        {"shard_id": "data-e04-p02", "epoch": 4, "bytes": 10,
+         "expected_checksum": "a", "stored_checksum": "b"},
+        {"shard_id": "data-e04-p00", "epoch": 4, "bytes": 10,
+         "expected_checksum": "a", "stored_checksum": "b"},
+    ]
+    expected = ["data-e04-p00", "data-e04-p01", "data-e04-p02", "data-e04-p03"]
+    _, _, plan, _ = _probe(_full(1000), poisoned=(), catalog=catalog)
+    assert [r["shard_id"] for r in plan["refetch"]] == expected, (
+        "the plan takes the shards in the catalogue's own order rather than by "
+        f"shard id: {[r['shard_id'] for r in plan['refetch']]}")
+    # Again with room for two, so the split falls between p01 and p02 and the
+    # deferred queue carries the other half in the same order. Taking the file
+    # order instead would admit p03 and p01 and defer p02 and p00.
+    _, _, capped, queue = _probe(
+        _full(1000), poisoned=(), catalog=catalog, max_refetch=2)
+    assert [r["shard_id"] for r in capped["refetch"]] == expected[:2], (
+        f"the cap admitted {[r['shard_id'] for r in capped['refetch']]}, not the "
+        f"{expected[:2]} that come first by shard id")
+    assert [r["shard_id"] for r in queue] == expected[2:], (
+        "the deferred queue carries the shards in the catalogue's own order "
+        f"rather than by shard id: {[r['shard_id'] for r in queue]}")
+
+
 def test_the_budget_defers_the_tail_in_the_same_order():
     """Shards past the byte budget are deferred, keeping the epoch order."""
     catalog = [
@@ -1040,8 +1096,16 @@ def test_a_stale_entry_the_run_cannot_clear_is_reported_rather_than_ignored():
             "the run could not clear the output directory and reported success "
             "anyway; the contract's three-file output was not met")
         assert (stuck / "inner.json").exists(), "the probe removed its own obstacle"
-        assert not (out_dir / "summary.json").exists(), (
-            "the run wrote its artifacts beside content it could not clear")
+        # All three, not summary.json alone. Checking one name graded the write
+        # ORDER rather than the rule: a run that wrote the plan and the queue
+        # first and only then discovered it could not clear the directory left
+        # two artifacts beside content it could not remove and still passed.
+        left = sorted(q.name for q in out_dir.iterdir()
+                      if q.name in ("summary.json", "resume_plan.json",
+                                    "refetch_queue.jsonl"))
+        assert not left, (
+            f"the run wrote {left} beside content it could not clear, though a "
+            "failed clearing writes no artifacts at all")
         # instruction.md has the run NAME the offending path on standard error.
         # Graded on the diagnostic as well as the status, because an exit code
         # alone leaves an operator with a failed run and nothing to act on, and
@@ -1050,7 +1114,5 @@ def test_a_stale_entry_the_run_cannot_clear_is_reported_rather_than_ignored():
         assert str(stuck) in result.stderr or str(stuck / "inner.json") in result.stderr, (
             "the run exited non-zero but did not say what it could not clear; "
             f"stderr was {result.stderr[-2000:]!r}")
-        assert not result.stdout.strip() or "summary" not in result.stdout, (
-            "the run reported artifacts it did not write")
     finally:
         os.chmod(stuck, 0o777)

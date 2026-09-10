@@ -171,7 +171,20 @@ func main() {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
-	if err := os.WriteFile("/app/data/checkpoint_registry.json", append(encoded, '\n'), 0o644); err != nil {
+	// The authoritative registry is replaced by a rename rather than written
+	// over in place: writing straight to the path truncates it first, so an
+	// interruption part-way through leaves neither the file that was there
+	// before nor the rebuilt one, only a half-written document at the path
+	// everything downstream reads. The rename is atomic, so the path holds one
+	// complete registry or the other at every instant.
+	target := "/app/data/checkpoint_registry.json"
+	staged := target + ".rebuilding"
+	if err := os.WriteFile(staged, append(encoded, '\n'), 0o644); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+	if err := os.Rename(staged, target); err != nil {
+		os.Remove(staged)
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
