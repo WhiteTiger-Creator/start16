@@ -965,6 +965,24 @@ def test_the_planner_declares_no_option_beyond_the_two_it_documents():
     """
     binary = _build(WORKFLOW_PATH)
     _publish_inputs()
+
+    # The declared set itself, rather than four guesses at what it might be
+    # called. Probing --catalog/--incident/--policy caught those three
+    # spellings and nothing else, so a planner offering --catalog-path, or any
+    # third option at all, cleared the rule it was meant to be held to. The
+    # flag package prints every option it declares when it refuses -h, so the
+    # set is read off the program rather than guessed at.
+    work = _candidate_dir()
+    usage = _run_agent([binary, "-h"], cwd=work)
+    text = usage.stdout + usage.stderr
+    declared = set(re.findall(r"^\s*-([A-Za-z0-9_.-]+)", text, re.MULTILINE))
+    assert declared, (
+        "the planner printed no usage for -h, so the options it declares "
+        f"cannot be read off it: {text[-2000:]}")
+    assert declared == {"input", "output-dir"}, (
+        f"the planner declares {sorted(declared)}; the contract names "
+        "--input and --output-dir and no other option")
+
     for option in ("--catalog", "--incident", "--policy", "--registry"):
         work = _candidate_dir()
         out_dir = work / "output"
@@ -999,10 +1017,30 @@ def test_the_planner_hands_the_work_to_no_other_program():
         "planner is meant to do the work itself rather than start another "
         "program, and cgo is not the standard library the build allows")
     payload = _go_source_payload(source)
-    for call in ("os.StartProcess", "syscall.Exec", "syscall.ForkExec",
-                 "syscall.StartProcess", "syscall.Syscall", "syscall.RawSyscall"):
-        assert call not in payload, (
-            f"plan_resume.go reaches {call}, which starts another program")
+    # Spelled against the name the FILE binds, not against the package name.
+    # `import sc "syscall"` followed by `sc.Exec(...)` replaces the process with
+    # an interpreter and writes the string "syscall.Exec" nowhere, so a scan for
+    # that literal passed it straight through. The entry points are listed per
+    # package and the local name is asked of Go's own parser.
+    banned_entries = {
+        "os": ("StartProcess",),
+        "syscall": ("Exec", "ForkExec", "StartProcess", "Syscall", "RawSyscall",
+                    "Syscall6", "RawSyscall6", "Syscall9", "Syscall12",
+                    "Syscall15", "RawSyscall9", "SYS_EXECVE", "SYS_EXECVEAT",
+                    "SYS_FORK", "SYS_VFORK", "SYS_CLONE"),
+    }
+    local = _go_import_names(source)
+    for path, entries in banned_entries.items():
+        name = local.get(path)
+        if name is None:
+            continue
+        assert name != ".", (
+            f"plan_resume.go dot-imports {path}, which puts its process-starting "
+            "entry points in scope under bare names")
+        for entry in entries:
+            assert f"{name}.{entry}" not in payload, (
+                f"plan_resume.go reaches {path}.{entry} (written {name}.{entry}), "
+                "which starts another program or replaces this one")
     # a linker directive lives in a comment, where neither scan above looks
     assert "go:linkname" not in source, (
         "plan_resume.go links to an unexported entry point")

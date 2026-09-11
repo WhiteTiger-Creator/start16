@@ -104,16 +104,34 @@ def _apply_rlimits() -> None:
 
 
 def _pids_owned_by(uid: int) -> list:
-    """Every live pid whose owner is `uid`, read from /proc."""
+    """Every live pid whose owner is `uid`, read from /proc.
+
+    A zombie is not one of them. A killed orphan stays in the table, owner and
+    all, until whatever inherited it gets round to reaping it, and that is the
+    init of this container rather than anything here -- so a sweep that counted
+    zombies was waiting on another process's scheduling and could report a
+    survivor that had already been killed. The state letter in /proc/<pid>/stat
+    says which, and a Z has nothing left that could run.
+    """
     pids = []
     for entry in os.listdir("/proc"):
         if not entry.isdigit():
             continue
         try:
-            if os.stat("/proc/" + entry).st_uid == uid:
-                pids.append(int(entry))
+            if os.stat("/proc/" + entry).st_uid != uid:
+                continue
+            with open("/proc/" + entry + "/stat", encoding="utf-8") as handle:
+                # the comm field can hold spaces and brackets, so the state is
+                # read from after the closing parenthesis rather than by index
+                stat_line = handle.read()
+            state = stat_line[stat_line.rfind(")") + 1:].split()[0]
+            if state == "Z":
+                continue
+            pids.append(int(entry))
         except OSError:
             continue
+        except (IndexError, ValueError):
+            pids.append(int(entry))
     return pids
 
 
@@ -129,7 +147,7 @@ def reap_candidate_uid(uid: int = CANDIDATE_UID) -> None:
     import signal as _signal
     import time as _time
 
-    for _ in range(50):
+    for _ in range(150):
         pids = _pids_owned_by(uid)
         if not pids:
             return
@@ -397,10 +415,11 @@ import (
 )
 
 type reading struct {
-	Imports    []string `json:"imports"`
-	Strings    []string `json:"strings"`
-	Payload    string   `json:"payload"`
-	ParseError string   `json:"parse_error"`
+	Imports     []string    `json:"imports"`
+	ImportNames [][2]string `json:"import_names"`
+	Strings     []string    `json:"strings"`
+	Payload     string      `json:"payload"`
+	ParseError  string      `json:"parse_error"`
 }
 
 func main() {
@@ -454,6 +473,18 @@ func main() {
 				value = spec.Path.Value
 			}
 			out.Imports = append(out.Imports, value)
+			// the name the file actually calls the package by: an alias where
+			// one is written, the last path element otherwise. Without it a
+			// scan for "syscall.Exec" read `import sc "syscall"` as nothing at
+			// all, because the source only ever spells `sc.Exec`.
+			local := value
+			if i := strings.LastIndex(local, "/"); i >= 0 {
+				local = local[i+1:]
+			}
+			if spec.Name != nil {
+				local = spec.Name.Name
+			}
+			out.ImportNames = append(out.ImportNames, [2]string{value, local})
 		}
 	}
 	json.NewEncoder(os.Stdout).Encode(out)
@@ -520,6 +551,17 @@ def _go_source_payload(source: str) -> str:
     calls survives, so f("/te"); g("sts") does not become a match.
     """
     return _go_reading(source)["payload"]
+
+
+def _go_import_names(source: str) -> dict:
+    """Each imported path against the name this file calls it by.
+
+    A scan for `syscall.Exec` reads the source as the source is written, and a
+    file written `import sc "syscall"` never spells that. Go's own parser knows
+    which local name the import bound, so the check asks it rather than
+    assuming the package name and the path's last element agree.
+    """
+    return {path: local for path, local in _go_reading(source).get("import_names", [])}
 
 
 def _go_imports(source: str) -> list:
@@ -608,5 +650,6 @@ __all__ = [
     "_go_reading",
     "_go_strings",
     "_go_source_payload",
+    "_go_import_names",
     "_go_imports",
 ]
