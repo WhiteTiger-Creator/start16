@@ -173,6 +173,15 @@ def test_a_stale_file_in_the_given_output_dir_is_cleared(tmp_path: Path):
     os.chmod(outside / "keep.txt", 0o666)
     (out_dir / "stale-file-link").symlink_to(outside / "keep.txt")
     (out_dir / "stale-dir-link").symlink_to(outside)
+    # A directory with something in it, and removable. Every probe here planted
+    # files, links and at most an EMPTY directory, so a clearing loop that
+    # unlinked each entry one by one rather than removing it recursively cleared
+    # everything the suite staged and passed -- and would have reported failure
+    # over an ordinary directory the contract says to clear.
+    (out_dir / "nested").mkdir()
+    (out_dir / "nested" / "old.json").write_text("{}\n", encoding="utf-8")
+    os.chmod(out_dir / "nested", 0o777)
+    os.chmod(out_dir / "nested" / "old.json", 0o666)
     before = out_dir.stat()
     result = _run_agent([binary, "--output-dir", str(out_dir)], cwd=work)
     assert result.returncode == 0, (
@@ -923,6 +932,103 @@ def test_the_strictest_setpriv_this_image_supports_is_the_one_in_use():
         assert "--inh-caps=-all" in harness._SETPRIV, (
             "setpriv accepts the strict capability flags but the harness is not using them")
         assert "--bounding-set=-all" in harness._SETPRIV
+
+
+def test_app_data_holds_exactly_the_files_it_held_before():
+    """instruction.md: the registry is the one file under /app/data replaced.
+
+    The six declared files were each pinned by their own digest, so the rule the
+    digests enforced was "these six are unchanged" rather than the one the
+    instruction states. A recovery step that copied the truncated registry to a
+    .bak beside it, or left a staging file or a transcript behind, satisfied
+    every digest here while leaving /app/data holding something the contract
+    does not name.
+    """
+    present = sorted(q.name for q in DATA.iterdir())
+    declared = sorted(q.name for q in DECLARED_DATA)
+    assert present == declared, (
+        "/app/data holds something other than the files it was given: "
+        f"{sorted(set(present) ^ set(declared))}")
+    for path in DATA.iterdir():
+        assert path.is_file() and not path.is_symlink(), (
+            f"{path} is not the ordinary file it was")
+
+
+def test_the_planner_declares_no_option_beyond_the_two_it_documents():
+    """instruction.md: the three fixed inputs are not selectable by a flag.
+
+    The fixed-path rule was graded only in the positive direction -- change the
+    catalogue in place and the plan moves -- which an implementation offering a
+    --catalog of its own passes without difficulty, since no run here ever
+    supplies one. A planner that declares only the two documented options
+    refuses an unknown one instead, which is what the flag package does for it.
+    """
+    binary = _build(WORKFLOW_PATH)
+    _publish_inputs()
+    for option in ("--catalog", "--incident", "--policy", "--registry"):
+        work = _candidate_dir()
+        out_dir = work / "output"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        os.chmod(out_dir, 0o777)
+        elsewhere = work / "elsewhere.json"
+        elsewhere.write_text("[]\n", encoding="utf-8")
+        os.chmod(elsewhere, 0o644)
+        result = _run_agent(
+            [binary, option, str(elsewhere), "--output-dir", str(out_dir)], cwd=work)
+        assert result.returncode != 0, (
+            f"the planner accepted {option}, so an input the contract fixes at "
+            "an absolute path can be pointed somewhere else after all")
+
+
+def test_the_planner_hands_the_work_to_no_other_program():
+    """instruction.md: the planner does its own work.
+
+    Compiling one file at a time keeps a sibling SOURCE out of the build, and
+    that was taken for the whole of the single-file constraint. It is not: a
+    wrapper of a few lines can shell out to an interpreter and let a script
+    beside it -- or one it carries as a string -- do the planning, and every
+    behavioural assertion in this file would still pass. There is no way to
+    start a process in Go that does not go through one of these, and the run
+    with /app stripped below closes the same route from the other side.
+    """
+    source = WORKFLOW_PATH.read_text(encoding="utf-8")
+    banned_imports = {"os/exec", "plugin", "C"}
+    declared = set(_go_imports(source))
+    assert not declared & banned_imports, (
+        f"plan_resume.go imports {sorted(declared & banned_imports)}: the "
+        "planner is meant to do the work itself rather than start another "
+        "program, and cgo is not the standard library the build allows")
+    payload = _go_source_payload(source)
+    for call in ("os.StartProcess", "syscall.Exec", "syscall.ForkExec",
+                 "syscall.StartProcess", "syscall.Syscall", "syscall.RawSyscall"):
+        assert call not in payload, (
+            f"plan_resume.go reaches {call}, which starts another program")
+    # a linker directive lives in a comment, where neither scan above looks
+    assert "go:linkname" not in source, (
+        "plan_resume.go links to an unexported entry point")
+    third_party = sorted({path for path in declared if "." in path.split("/")[0]})
+    assert not third_party, f"third-party import(s): {third_party}"
+
+
+def test_the_graded_run_needs_nothing_under_app_but_the_inputs_and_its_own_source(
+        primary_outputs):
+    """The single-file rule graded as behaviour rather than as build shape.
+
+    Everything under /app that is neither a declared input nor the planner is
+    moved aside, and the plan has to come out the same without it. A submission
+    whose Go file is a wrapper over a helper it left beside itself passes every
+    other test in this file and fails here.
+    """
+    stash, moved = _hide_everything_else_under_app()
+    try:
+        _, summary, plan, queue = _run_pipeline()
+        assert summary == FIXTURE["primary"]["summary"], (
+            "the plan changed once everything the submission left under /app "
+            f"was taken away: {sorted(str(q) for q in moved)}")
+        assert _digest(plan) == FIXTURE["primary"]["plan_digest"]
+        assert _digest(queue) == FIXTURE["primary"]["queue_digest"]
+    finally:
+        _restore_everything_under_app(stash, moved)
 
 
 def test_frozen_snapshot_preserved():
