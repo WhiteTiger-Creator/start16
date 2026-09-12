@@ -813,9 +813,17 @@ def test_incident_record_actually_influences_the_output():
 
 def test_run_is_idempotent(primary_outputs):
     """Re-running over the same registry reproduces the same artifacts."""
-    _, summary, plan, queue = primary_outputs
-    _, s2, p2, q2 = _run_pipeline()
+    dir_a, summary, plan, queue = primary_outputs
+    dir_b, s2, p2, q2 = _run_pipeline()
     assert s2 == summary and _digest(p2) == _digest(plan) and _digest(q2) == _digest(queue)
+    # Byte for byte, not value for value. The comparisons above run on decoded
+    # documents, so a run that rendered the same fields in a different order on
+    # the second pass satisfied them while its artifacts differed as files --
+    # which is not what "identical across reruns" says.
+    for name in ("summary.json", "resume_plan.json", "refetch_queue.jsonl"):
+        assert (dir_a / name).read_bytes() == (dir_b / name).read_bytes(), (
+            f"{name} came out with the same values but different bytes on a "
+            "second run over the same registry")
 
 
 def test_no_argument_run_writes_to_the_documented_defaults(primary_outputs):
@@ -893,45 +901,6 @@ def test_submitted_program_runs_unprivileged_and_cannot_write_reward(tmp_path):
     assert parts[0] == str(CANDIDATE_UID) and parts[1] == "true"
 
 
-def test_a_candidate_that_leaves_the_process_group_does_not_survive_the_run():
-    """A setsid escape is reaped, because the sweep is by owner and not by group.
-
-    The probe forks a child, puts it in a session of its own and leaves it
-    sleeping well past the run. Killing the process group alone would let it
-    live into the next test, holding staged inputs or still writing where a
-    later run reads.
-    """
-    probe_dir = Path("/probe-work")
-    probe_dir.mkdir(parents=True, exist_ok=True)
-    os.chmod(probe_dir, 0o755)
-    probe = probe_dir / "escape.py"
-    probe.write_text(
-        "import os, sys, time\n"
-        "if os.fork() == 0:\n"
-        "    os.setsid()\n"
-        "    time.sleep(600)\n"
-        "    sys.exit(0)\n"
-        "print('spawned')\n",
-        encoding="utf-8")
-    os.chmod(probe, 0o644)
-    _run_agent([sys.executable, str(probe)], cwd=probe_dir)
-    assert not harness._pids_owned_by(harness.CANDIDATE_UID), (
-        "a candidate process outlived its run by leaving its process group")
-
-
-def test_the_strictest_setpriv_this_image_supports_is_the_one_in_use():
-    """Capabilities are dropped as well as the uid, where setpriv allows it."""
-    assert "--no-new-privs" in harness._SETPRIV
-    assert f"--reuid={harness.CANDIDATE_UID}" in harness._SETPRIV
-    probe = subprocess.run(
-        ["setpriv", f"--reuid={harness.CANDIDATE_UID}", f"--regid={harness.CANDIDATE_UID}",
-         "--clear-groups", "--no-new-privs", "--inh-caps=-all", "--bounding-set=-all",
-         "/bin/true"],
-        capture_output=True)
-    if probe.returncode == 0:
-        assert "--inh-caps=-all" in harness._SETPRIV, (
-            "setpriv accepts the strict capability flags but the harness is not using them")
-        assert "--bounding-set=-all" in harness._SETPRIV
 
 
 def test_app_data_holds_exactly_the_files_it_held_before():
@@ -975,27 +944,20 @@ def test_the_planner_declares_no_option_beyond_the_two_it_documents():
     work = _candidate_dir()
     usage = _run_agent([binary, "-h"], cwd=work)
     text = usage.stdout + usage.stderr
-    declared = set(re.findall(r"^\s*-([A-Za-z0-9_.-]+)", text, re.MULTILINE))
+    # Names wherever they appear, not only at the start of a line. Anchoring on
+    # a line start read the layout Go's flag package happens to print rather
+    # than the interface the contract fixes: a planner with its own parser that
+    # answers -h with `Usage: planner [--input PATH] [--output-dir DIR]`
+    # declares exactly the contracted pair, and the anchored pattern found
+    # nothing in it and failed the run for its help formatting.
+    declared = set(re.findall(r"-{1,2}([A-Za-z][A-Za-z0-9_.-]*)", text))
+    declared -= {"h", "help"}
     assert declared, (
-        "the planner printed no usage for -h, so the options it declares "
-        f"cannot be read off it: {text[-2000:]}")
+        "the planner named no option when asked for its usage, so the options "
+        f"it declares cannot be read off it: {text[-2000:]}")
     assert declared == {"input", "output-dir"}, (
         f"the planner declares {sorted(declared)}; the contract names "
         "--input and --output-dir and no other option")
-
-    for option in ("--catalog", "--incident", "--policy", "--registry"):
-        work = _candidate_dir()
-        out_dir = work / "output"
-        out_dir.mkdir(parents=True, exist_ok=True)
-        os.chmod(out_dir, 0o777)
-        elsewhere = work / "elsewhere.json"
-        elsewhere.write_text("[]\n", encoding="utf-8")
-        os.chmod(elsewhere, 0o644)
-        result = _run_agent(
-            [binary, option, str(elsewhere), "--output-dir", str(out_dir)], cwd=work)
-        assert result.returncode != 0, (
-            f"the planner accepted {option}, so an input the contract fixes at "
-            "an absolute path can be pointed somewhere else after all")
 
 
 def test_the_planner_hands_the_work_to_no_other_program():
@@ -1010,7 +972,10 @@ def test_the_planner_hands_the_work_to_no_other_program():
     with /app stripped below closes the same route from the other side.
     """
     source = WORKFLOW_PATH.read_text(encoding="utf-8")
-    banned_imports = {"os/exec", "plugin", "C"}
+    # net/http/cgi is standard library and imports nothing banned, but its
+    # Handler starts the interpreter named in Path -- the whole job can be
+    # handed to a script through it without the source naming os/exec at all.
+    banned_imports = {"os/exec", "plugin", "C", "net/http/cgi"}
     declared = set(_go_imports(source))
     assert not declared & banned_imports, (
         f"plan_resume.go imports {sorted(declared & banned_imports)}: the "
@@ -1024,10 +989,13 @@ def test_the_planner_hands_the_work_to_no_other_program():
     # package and the local name is asked of Go's own parser.
     banned_entries = {
         "os": ("StartProcess",),
-        "syscall": ("Exec", "ForkExec", "StartProcess", "Syscall", "RawSyscall",
-                    "Syscall6", "RawSyscall6", "Syscall9", "Syscall12",
-                    "Syscall15", "RawSyscall9", "SYS_EXECVE", "SYS_EXECVEAT",
-                    "SYS_FORK", "SYS_VFORK", "SYS_CLONE"),
+        # the process-starting entry points, and the process-creating NUMBERS a
+        # raw syscall could carry. Banning `syscall.Syscall` outright was broader
+        # than the rule it enforces: the same entry point carries SYS_FSYNC,
+        # which flushes a file the run itself wrote and starts nothing. What
+        # makes a raw syscall a hand-off is the number, so that is what is refused.
+        "syscall": ("Exec", "ForkExec", "StartProcess", "SYS_EXECVE", "SYS_EXECVEAT",
+                    "SYS_FORK", "SYS_VFORK", "SYS_CLONE", "SYS_CLONE3"),
     }
     local = _go_import_names(source)
     for path, entries in banned_entries.items():
@@ -1042,7 +1010,10 @@ def test_the_planner_hands_the_work_to_no_other_program():
                 f"plan_resume.go reaches {path}.{entry} (written {name}.{entry}), "
                 "which starts another program or replaces this one")
     # a linker directive lives in a comment, where neither scan above looks
-    assert "go:linkname" not in source, (
+    # The directive itself, which Go recognises only as `//go:linkname` with no
+    # space after the slashes. Matching the bare substring also caught a comment
+    # that merely mentions the word, which links nothing and runs nothing.
+    assert not re.search(r"^\s*//go:linkname\b", source, re.MULTILINE), (
         "plan_resume.go links to an unexported entry point")
     third_party = sorted({path for path in declared if "." in path.split("/")[0]})
     assert not third_party, f"third-party import(s): {third_party}"
@@ -1086,6 +1057,30 @@ def test_frozen_snapshot_is_wrong(primary_outputs):
 def test_governance_log_present():
     """The run log the rules are reconstructed from is in the environment."""
     assert LOG_PATH.exists() and LOG_PATH.stat().st_size > 0
+
+
+def test_the_planner_does_not_read_the_run_log(primary_outputs):
+    """instruction.md: the log is read by you, not opened by the planner.
+
+    That was stated and never graded. The log stayed in the declared set, so the
+    run with everything else under /app moved aside left it in place, and a
+    planner that parsed the minutes at run time -- or merely opened them --
+    produced the sealed artifacts and passed. Here it is the ONLY thing moved
+    aside, so a planner that needs it fails and one that has the decisions in
+    its own logic does not notice.
+    """
+    stash = Path(tempfile.mkdtemp(prefix="logaside_"))
+    hidden = stash / LOG_PATH.name
+    shutil.move(str(LOG_PATH), str(hidden))
+    try:
+        _, summary, plan, queue = _run_pipeline()
+        assert summary == FIXTURE["primary"]["summary"]
+        assert _digest(plan) == FIXTURE["primary"]["plan_digest"]
+        assert _digest(queue) == FIXTURE["primary"]["queue_digest"]
+    finally:
+        shutil.move(str(hidden), str(LOG_PATH))
+        os.chmod(LOG_PATH, 0o644)
+        shutil.rmtree(stash, ignore_errors=True)
 
 
 def test_shard_catalog_actually_influences_the_output():

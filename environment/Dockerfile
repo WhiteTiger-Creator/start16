@@ -8,7 +8,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 # container dies here; those three and the cert bundle are added explicitly.
 ENV GOCACHE=/tmp/gocache \
     GOPATH=/tmp/gopath \
-    GO111MODULE=off
+    GO111MODULE=off \
+    CGO_ENABLED=0
 
 # Least-volatile layers first: fix the working directory before the apt and
 # dependency layers so a change to those never invalidates the WORKDIR layer.

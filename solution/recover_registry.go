@@ -126,7 +126,11 @@ func main() {
 	// amendment posted before survives, one posted while it was out is lost.
 	held := map[string]entry{}
 
-	sort.Slice(journal, func(i, j int) bool { return journal[i].Seq < journal[j].Seq })
+	// Stable, so two entries sharing a seq replay in the order the journal
+	// lists them rather than in whichever order an unstable sort happens to
+	// leave them -- the same journal then replays the same way twice. The
+	// shipped journal has no duplicate seq; a conforming one might.
+	sort.SliceStable(journal, func(i, j int) bool { return journal[i].Seq < journal[j].Seq })
 	for _, c := range journal {
 		switch c.Kind {
 		case "amend":
@@ -147,13 +151,24 @@ func main() {
 		}
 	}
 
-	out := make([]entry, 0, len(live))
-	for _, e := range live {
-		out = append(out, *e)
+	// Carried with the key it was stored under, which is the entry id the
+	// snapshot gave it and is unique by construction. The four fields #ML-6174
+	// orders on are not: an amend may set entry_id to a value another record
+	// already has, and then two records agree on step, rank, kind AND entry id
+	// while differing in shard, bytes and checksum. The comparator was false
+	// both ways for such a pair, so the order the map happened to yield decided
+	// which came first, and the same journal could rebuild to different bytes.
+	type keyed struct {
+		key string
+		rec entry
+	}
+	out := make([]keyed, 0, len(live))
+	for k, e := range live {
+		out = append(out, keyed{key: k, rec: *e})
 	}
 	// #ML-6174: ascending step, then rank, then kind, then entry id.
 	sort.Slice(out, func(i, j int) bool {
-		a, b := out[i], out[j]
+		a, b := out[i].rec, out[j].rec
 		if a.Step != b.Step {
 			return a.Step < b.Step
 		}
@@ -163,10 +178,17 @@ func main() {
 		if a.Kind != b.Kind {
 			return a.Kind < b.Kind
 		}
-		return a.EntryID < b.EntryID
+		if a.EntryID != b.EntryID {
+			return a.EntryID < b.EntryID
+		}
+		return out[i].key < out[j].key
 	})
+	records := make([]entry, 0, len(out))
+	for _, k := range out {
+		records = append(records, k.rec)
+	}
 
-	encoded, err := json.MarshalIndent(out, "", "  ")
+	encoded, err := json.MarshalIndent(records, "", "  ")
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
